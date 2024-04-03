@@ -32,3 +32,4 @@ yarn-error.log*
 
 # locales will be available via oro-locales
 /public/locales/*
+*storybook.log
