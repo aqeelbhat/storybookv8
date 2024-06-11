@@ -1,0 +1,70 @@
+.customForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .formName {
+    margin-bottom: 24px;
+    font-family: "Inter";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #3E4456;
+  }
+
+  .actionBar {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+
+    &.fixed {
+      --content: 1440px;
+      --margin-twice: calc(100% - 1440px);
+      --margin: calc(var(--margin-twice) / 2);
+      --notes: calc(var(--content) * 0.3);
+
+      z-index: 2;
+      position: sticky;
+      bottom: 0;
+      width: auto;
+      left: var(--margin);
+      right: calc(var(--margin) + var(--notes) + 2px);
+      padding: 12px 0;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(113, 113, 113, 0.18);
+      clip-path: inset(-10px 0 0 0);
+    }
+    
+
+    .complete, .close {
+      width: 160px;
+      justify-content: space-around;
+      margin-right: 18px;
+    }
+  }
+}
+
+.customFormShadow {
+  display: none;
+  max-width: 520px; // this is the max-width set in email template by rohit
+}
+
+@media (max-width: 1440px) {
+  .customForm {
+    .actionBar.fixed {
+      right: calc(30% + 2px);
+    }
+  }
+}
+
+@media (max-width: 1099px) {
+  .customForm {
+    .actionBar.fixed {
+      width: 100%;
+      left: 0;
+    }
+  }
+}

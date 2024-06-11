@@ -1,0 +1,68 @@
+@import './../../branding';
+@import './../../font';
+
+.uploadLogoModal {
+    .modalHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 12px;
+        border-bottom: none;
+        
+        .group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+        }
+    }
+
+    .modalBody {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 32px;
+
+        .uploadDoc {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-width: 840px;
+        }
+    }
+
+    .modalFooter {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        justify-content: flex-end;
+
+        width: 100%;
+        padding-top: 16px;
+        border-top: 1px solid var(--warm-neutral-mid-400);
+
+        .buttonPrimary {
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            border-radius: 4px;
+            background-color: var(--warm-stat-mint-mid);
+            border: solid 1px var(--warm-stat-mint-mid);
+            @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-chalk));
+            cursor: pointer;
+        }
+
+        .buttonSecondary {
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            border-radius: 4px;
+            background-color: var(--warm-prime-chalk);
+            border: solid 1px var(--warm-neutral-mid-600);
+            @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+            cursor: pointer;
+        }
+    }
+}

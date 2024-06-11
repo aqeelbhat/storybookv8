@@ -1,0 +1,11 @@
+@import '../font';
+.link {
+    text-decoration: none !important;
+    cursor: pointer !important;
+    line-break: anywhere;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure) !important);
+
+    &:hover {
+        color: var(--warm-prime-azure) !important;
+    }
+}

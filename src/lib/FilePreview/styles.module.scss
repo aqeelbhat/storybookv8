@@ -1,0 +1,251 @@
+@import './../_font';
+
+.pg-viewer-wrapper {
+  img {
+    width: 100% !important;
+    height: revert !important;
+  }
+}
+
+.filePreviewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,.72);
+
+  .filePreviewHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 77px;
+    padding: 8px 40px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 103.9%);
+    
+    svg {
+      cursor: pointer;
+    }
+
+    .fileName {
+      display: flex;
+      align-items: center;
+
+      p {
+        width: 90%;
+        max-width: 861px;
+        margin-left: 16px;
+        @include FONTSTYLE_SUBTITLE_SB2(32px, var(--coco-chalk));
+      }
+    }
+  }
+
+  .fileContent {
+    width: 90%;
+    height: 90%;
+  }
+
+  &Actions {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+
+    &Info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      width: 56px;
+      height: 56px;
+      background: var(--warm-neutral-mid-100);
+      cursor: pointer;
+    }
+    &Plus, &Minus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+  }
+}
+
+// Styles for CSVRendered plugin for react-doc-viewer
+.csvRenderer {
+  width: 100%;
+  .csv{
+    width: 100%;
+    table-layout: auto !important;
+    .row {
+      &.header {
+        position: sticky;
+        top: 0;
+  
+        .value {
+          background-color: var(--warm-neutral-mid-600);
+          font-weight: 500;
+        }
+      }
+  
+      .value {
+        padding: 4px 8px;
+        border: 1px solid var(--warm-neutral-shade-600);
+        border-collapse: collapse;
+        word-wrap: break-word;
+        @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-500));
+      }
+    }
+  }
+}
+
+.JSONContainer {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.docxContainer {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background: var(--warm-prime-chalk);
+  div[class="docx-wrapper"] {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    background: var(--warm-prime-chalk) !important;
+    section[class="docx"] {
+      margin: 0 auto !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.spreadsheetViewer {
+  padding: 16px;
+  .sheetNames {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 12px;
+    .sheetNamesItems {
+      display: inline-block;
+      padding: 4px 8px;
+      background: var(--warm-neutral-mid-100);
+      border-radius: 4px;
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+      text-align: center;
+      cursor: pointer;
+    }
+    .sheetNamesActive {
+      font-weight: 600 !important;
+      background: var(--warm-stat-mint-lite-2) !important;
+      color: var(--warm-neutral-shade-600) !important;
+    }
+  }
+}
+
+// email file
+.emlRenderer {
+  padding: 24px;
+  .emailContainer {
+    padding-bottom: 32px;
+    .attachmentsContainer {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--warm-neutral-mid-400);
+      .attachmentsContainerContent {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+        .attachmentsContainerContentLink {
+          padding: 6px;
+          border: 1px solid var(--warm-neutral-shade-300);
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+        }
+      }
+    }
+    .htmlContainer {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--warm-neutral-mid-400);
+    }
+    .textContainer {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--warm-neutral-mid-400);
+      .textContainerContent {
+        white-space: pre-wrap;
+        @include FONTSTYLE_BODY_M2(20px, var(--warm-neutral-shade-400));
+      }
+    }
+    .infoContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .subjectContent {
+        margin-bottom: 4px;
+        @include FONTSTYLE_HEADING_H6(20px, var(--warm-neutral-shade-500));
+      }
+      .emailInfoRow {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .emailInfoLabel {
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+        }
+        .emailInfoContent {
+          @include FONTSTYLE_BODY_SB1(20px, var(--warm-prime-azure));
+        }
+        .emailInfoDate {
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400))
+        }
+      }
+    }
+  }
+}
+
+// no renderer
+.noRenderer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  background-color: var(--warm-neutral-light-400);
+  .noRendererEye {
+    margin-bottom: 22px;
+    svg{
+      flex-shrink: 0;
+    }
+  }
+  .noRendererTitle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+  }
+  .noRendererFiletype {
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+  }
+  .noRendererFileLink {
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid var(--warm-neutral-mid-600);
+    background: var(--warm-prime-chalk);
+    cursor: pointer;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+  }
+}

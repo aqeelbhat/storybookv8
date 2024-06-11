@@ -1,0 +1,563 @@
+@import 'src/lib/_font.scss';
+@import 'src/lib/branding.scss';
+
+.taskRow {
+    width: 100%;
+    display: flex;
+
+    &Container {
+        width: 100%;
+        position: relative;
+        border-bottom: 1px dashed var(--coco-neutral-mid-200);
+
+        &Line {
+            position: relative;
+        }
+
+        &Done{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: 23px;
+            left: -30.5px;
+            margin-bottom: -10px;
+            border-radius: 50%;
+            background-color: var(--warm-stat-mint-mid);
+        }
+
+        &Denied{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: 23px;
+            left: -30.5px;
+            margin-bottom: -10px;
+            border-radius: 50%;
+            background-color: var(--warm-stat-chilli-regular);
+        }
+
+        &Na{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: 20px;
+            left: -30.5px;
+            margin-bottom: -10px;
+            border-radius: 50%;
+            background-color: var(--warm-neutral-light-400);
+        }
+
+        &Dot {
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: 20px;
+            left: -30.5px;
+            margin-bottom: -10px;
+            border-radius: 100%;
+            border: 2px solid var(--warm-neutral-mid-400);
+            background-color: var(--coco-chalk);
+
+            &Inner {
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+            }
+        }
+
+        &Circle {
+            display: block;
+            width: 10px;
+            height: 10px;
+            position: relative;
+            top: 23px;
+            left: -30.5px;
+            margin-bottom: -10px;
+            border-radius: 100%;
+            border: 2px solid var(--warm-stat-mint-mid);
+            background-color: var(--coco-chalk);
+
+            &Inner {
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+            }
+        }
+
+        &Phase {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0px 16px 0px;
+            margin-right: 24px;
+            @include FONTSTYLE_BODY_SB3(18px, var(--warm-neutral-shade-500));
+
+            &Icon {
+                display: inline-flex;
+            }
+
+            &Name {
+                margin-left: 14px;
+            }
+        }
+
+        &Dash {
+            height: 15px;
+            margin-left: 7.5px;
+            margin-top: -24px;
+            border-left: 1px solid var(--coco-neutral-shade-100);
+        }
+
+        &Ctn:last-child {
+            margin-bottom: 18px;
+        }
+
+        &Tree {
+            position: relative;
+            
+            ul {
+                padding-left: 7.5px;
+                list-style: none;
+                margin-bottom: 0px;
+              
+                li {
+                    position: relative;
+                    padding-left: 20px;
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    
+                    &:before {
+                        position: absolute;
+                        top: 25px;
+                        left: 0;
+                        width: 16px;
+                        height: 1px;
+                        margin: auto;
+                        content: '';
+                        background-color: var(--coco-neutral-shade-100);
+                    }
+                    
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: 1px;
+                        height: 100%;
+                        content: '';
+                        background-color: var(--coco-neutral-shade-100);
+                    }
+                    
+                    &:last-child:after {
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    &Accordion {
+        display: flex;
+        align-items: flex-start;
+        padding: 16px 0px;
+        cursor: pointer;
+
+        &NameBox {
+            display: flex;
+            align-items: center;
+        }
+
+        &Icon {
+            display: flex;
+            align-items: center;
+            margin-right: 13px;
+        }
+
+        &Current {
+            @include FONTSTYLE_BODY_SB3(18px, var(--warm-neutral-shade-500));
+        }
+
+        &Other {
+            @include FONTSTYLE_BODY_SB3(18px, var(--warm-neutral-shade-500));
+        }
+
+        &Desc {
+            max-width: 442px;
+            width: 100%;
+            padding-left: 28px;
+            margin-top: 4px;
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300))
+        }
+
+        &SubTask {
+            display: flex;
+            align-items: center;
+            padding: 3px 8px;
+            margin-left: 8px;
+            background-color: $white-smoke-color;
+            border-radius: 4px;
+            @include FONTSTYLE_BODY_R2(18px, var(--coco-neutral-shade-500))
+        }
+
+        &Arrow {
+            width: 18px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 2px;
+            margin-right: 5px;
+        }
+
+        &Name {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1;
+            padding-right: 8px;
+            color: var(--primary-checkbox-label-font-color);
+            @include FONTSTYLE_SUBTITLE_SB2(24px, var(--coco-neutral-shade-500))
+        }
+
+        &SubProcess {
+            flex: 1 1;
+            padding-right: 8px;
+            @include FONTSTYLE_SUBTITLE_R2(20px, var(--coco-neutral-shade-500))
+        }
+
+        &AssignTo {
+            display: flex;
+            flex-direction: column;
+            max-width: 192px;
+            width: 100%;
+            padding-right: 8px;
+            @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-500));
+
+            &Dep {
+                margin-bottom: 5px;
+            }
+
+            &Name {
+                width: 150px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &Skipped {
+                @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-500));
+            }
+        }
+
+        &AssignToDn {
+            max-width: 192px;
+            width: 100%;
+            padding-right: 8px;
+            @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-500));
+
+            &Dep {
+                margin-bottom: 5px;
+            }
+
+            &Name {
+                width: 150px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &Status {
+            margin-right: 25px;
+            white-space: nowrap;
+            @include FONTSTYLE_BODY_R1(18px, var(--warm-neutral-shade-500));
+        }
+
+        &StatusTag {
+            display: flex;
+            align-items: flex-start;
+            max-width: 114.38px;
+            width: 100%;
+        }
+
+        &Declined {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1;
+            padding-right: 8px;
+            @include FONTSTYLE_BODY_SB3(20px, var(--coco-neutral-shade-500))
+        }
+
+        &DeclinedSub {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1;
+            padding-right: 8px;
+            @include FONTSTYLE_BODY_SB3(20px, var(--coco-neutral-shade-500))
+        }
+
+        &DeclinedTask {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1;
+            padding-right: 8px;
+            @include FONTSTYLE_BODY_SB3(20px, var(--coco-neutral-shade-500))
+        }
+
+        &NotApplicable {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1;
+            padding-right: 8px;
+            @include FONTSTYLE_BODY_SB3(18px, var(--warm-neutral-shade-200));
+        }
+
+        &NotApplicableSub {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1;
+            padding-right: 8px;
+            @include FONTSTYLE_BODY_SB3(18px, var(--warm-neutral-shade-200));
+        }
+
+        &Skipped {
+            @include FONTSTYLE_BODY_SB3(18px, var(--warm-neutral-shade-500));
+        }
+
+        &Box {
+            width: 100%;
+
+            &Content {
+                display: flex;
+                justify-content: space-between;
+                padding: 12px 16px;
+                margin: 0px 0px 18px 28px;
+                background-color: var(--coco-neutral-light-200);
+                border-radius: 8px;
+                border: 1px solid var(--warm-neutral-mid-300);
+
+                .datesInfoBox {
+                    width: 100%;
+                    padding-right: 20px;
+
+                    &Statement {
+                        width: fit-content;
+                        padding: 4px 8px;
+                        background: var(--coco-neutral-light-200-1);
+                        border-radius: 8px;
+                        margin-bottom: 20px;
+
+                        &Pending {
+                            @include FONTSTYLE_BODY_R1(18px, var(--coco-neutral-shade-500))
+                        }
+        
+                        &Days {
+                            @include FONTSTYLE_BUTTON(18px, var(--coco-neutral-shade-500))
+                        }
+                    }
+                }
+
+                .checklistInfoBox {
+                    width: 100%;
+                    padding-left: 20px;
+                    border-left: 1px solid var(--warm-neutral-mid-400);
+
+                    &Btn {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    label {
+                        width: fit-content;
+                        height: 32px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 4px 8px;
+                        background: var(--coco-neutral-light-200-1);
+                        border-radius: 8px;
+                        margin-bottom: 20px;
+                        @include FONTSTYLE_BUTTON(18px, var(--coco-neutral-shade-500))
+                    }
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        @include FONTSTYLE_BUTTON(18px, var(--coco-neutral-shade-500));
+
+                        .checked {
+                            padding-bottom: 11px;
+                            margin-right: 13px;
+                        }
+
+                        .denied {
+                            padding-bottom: 8px;
+                            margin-right: 13px;
+                        }
+                    }
+                }
+
+                p {
+                    margin-bottom: 8px;
+                }
+
+                .date {
+                    @include FONTSTYLE_BODY_R2(18px, var(--coco-neutral-shade-500));
+                }
+
+                .dot {
+                    display: inline-block;
+                    height: 6px;
+                    width: 6px;
+                    margin: 0px 8px 1px 8px;
+                    border-radius: 50%;
+                    background-color: var(--coco-charcoal);
+                }
+
+                .sentence {
+                    @include FONTSTYLE_BODY_SB2(18px, var(--coco-neutral-shade-500));
+                }
+            }
+        }
+    }
+
+    .tabs {
+        padding-right: 14px;
+
+        .verticleTop {
+            height: 12px;
+            margin-left: 11px;
+        }
+
+        .verticleTopDN {
+            height: 12px;
+            margin-left: 12px;
+            border-left: 1px dashed var(--warm-neutral-shade-100);
+        }
+
+        .verticleBottom {
+            height: 100%;
+            margin-left: 12px;
+            border-left: 1px dashed var(--warm-neutral-shade-100);
+        }
+
+        .verticleDone {
+            height: 100%;
+            margin-left: 12px;
+            border-left: 1px solid var(--warm-neutral-shade-100);
+        }
+
+        .verticleBottomLine {
+            height: 100%;
+            margin-left: 12px;
+            border-left: 1px dashed var(--warm-neutral-shade-100);
+        }
+    }
+
+    .firstTab {
+        padding-top: 12px;
+    }
+
+    .firstTabDN {
+        padding-top: 12px;
+    }
+
+    .btmBorder {
+        width: 100%;
+        border-bottom: 1px dashed var($gray-color-2);
+    }
+
+    .last {
+        display: block;
+        background-color: black;
+    }
+
+    .noBorder {
+        width: 100%;
+    }
+}
+
+.cirularTabProgress {
+    width: 24px;
+    height: 24px;
+    background-color: var(--coco-chalk);
+    z-index: 8;
+
+    .innerText text {
+        border-radius: 50%;
+        background-color: var(--warm-stat-mint-mid);
+    }
+
+    .innerTextDone {
+        background-color: var(--warm-stat-mint-mid);
+        border-radius: 50%;
+    }
+
+    .innerTextDenied {
+        background-color: var(--warm-stat-chilli-mid);
+        border-radius: 50%;
+    }
+
+    .innerTextSkipped {
+        background-color: var(--warm-neutral-light-400) !important;
+        border-radius: 50% !important;
+    }
+}
+
+.topBorder {
+    border-top: 1px dashed $gray-color-2;
+}
+
+@media (max-width: 576px) {
+    .taskRow {
+        &Accordion {
+            &AssignTo {
+                display: none;
+            }
+            &AssignToDn {
+                display: none;
+            }
+            &Status {
+                display: none;
+            }
+            &Box {
+                &Content {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 13px;
+                }
+            }
+        }
+        .firstTabDN {
+            padding-top: 16px;
+        }
+        .tabs {
+            .verticleTopDN {
+                height: 16px;
+                margin-left: 15px;
+                border-left: 2px dashed var($gray-color-2);
+            }
+        }
+        .btmBorder {
+            border: none;
+        }
+    }
+
+    .topBorder {
+        border: none;
+    } 
+}

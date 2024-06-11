@@ -1,0 +1,773 @@
+@import './../../branding';
+@import './../../font';
+
+.supplierCard {
+    &.short {
+        max-width: 450px; 
+    }
+}
+
+.supplier {
+    &Vendors {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 22px;
+
+        &PersonContact {
+            display: flex;
+            flex-direction: column;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--warm-neutral-mid-600);
+
+            &Add {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                &Required {
+                    border-color: var(--warm-stat-chilli-regular) !important; 
+                }
+                &Title {
+                    display: flex;
+                    align-items: center;
+                    @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600));
+                    span {
+                        margin-left: 4px;
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                    }
+                }
+                &NotAvailable {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                }
+                &Action {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                    cursor: pointer;
+                    &:hover {
+                        color: var(--warm-prime-azure);
+                        svg {
+                            stroke: var(--warm-prime-azure);
+                        }
+                    }
+                    span {
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                    }
+                }
+                h4 {
+                    margin: 0;
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+                    span {
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                    }
+                }
+                button {
+                    border-color: var(--warm-neutral-mid-400);
+                    border-radius: 4px;
+                    border-width: 1px !important;
+                    @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+                }
+
+                &Crm {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 16px;
+
+                    h4 {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        margin: 0;
+                        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+                        span {
+                            @include FONTSTYLE_BODY_R1(1.14, var(--warm-neutral-shade-200));
+                        }
+                    }
+
+                    input {
+                        margin-top: 8px;
+                    }
+
+                    input:focus {
+                        outline-color: var(--warm-stat-mint-mid);
+                    }
+                }
+
+                .warning {
+                    color: var(--red-error-border-color);
+                    border: solid 1px var(--darker-yellow-font-color);
+                }
+            }
+
+            &Exist {
+                display: flex;
+                justify-content: space-between;
+                gap: 8px;
+                margin-top: 12px;
+                padding: 8px;
+                border-radius: 4px;
+                background: var(--warm-neutral-light-200);
+
+                &Action {
+                    display: flex;
+                    gap: 8px;
+                    svg {
+                        cursor: pointer;
+                    }
+                }
+
+                &Info {
+                    display: flex;
+                    gap: 8px;
+                    min-width: 0;
+                    @media (max-width: 490px) {
+                        align-items: flex-start;
+                    }
+                    &Pic {
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border: 1px solid var(--coco-chalk);
+                            border-radius: 50%;
+                        }
+                        
+                        @media (max-width: 490px) {
+                            margin-bottom: 12px;
+                        }
+                    }
+
+                    &Detail {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        width: 90%;
+                        h3 {
+                            margin: 0;
+                            max-width: 100%;
+                            width: 100%;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                        }
+                        &Role {
+                            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                        }
+                        &Connect {
+                            display: flex;
+                            gap: 12px;
+                            flex-wrap: wrap;
+                            span {
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                                &:not(:only-child):last-of-type {
+                                    padding-left: 12px;
+                                    border-left: 1px solid var(--warm-neutral-mid-400);
+                                }
+
+                                svg {
+                                    flex-shrink: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &ItemDelete {
+            position: absolute;
+            right: -19px;
+            top: -19px;
+            display: flex;
+            //height: 46px;
+            padding: 4px;
+            border-radius: 50%;
+            background: var(--coco-chalk);
+            cursor: pointer;
+            z-index: 2;
+
+            &Icon {
+                display: flex;
+                padding: 5px;
+                border-radius: 50%;
+                background: var(--coco-chalk);
+                border: 1px solid var(--warm-neutral-mid-400);
+            }
+        }
+
+        &ItemInPortal {
+            display: block !important;
+
+            .supplierVendorsItemInfo {
+                max-width: 100% !important;
+            }
+
+            .supplierVendorsItemStatus {
+                max-width: 100% !important;
+            }
+        }
+
+        &Item {
+            position: relative;
+            display: flex;
+            margin-top: 20px;
+            padding: 4px;
+            background-color: var(--warm-prime-chalk);
+            border: 1px solid var(--warm-neutral-mid-400);
+            border-radius: 12px;
+            &:first-of-type {
+                margin-top: 0 !important;
+            }
+            @media (max-width: 800px) {
+                display: block;
+            }
+
+            &InfoSingle {
+                max-width: 100% !important;
+            }
+
+            &Readonly {
+                max-width: 500px;
+                width: 100%;
+            }
+
+            &Subsidiaries {
+                padding-bottom: 14px;
+            }
+
+            &Docs, &Subsidiaries {
+                border-bottom: 1px dashed var(--light-light-gray-font-color);
+                &Noborder {
+                    border-bottom: none;
+                }
+
+                &Upload {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-top: 14px;
+                    @media (max-width: 490px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+                &Text {
+                    font-family: var(--primary-16px-below-font-family);
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 1.29;
+                    color: var(--titles-blue-gray-font-color);
+                    span {
+                        font-weight: normal;
+                    }
+                    @media (max-width: 490px) {
+                        margin-bottom: 12px;
+                    }
+                }
+                &Action {
+                    display: flex;
+                    button {
+                        margin-left: 10px;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                &Uploaded {
+                    margin-bottom: 16px;
+                    &Item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 5px;
+                        padding: 9px 12px 9px 6px;
+                        border-radius: 4px;
+                        background-color: var(--green-light-highlight-background-color);
+                        @media (max-width: 490px) {
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
+
+                        &:first-child {
+                            margin-top: 16px;
+                        }
+
+                        &Text {
+                            display: flex;
+                            align-items: center;
+                            font-family: var(--primary-16px-below-font-family);
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 1.57;
+                            color: var(--titles-blue-gray-font-color);
+                            @media (max-width: 490px) {
+                                margin-bottom: 8px;
+                            }
+                            svg {
+                                display: inline-block;
+                                width: 24px;
+                                height: 24px;
+                                margin-right: 8px;
+                            }
+                        }
+                        &File {
+                            display: flex;
+                            align-items: center;
+                            span {
+                                margin-right: 15px;
+                                font-family: var(--primary-16px-below-font-family);
+                                font-size: 14px;
+                                line-height: 1.57;
+                                color: var(--dark-light-gray-font-color);
+                            }
+                            svg {
+                                margin-left: 4px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &Info {
+                position: relative;
+                width: 100%;
+                padding: 20px;
+                background: var(--coco-chalk);
+                border-radius: 8px 0 0 8px;
+
+                @media (max-width: 800px) {
+                    max-width: 100%;
+                    border-radius: 8px 8px 0 0;
+                    padding: 16px;
+                }
+
+                &Readonly {
+                    border-radius: 8px;
+                    border-right: none;
+                }
+
+                &Box {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 8px;
+                }
+
+                &CompanyName {
+                    margin-top: 6px;
+                    @include FONTSTYLE_SUBTITLE_M2(20px, var(--warm-neutral-shade-600));
+                }
+
+                &Logo {
+                    img {
+                        display: block;
+                        max-width: 120px;
+                        max-height: 48px;
+                        width: auto;
+                        height: auto;
+                        object-fit: contain;
+                        border-radius: 4px;
+                    }
+                }
+
+                &Name {
+                    display: flex;
+                    gap: 12px;
+                    margin-bottom: 0;
+                    word-break: break-all;
+                    @include FONTSTYLE_SUBTITLE_SB1(26px, var(--warm-neutral-shade-500));
+                }
+
+                &AddContact {
+                    display: flex;
+                    align-items: center;
+                    width: fit-content;
+                    cursor: pointer;
+                    span {
+                        display: inline-block;
+                        margin-left: 16px;
+                        font-family: var(--primary-16px-below-font-family);
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: var(--primary-goback-link-font-color);
+                        cursor: pointer;
+                    }
+                }
+
+                &Contacts {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    margin-top: 12px;
+                    &Item {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 3px 12px 3px 6px;
+                        background: var(--warm-neutral-light-400);
+                        border-radius: 4px;
+                        span, a {
+                            @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+                        }
+                        a {
+                            max-width: 150px;
+                            width: 100%;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                        svg {
+                            flex-shrink: 0;
+                        }
+                    }
+                }
+
+                &Subsidiary {
+                    width: fit-content;
+                    margin-top: 6px;
+                    cursor: pointer;
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-300));
+                    &:hover {
+                        color: var(--warm-prime-azure);
+                    }
+                }
+
+                &Parents {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: 8px;
+                    &Item {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                        flex-shrink: 0;
+                        padding-right: 8px;
+                        border-right: 1px solid var(--warm-neutral-mid-400);
+                        &:last-of-type {
+                            padding-right: 0;
+                            border-right: none;
+                        }
+                        &Label {
+                            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+                        }
+                        &Text {
+                            @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-300));
+                        }
+                    }
+                }
+
+                &Location {
+                    display: flex;
+                    gap: 12px;
+                    margin-top: 6px;
+                    &Address {
+                        display: flex;
+                        align-items: center;
+                        border-right: 1px solid var(--warm-neutral-mid-500);
+                        padding-right: 12px;
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                        &:last-of-type {
+                            border-right: none;
+                            padding-right: 0; 
+                        }
+                        span, a {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+                            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                        }
+                        &:hover {
+                            a, a svg {
+                                color: var(--warm-prime-azure);
+                                stroke: var(--warm-prime-azure);
+                            }
+                        }
+                    }
+                }
+            }
+            &Status {
+                max-width: 44%;
+                width: 100%;
+                @media (max-width: 800px) {
+                    max-width: 100%;
+                    padding: 0;
+                }
+                &Box {
+                    width: 100%;
+                    background: var(--warm-neutral-light-400);
+                    border-radius: 8px;
+                    padding: 20px;
+                    height: 100%;
+                    @media (max-width: 800px) {
+                        width: 100%;
+                        border-radius: 0 0 8px 8px;
+                        padding: 16px;
+                    }
+
+                    &Header {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6px;
+                        padding-bottom: 8px;
+                        border-bottom: 1px solid var(--warm-neutral-mid-500);
+                        &Help {
+                            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                        }
+                        &Title {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                            &Text {
+                                .existing {
+                                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                                }
+                                .active {
+                                    display: flex;
+                                    gap: 6px;
+                                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+
+                                    &Text {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: 6px;
+                                        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+                                    }
+                                    &Icon {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex-shrink: 0;
+                                        width: 16px;
+                                        height: 16px;
+                                        background: var(--warm-stat-mint-regular);
+                                        border-radius: 50%;
+                                    }
+                                    &RA {
+                                        margin-left: -2px;
+                                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-600)); 
+                                    }
+                                }
+                                .newSupplier {
+                                    @include FONTSTYLE_BODY_M1(20px, var(--warm-misc-bold-orange));
+                                }
+                            }
+                            &Action {
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                                cursor: pointer;
+                                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-300));
+
+                                &:hover {
+                                    color: var(--warm-prime-azure);
+                                    svg {
+                                        stroke: var(--warm-prime-azure);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &Details {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                        margin-top: 16px;
+                        &Info {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 4px;
+                            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                            strong {
+                                font-weight: 500;
+                            }
+                            svg {
+                                margin-right: 2px;
+                            }
+
+                            .activeIcon {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 16px;
+                                height: 16px;
+                                background: var(--warm-stat-mint-regular);
+                                border-radius: 50%;
+                                margin-right: 4px;
+
+                                svg {
+                                    margin-right: 0 !important;
+                                }
+                            }
+                        }
+                        &Action {
+                            display: flex;
+                            gap: 8px;
+                            padding: 12px;
+                            border: 1.2px dashed var(--warm-neutral-shade-200);
+                            border-radius: 8px;
+                            background: var(--warm-neutral-light-400);
+                            cursor: pointer;
+                            &:hover {
+                                background: var(--warm-neutral-mid-200);
+                            }
+                            &Info {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 8px;
+
+                                &Text {
+                                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                                }
+                                &Help {
+                                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                                }
+                            }
+                        }
+                        &Items {
+                            &Error {
+                                margin-top: 6px;
+                            }
+                            &Label {
+                                margin-right: 4px;
+                                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                            }
+                            &Value {
+                                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                                &Action {
+                                    display: inline-flex;
+                                    gap: 6px;
+                                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+                                    &Link {
+                                        @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &Desc {
+                    &Text, &Action {
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                    }
+
+                    &Action {
+                        margin-bottom: 10px;
+                        color: var(--primary-goback-link-font-color);
+                    }
+                    &SelectNow {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        margin-top: 12px;
+
+                        &Action {
+                            padding: 4px 16px;
+                            background: var(--coco-chalk);
+                            border: 1px solid var(--warm-neutral-mid-400);
+                            border-radius: 4px;
+                            @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+                            cursor: pointer;
+                        }
+                        &ActionRequired {
+                            border-color: var(--warm-stat-chilli-regular) !important; 
+                        }
+
+                        &Help {
+                            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                        }
+
+                        &Sep {
+                            margin: 0 8px;
+                            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500)); 
+                        }
+                    }
+                }
+
+                &VendorDetail {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    width: 100%;
+                    margin-bottom: 12px;
+                    line-break: anywhere;
+                    &Title {
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                    }
+                    &ID {
+                        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                    }
+                    &Action {
+                        @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+                        cursor: pointer;
+                    }
+                }
+
+                &Header {
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid var(--warm-neutral-mid-400);
+                    margin-bottom: 12px;
+                    &Icon {
+                        display: flex;
+                        padding: 2px;
+                        border: 1.5px solid var(--warm-stat-mint-regular);
+                        border-radius: 50%;
+                    }
+                    svg {
+                        flex-shrink: 0;
+                    }
+                    span.activeSupplier {
+                        color: var(--warm-stat-mint-regular) !important;
+                    }
+                    span.newSupplier {
+                        color: var(--warm-misc-bold-orange) !important;
+                    }
+                    span {
+                        &:first-of-type {
+                            margin-left: 12px;
+                            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                        }
+                        &:last-of-type {
+                            margin-left: 4px;
+                            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &ErrorMessage {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-stat-chilli-regular));
+    }
+
+    &ContactForm {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 460px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,12 @@
+@import 'src/lib/_font.scss';
+
+.responseLabel {
+    @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-500));
+    padding-bottom: 10px;
+}
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

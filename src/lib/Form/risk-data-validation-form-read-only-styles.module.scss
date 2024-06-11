@@ -1,0 +1,412 @@
+@import './../branding';
+@import './../_font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 15px;
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * 4)) / 5);
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    &5 {
+        width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    }
+}
+
+.row {
+    margin-bottom: 24px;
+}
+
+.readOnlyFormDivider {
+    padding-bottom: 24px;
+}
+
+.riskValidationFormReadOnly {
+    display: flex;
+    flex-direction: column;
+    width: $form-width;
+    margin-top: 24px;
+
+    &Title {
+        margin-bottom: 24px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.39;
+        color: $dark-color;
+        border-bottom: 1px dotted $gray-color-2;
+    }
+
+    &Section {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+
+        &:last-child {
+            margin-bottom: 0;
+            border-bottom: none
+        }
+    }
+
+    &Row {
+        flex-direction: row;
+        width: 100%;
+
+        .item {
+            margin-right: 0px;
+            &.flex {
+                flex: 1;
+            }
+        }
+
+        .comments {
+            margin-top: 15px;
+        }
+    }
+
+    .overallScoreContainer {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+
+        &ManualRiskScore {
+            display: flex;
+            width: 402px;
+            padding: 10px;
+
+            .overallRisk {
+                float: right;
+                margin-right: 5px;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 24px;
+                width: 24px;
+                border-radius: 12px;
+            }
+        }
+    }
+
+    .riskBadge { 
+        border-right: 1px solid $gray-color-2;
+    }
+
+    &Header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 380px;
+        margin-top: 10px;
+        background: $green-light-highlight-background-color;
+        border: 1px solid $green-light-highlight-background-color;
+        padding: 12px 22px;
+    }
+
+
+    &HeadingSub {
+        padding: 0px 0px 16px 0px;
+        &Text {
+            @include FONTSTYLE_SUBTITLE_SB2($line-height: 24px, $color: $dark-color);
+        }
+    }
+
+    &Text {
+        padding: 3px 0px;
+        @include FONTSTYLE_BODY_R2(12px, $light-blue-gray-color);
+    }
+
+    &ManualRiskScore {
+        display: flex;
+        flex-direction: row;
+        left: 40px;
+        top: 87px;
+        max-width: 380px;
+        background: $pure-white-color;
+        border: 1px solid $primary-background-color;
+        border-radius: 8px;
+        box-sizing: border-box;
+        box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.05);
+        padding: 18px 5px;
+    }
+
+    &RiskScore {
+        @include FONTSTYLE_HEADING_H5($line-height: 22px);
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+
+    &Fields {
+        padding: 0 10px;
+        margin-bottom: 3px;
+
+        &KeyValuePair {
+            display: flex;
+            flex-direction: row;
+            padding: 3px 0;
+        }
+
+        &Label {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            max-width: 305px;
+            @include FONTSTYLE_BODY_R2($color: $panel-font-color)
+        }
+
+        &Value {
+            flex: 2;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            @include FONTSTYLE_BODY_R1($color: $pure-black-color)
+        }
+    
+    }
+
+    &Score {
+        &Row {
+            display: flex;
+            align-items: center;
+            padding: 12px 0px;
+            position: relative;
+
+            &DataValidation {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                background: $pure-white-color;
+                border: 1px solid $primary-background-color;
+                box-sizing: border-box;
+                border-radius: 8px;
+                margin-bottom: 16px;
+
+                &Section {
+                    background: $white-smoke-color;
+                    padding: 7px 10px;
+                    border-bottom: 1px solid $panel-border-color;
+                    &Header {
+                        @include FONTSTYLE_BODY_SB2(16px, $light-blue-gray-color);
+                    }
+                }
+
+                &Content {
+                    display: flex;
+                    padding: 8px;
+                    border-bottom: 1px solid #E6E6E6;
+
+                    &:last-child {
+                      border-bottom: none;
+                    }
+
+                    &Column {
+                        margin-top: 10px;
+                        
+                        &Source {
+                            @include FONTSTYLE_BODY_R2($line-height: 12px, $color: $light-blue-gray-color)
+                        }
+
+                        &Service {
+                            @include FONTSTYLE_BUTTON(16px, $dark-light-color)
+                        }
+
+                        &list {
+                            @include FONTSTYLE_BODY_R1($line-height: 18px)
+                        }
+
+                        &Level {
+                            padding: 4px;
+                            text-align: center;
+                            margin-right: 15px;
+
+                            .risklevel {
+                                padding: 4px 8px;
+                            }
+                        }
+
+                        &Noteslist {
+                            margin-right: 16px;
+                            margin-left: 35px;
+                        }
+                    }
+
+                    &Icon {
+                        margin: 20px 10px;
+                    }
+
+                    &RiskWidget {
+                        padding: 0px 15px 22px 0;
+                        border-right: 1px solid rgba(196, 196, 196, 0.4);
+                        &Span {
+                            margin-left: 0px;
+                            @include FONTSTYLE_SUBTITLE_SB2($line-height: 16px, $color: $blue-grays-font-color);
+                            span {
+                              @include FONTSTYLE_BODY_R2($line-height: 22px, $color: $blue-grays-font-color)
+                            }
+                        }
+                    }
+
+                    &RiskComment {
+                        @include FONTSTYLE_BODY_R1($line-height: 20px);
+                        margin: 0px 10px;
+                    }
+
+                    &RiskBadge { 
+                        border-right: 1px solid $gray-color-2;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    &CommentsBody {
+
+		&Row {
+			display: flex;
+			align-items: center;
+			padding: 12px 35px;
+			position: relative;
+
+			&:first-child {
+				padding-top: 0px;
+			}
+
+			&:last-child {
+				padding-bottom: 15px;
+			}
+
+            &Content {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				margin-left: 8px;
+
+                &Date{
+                    width: 80px;
+                    margin-top: 3px;
+                    @include FONTSTYLE_BODY_R2($color: $blue-grays-font-color)
+                }
+			}
+
+            &CommentWrapper {
+                flex: 1;
+                display: flex;
+                margin-left: 12px;
+
+                .userDetails {
+                    flex-direction: column;
+                    justify-content: center;
+                    min-height: 38px;
+
+                    .name, .level {
+                        @include FONTSTYLE_BUTTON($line-height:20px, $color: $blue-grays-font-color)
+                    }
+
+                    .notes {
+                        @include FONTSTYLE_BODY_R1($line-height: 20px, $color: $blue-grays-font-color)
+                    }
+                }
+
+                .commentText {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    min-height: 38px;
+                    padding: 0 8px;
+                    outline: none;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    @include FONTSTYLE_BUTTON($line-height:20px, $color: $blue-grays-font-color);
+                }
+            }
+
+            &Profile {
+                margin: 20px 10px;
+                height: 30px;
+                width: 30px;
+                background-color: var(--always-white-font-color);
+                border-radius: 19px;
+                overflow: hidden;
+                z-index: 1;
+        
+                img {
+                  height: 30px;
+                  width: 30px;
+                }
+            }
+
+			&Line {
+				position: absolute;
+				left: 138px;
+				top: 23px;
+				height: 60PX;
+				width: 1px;
+				border: 1px dashed rgba(132, 132, 132, 0.4);
+			}
+
+            &Previous {
+                margin-left: 74px;
+                margin-top: 0px;
+            }
+        }
+    }
+}
+
+.low {
+    background: $green-light-highlight-background-color;
+    border: 1px solid $green-light-highlight-background-color;
+    border-radius: 8px;
+    box-sizing: border-box;
+    @include FONTSTYLE_SUBTITLE_SB2(24px, $dark-green-color)
+}
+
+.medium {
+    background: $oro-light-gold-background-color;
+    border: 1px solid $oro-light-gold-background-color;
+    border-radius: 8px;
+    box-sizing: border-box;
+    @include FONTSTYLE_SUBTITLE_SB2(24px, $oro-gold-font-color)
+}
+
+.high {
+    background: var(--color-error-bg);
+    border: 1px solid var(--color-error-bg);
+    border-radius: 8px;
+    box-sizing: border-box;
+    @include FONTSTYLE_SUBTITLE_SB2(24px, var(--color-error-dark))
+}
+
+.levelNotFound {
+    background: $gray-color-2;
+    border: 1px solid $gray-color-2;
+    border-radius: 8px;
+    box-sizing: border-box;
+    @include FONTSTYLE_SUBTITLE_SB2(24px, $pure-white-color)
+}
+
+.leveltext {
+    margin-left: 8px;
+}
+
+

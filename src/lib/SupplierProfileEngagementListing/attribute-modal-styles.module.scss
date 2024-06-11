@@ -1,0 +1,39 @@
+@import './../_font';
+.attributeModal {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+    justify-content: space-between;
+    cursor: default;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+
+            .key {
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+            }
+        
+            .value {
+                @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+            }
+        }
+    }
+    }
+
+    .closeBtn {
+        margin: 5px 0;
+        cursor: pointer;
+        color: var(--warm-neutral-shade-200);
+    }
+}

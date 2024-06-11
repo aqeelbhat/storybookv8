@@ -1,0 +1,26 @@
+@import './../../../branding';
+@import './../../../font';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.blocked {
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+    border-radius: 8px;
+    background: var(--warm-stat-chilli-lite);
+}
+
+.alert {
+    svg {
+        fill: var(--warm-misc-bold-cherry);
+        stroke: var(--coco-chalk);
+    }
+}

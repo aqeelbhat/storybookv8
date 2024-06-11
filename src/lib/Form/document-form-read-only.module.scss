@@ -1,0 +1,273 @@
+@import './../branding';
+@import './../_font';
+
+.docList {
+  width: 100%;
+  .themecoco {
+    .docListTableBody {
+      &Row {
+        background: var(--coco-chalk);
+        &:hover {
+          .docListTableBodyColumnNameTitle {
+            p {
+              color: var(--warm-prime-azure) !important;
+            }
+            svg:not(.signedDoc) {
+              stroke: var(--warm-prime-azure) !important;
+            }
+          }
+        }
+      }
+      &Column {
+        
+        &Name {
+          .highlights {
+            &Label {
+              color: var(--warm-neutral-shade-300);
+            }
+            &Text {
+              color: var(--warm-neutral-shade-500);
+            }
+            &Seperator {
+              border-right: 1px solid var(--warm-neutral-mid-400);
+            }
+          }
+        }
+        &Action {          
+          &Notes {
+            span {
+              color: var(--coco-berry-burnt);
+            }
+
+            &Active {
+              color: var(--warm-prime-azure) !important;
+            }
+            
+            &:hover {
+              svg {
+                stroke: var(--warm-prime-azure) !important;
+              }
+              span {
+                color: var(--warm-prime-azure) !important;
+              }
+            }
+          }
+          &Download {
+            &:hover {
+              svg {
+                stroke: var(--warm-prime-azure) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &Table {
+      width: 100%;
+      margin-bottom: 24px;
+      &Header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        &Column {
+            min-height: 22px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            @include FONTSTYLE_BODY_SB2(18px, var(--warm-neutral-shade-200));
+            &Name {
+              width: 53%;
+              padding: 6px 0px 0px 16px;
+            }
+            &Type {
+              width: 15%;
+              padding: 6px 0px 0px 10px;
+            }
+            &Owner {
+              width: 15%;
+              padding: 6px 0px 0px 9px;
+            }
+            &Action {
+              display: flex;
+              justify-content: end;
+              padding: 6px 24px 6px 16px;
+              min-height: 32px;
+              width: 15%;
+            }
+        }
+      }
+
+      &Body {
+        display: flex;
+        flex-direction: column;
+          &Row {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              padding: 16px 0px;
+              background: var(--always-white-font-color);
+              border-top: 1px solid var(--coco-mid-200);
+
+              &Content {
+                display: flex;
+                width: 100%;
+              }
+              &Notes {
+                padding: 12px 16px;
+                margin: 12px 16px;
+                background: var(--warm-neutral-light-200);
+                border-radius: 8px;
+                &HeaderEmpty {
+                  margin-bottom: 0 !important;
+                }
+                &Header {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 16px;
+
+                  &Close {
+                    flex-shrink: 0;
+                    cursor: pointer;
+                  }
+
+                  &Label {
+                    @include FONTSTYLE_SUBTITLE_SB2(22px, var(--warm-prime-charcoal))
+                  }
+                }
+              }
+          }
+          &Column {
+              min-height: 22px;
+              padding: 0 16px;
+              &Name {
+                  display: flex;
+                  flex-direction: column;
+                  width: 54%;
+                  max-width: 550px;
+                  &Title {
+                      display: flex;
+                      align-items: center;
+                      svg {
+                        margin-right: 4px;
+                        flex-shrink: 0;
+                      }
+
+                      .status {
+                        display: flex;
+                        padding: 2px 6px;
+                        align-items: center;
+                        gap: 4px;
+                        border-radius: 4px;
+                        margin-left: 8px;
+                        @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+                        text-transform: capitalize;
+                      }
+
+                      .finalised {
+                        background: var(--warm-stat-berry-lite);
+                      }
+
+                      .signed {
+                        background: var(--warm-stat-mint-lite-2);
+                      }
+
+                      .draft {
+                        background: var(--warm-neutral-light-400);
+                      }
+                  }
+                  .highlights {
+                      &Container {
+                        padding: 0;
+                        margin: 0;
+                      }
+                    
+                      &Item {
+                        display: inline;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        list-style: none;
+
+                        &:last-child {
+                          .highlightsSeperator {
+                            display: none;
+                          }
+                        }
+                      }
+
+                      &Label {
+                        margin-right: 4px;
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                      }
+                    
+                      &Text {
+                        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                      }
+                    
+                      &Seperator {
+                        margin: 0 8px;
+                        width: 2px;
+                        height: 16px;
+                        border-right: 1px solid var(--light-light-gray-background-color);
+                      }
+                  }
+              }
+              &Type {
+                width: 15%;
+                max-width: 160px;
+              }
+              &Owner {
+                width: 15%;
+                max-width: 170px;
+              }
+              &Action {
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: flex-start;
+                  gap: 15px;
+                  width: 15%;
+                  max-width: 160px;
+                  span {
+                    cursor: pointer;
+                  }
+                  &Notes {
+                    position: relative;
+                    span {
+                      position: absolute;
+                      top: 8px;  
+                      left: 7px;
+                      @include FONTSTYLE_OVERLINE1(10px, var(--coco-shade-400))
+                    }
+
+                    &Active {
+                      color: var(--blue-crayola-font-color) !important;
+                    }
+                  }
+                  &Expand {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 24px;
+                    height: 24px;
+                    cursor: pointer;
+                  }
+                  &Download {
+                      width: 24px;
+                      height: 24px;
+                      cursor: pointer;
+                      &:hover {
+                        svg {
+                          stroke: var(--warm-prime-azure) !important;
+                        }
+                      }
+                      // &Link {
+                      //     transform: rotate(-45deg);
+                      // }
+                  }
+              }
+          }
+      }
+  }
+}

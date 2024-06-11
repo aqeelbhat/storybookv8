@@ -1,0 +1,72 @@
+.engagements {
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  &Title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--blue-gray-paragraphy);
+  }
+
+  &Link {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--primary-goback-link-font-color);
+    cursor: pointer;
+  }
+  
+  &Item {
+    margin-bottom: 24px;
+    border: 1px solid var(--light-light-gray-border-color);
+  }
+}
+
+.shimmerPlaceholder {
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: var(--light-light-gray-background-color1);
+  background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+  background-size: 1440px 100%;
+
+  &HeaderOnly {
+    height: 132px;  // Avg height of Full header content and minimun draft mode header content
+  }
+
+  &WithActionbar {
+    height: 243px;
+  }
+
+  &WithActionbarAndButton {
+    height: 288px;
+  }
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+      background-position: -100% 0;
+  }
+  100% {
+      background-position: 100% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+      background-position: -1440px 0;
+  }
+  100% {
+      background-position: 1440px 0;
+  }
+}

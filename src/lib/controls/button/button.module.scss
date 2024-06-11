@@ -1,0 +1,168 @@
+@import './../../branding';
+@import './../../font';
+
+.oroBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  border: none;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.themecoco {
+  &.default {
+    background-color: var(--coco-light-400);
+    border: none;
+  }
+
+  &.primary {
+    background-color: $oro-primary-green-color; // var(--coco-berry-burnt);
+  }
+
+  &.secondary {
+    color: $dark-green-font-color; // var(--coco-berry-burnt);
+    border-color: $dark-green-font-color; // var(--coco-berry-burnt);
+    font-weight: 500;
+  }
+
+  &.alert {
+    background-color: $oro-primary-red-color; // var(--coco-chilli);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.orobtnsmall {
+  gap: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.orobtnmedium {
+  gap: 8px;
+  padding: 5px 16px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.default {
+  color: var(--warm-neutral-shade-500);
+  border: 1.5px solid $gray-color;
+  background-color: $pure-white-color;
+}
+
+.primary {
+  background-color: var(--warm-stat-mint-mid);
+  color: var(--warm-prime-chalk);
+  border: 1px solid var(--warm-stat-mint-mid);
+}
+
+.secondary {
+  background-color: white;
+  color: var(--warm-neutral-shade-500);
+  border: 1px solid var(--warm-neutral-mid-600);
+
+  &:hover {
+    background-color: var(--warm-neutral-light-300);
+  }
+}
+
+.alert {
+  color: $pure-white-color;
+  background-color: $oro-error-red-color;
+}
+
+.link {
+  color: var(--warm-prime-azure);
+  background-color: transparent;
+}
+
+.widthfillAvailable {
+  width: 100%;
+}
+
+.widthcontent {
+  width: fit-content;
+}
+
+.fontnormal {
+  font-weight: 400;
+}
+
+.fontmedium {
+  font-weight: 500;
+}
+
+.fontsemibold {
+  font-weight: 500;
+}
+
+.fontbold {
+  font-weight: 500;
+}
+
+.radiusnone {
+  border-radius: 0;
+}
+
+.radiuslow {
+  border-radius: 2px;
+}
+
+.radiusmedium {
+  border-radius: 4px;
+}
+
+.radiushigh {
+  border-radius: 8px;
+}
+
+.iconLeft {
+  display: inline-flex;
+  align-items: center;
+}
+
+.iconRight {
+  display: inline-flex;
+  align-items: center;
+}
+
+.iconCenter {
+  display: inline-flex;
+  align-items: center;
+}
+
+.linkButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 5px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  background-color: var(--warm-prime-chalk);
+  border: 1px solid var(--warm-neutral-mid-600);
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+  &:hover {
+    background-color: var(--warm-neutral-light-300);
+  }
+  
+  &.primary {
+    background-color: var(--warm-stat-mint-mid);
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-chalk));
+    border-color: var(--warm-stat-mint-mid);
+  }
+}

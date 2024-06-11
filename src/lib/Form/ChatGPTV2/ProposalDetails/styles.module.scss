@@ -1,0 +1,29 @@
+@import 'src/lib/_font.scss';
+
+.pd {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .title {
+        @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-500));
+    }
+
+    .label {
+        padding-right: 20px;
+        padding-bottom: 12px;
+
+        @include FONTSTYLE_BODY_R1(24px, var(--warm-neutral-shade-300));
+    }
+
+    .value {
+
+        padding-bottom: 12px;
+        @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+    }
+
+    .btn {
+        margin-top: 8px;
+    }
+}

@@ -1,0 +1,93 @@
+@import './../../../../branding';
+@import './../../../../font';
+
+.main{
+  display: flex;
+  flex-direction: column;
+  //margin-top: 24px;
+  gap: 10px;
+  .title {
+    @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-600));
+  }
+}
+.searchBox {
+  display: flex;
+  padding: 20px;
+
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid var(--warm-stat-mint-mid);
+  background: var(--warm-prime-chalk);
+
+
+
+  .searchLense {
+    svg {
+      color: var(--warm-neutral-shade-300);
+    }
+  }
+
+  .inputBox {
+    flex-grow: 1;
+
+    input {
+      width: 100%;
+      height: 28px;
+      border: none;
+      border: none;
+      outline: none;
+      @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-500));
+
+      &:hover,
+      &:focus {
+        border: none;
+        outline: none;
+      }
+
+
+    }
+  }
+
+  .button {
+
+    &.loader {
+      animation: rotation 2s infinite linear;
+    }
+
+    &.delete {
+      cursor: pointer;
+
+      svg {
+        fill: var(--warm-neutral-shade-300);
+        stroke: var(--warm-neutral-shade-300);
+      }
+    }
+
+    &.go {
+      cursor: pointer;
+
+      svg {
+        fill: var(--warm-stat-mint-mid);
+        stroke: var(--coco-chalk);
+        stroke-width: 1px;
+      }
+    }
+
+    button {
+      padding: 0;
+    }
+
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}

@@ -1,0 +1,214 @@
+@import './branding';
+
+@mixin FONTSTYLE_HEADING_H4($line-height: 44px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_HEADING_H5_MEDIUM($line-height: 32px, $color: var(--body-text-blue-gray-font-color)) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_SUBTITLE_SB0($line-height: 26px, $color: var(--body-text-blue-gray-font-color)) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_HEADING_H5($line-height: 32px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_HEADING_H6($line-height: 28px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_HEADING_H7($line-height: 28px, $color: var(--body-text-blue-gray-font-color)) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_SUBTITLE_SB1($line-height: 26px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_SUBTITLE_M1($line-height: 26px, $color: var(--body-text-blue-gray-font-color)) {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_SUBTITLE_R1($line-height: 26px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_SUBTITLE_SB3($line-height: 24px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_SUBTITLE_SB2($line-height: 24px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_SUBTITLE_M2($line-height: 24px, $color: var(--body-text-blue-gray-font-color)) {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_SUBTITLE_R2($line-height: 24px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_BUTTON($line-height: 24px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_BODY_SB1($line-height: 20px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_BODY_M1($line-height: 20px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_BODY_R1($line-height: 20px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_BODY_SB2($line-height: 18px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_BODY_M2($line-height: 18px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_BODY_R2($line-height: 18px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_OVERLINE1($line-height: 16px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 10px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_OVERLINE2($line-height: 16px, $color: $dark-light-gray-font-color) {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 10px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin FONTSTYLE_BODY_SB3($line-height: 24px, $color: $blue-gray-color) {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin BORDER_GRADIENT8 {
+  border-radius: 8px;
+  background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 7px, transparent 7px) 0% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 7px, transparent 7px) 100% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 7px, transparent 7px) 0% 100%/8px 8px no-repeat,
+    radial-gradient(circle at 0 0, #ffffff 0, #ffffff 7px, transparent 7px) 100% 100%/8px 8px no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 2px) calc(100% - 16px) no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 16px) calc(100% - 2px) no-repeat,
+    conic-gradient(from 188deg, #F2831D 0%, #ffb525 20%, #9de541 40%, #2cc1e2 60%, #8834f4 80%, #db28a9 100%);
+}
+@mixin BORDER_GRADIENT12() {
+  border-radius: 12px;
+  background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 11px, transparent 11px) 0% 0%/12px 12px no-repeat,
+    radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 11px, transparent 11px) 100% 0%/12px 12px no-repeat,
+    radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 11px, transparent 11px) 0% 100%/12px 12px no-repeat,
+    radial-gradient(circle at 0 0, #ffffff 0, #ffffff 11px, transparent 11px) 100% 100%/12px 12px no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 2px) calc(100% - 24px) no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 24px) calc(100% - 2px) no-repeat,
+    conic-gradient(from 188deg, #F2831D 0%, #ffb525 20%, #9de541 40%, #2cc1e2 60%, #8834f4 80%, #db28a9 100%);
+}

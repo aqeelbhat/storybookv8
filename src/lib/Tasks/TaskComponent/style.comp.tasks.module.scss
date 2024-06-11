@@ -1,0 +1,137 @@
+@import '../../branding';
+
+.tasksContainer {
+    position: relative;
+    width: 100%;
+}
+
+.tasksContainerBoxSerial {
+    display: flex;
+    width: 100%;
+}
+
+.tasksContainerBoxParallel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.indexCount {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    padding: 0 8px;
+    background: rgba(130, 193, 70, 0.14);
+    border: 1px solid $panel-border-color;
+    border-right: none;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: $semilight-dark-gray-color;
+    cursor: default;
+}
+
+.tasksContainer .phaseName {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 0;
+    background-color: inherit;
+    border: none;
+    color: $semilight-dark-gray-color;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.dropZone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 22px 34px 48px 42px;
+    color: $dark-light-gray-font-color;
+    border: 1.5px dashed $semilight-dark-gray-color;
+    border-radius: 25px;
+
+    .dropZoneTitle {
+        font-family: "Inter";
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .dropZoneSubtitle {
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .dropZoneBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        padding: 17px 57px 17px 21px;
+        box-shadow: 0 0 25px 0 rgba(193, 202, 208, 0.25);
+        background-color: $pure-white-color;
+    }
+
+    .dropZoneCircle {
+        width: 24px;
+        height: 24px;
+        margin: 0 16px 0 0;
+        border-radius: 20px;
+        background-color: $dark-light-gray-font-color
+    }
+
+    .dropZoneLine {
+        width: 196px;
+        height: 8px;
+        margin: 8px 0 8px 16px;
+        border-radius: 20px;
+        background-color: $dark-light-gray-font-color;
+    }
+}
+
+.sandwichBread {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1.5rem 0.5rem;
+    border: 1px dashed $semilight-dark-gray-color;
+    border-radius: 22px;
+    box-sizing: border-box;
+    background: $pure-white-color;
+
+    .sandwichBreadTxtlft {
+        font-family: "Inter";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: $blue-gray-color;
+    }
+
+    .sandwichBreadTxtrgt {
+        font-family: "Inter";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: $dark-light-gray-font-color;
+    }
+}
+
+.sandwichBread.active {
+    border-color: $oro-primary-green-color;
+    background-color: $lightest-green-border-color;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}

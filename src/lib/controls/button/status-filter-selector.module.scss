@@ -1,0 +1,212 @@
+@import 'src/lib/font';
+
+.workstreamSelector {
+  position: relative;
+
+  .selectionActive {
+    background: var(--warm-neutral-mid-100);
+    border-color: var(--warm-neutral-mid-200) !important;
+    border-radius: 4px;
+  }
+
+  .placeholder {
+    @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-100));
+  }
+
+  .selection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 4px 8px;
+    min-width: 75px;
+    border: 1px solid transparent;
+    width: fit-content;
+    cursor: pointer;
+
+    .customArrow {
+      transform: rotate(180deg);
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      background: var(--warm-neutral-mid-100);
+      border-radius: 4px;
+    }
+
+    .value {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .valueCount {
+        padding: 2px 4px;
+        background: var(--warm-neutral-mid-300);
+        border-radius: 4px;
+        @include FONTSTYLE_BODY_M2(16px, var(--warm-neutral-shade-500));
+      }
+      .label {
+        display: block;
+        max-width: 160px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        text-transform: capitalize;
+      }
+
+      .count {
+        padding: 2px 4px;
+        background: var(--warm-neutral-mid-300);
+        border-radius: 4px;
+        @include FONTSTYLE_BODY_M2(16px, var(--warm-neutral-shade-500));
+      }
+    }
+  }
+
+  .optionListLeft {
+    left: unset !important;
+    right: 0 !important;
+  }
+
+  .optionList {
+    position: absolute;
+    top: 34px;
+    left: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    min-width: 200px;
+    width: max-content;
+    max-height: 500px;
+    padding: 8px;
+
+    background: var(--coco-chalk);
+    border: 1px solid var(--warm-neutral-mid-200);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+
+    .optionActive {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 4px 12px;
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-600));
+      background: var(--warm-stat-mint-lite-2);
+      border-radius: 4px;
+      cursor: pointer;
+
+      .label {
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-600));
+      }
+
+      .count {
+        padding: 2px 4px;
+        background: var(--coco-chalk);
+        border-radius: 4px;
+        @include FONTSTYLE_BODY_M2(16px, var(--warm-neutral-shade-600));
+      }
+    }
+
+    .optionMulti {
+      justify-content: flex-start !important;
+      gap: 8px !important;
+      &:hover {
+        background: var(--warm-neutral-light-500);
+        border-radius: 4px;
+      }
+    }
+
+    input[type="checkbox"] {
+      position: static;
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+      border: solid 1px #D9D9D9;
+      border-radius: 2px;
+      background-color: var(--warm-prime-chalk);
+      outline: none;
+      transition-duration: 0.1s;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+
+      &:before {
+        border: solid 1px #D9D9D9;
+        border-radius: 2px;
+      }
+
+      &:checked {
+        border: solid 1px var(--warm-stat-mint-mid);
+        background-color: var(--warm-stat-mint-mid);
+        background-image: none;
+
+        &::after {
+          display: block;
+          position: relative;
+          top: -3px;
+          content: '\2713';
+          font-family: system-ui;
+          text-align: center;
+          color: var(--warm-prime-chalk);
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 4px 12px;
+      cursor: pointer;
+
+      .label {
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+      }
+
+      .labelClear {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-prime-azure));
+      }
+
+      .count {
+        padding: 2px 4px;
+        background: var(--warm-neutral-light-500);
+        border-radius: 4px;
+        @include FONTSTYLE_BODY_M2(20px, var(--warm-neutral-shade-400));
+      }
+
+      &:hover {
+        background: var(--warm-neutral-light-500);
+        border-radius: 4px;
+      }
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(#000000, 0);
+    cursor: default;
+  }
+}

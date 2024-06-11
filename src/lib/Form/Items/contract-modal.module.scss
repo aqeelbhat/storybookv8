@@ -1,0 +1,94 @@
+@import './../../branding';
+@import './../../font';
+
+.contractModal {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+
+  .headerBar {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+    .title {
+      @include FONTSTYLE_SUBTITLE_M1(26px, var(--warm-neutral-shade-500));
+    }
+
+    .closeBtn {
+      cursor: pointer;
+    }
+  }
+
+  .contractList {
+    display: flex;
+    flex-direction: column;
+
+    &Header {
+      display: flex;
+      align-items: center;
+      grid-gap: 16px;
+      padding: 0 16px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+      .col {
+        text-transform: uppercase;
+        @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-200));
+      }
+    }
+
+    &Item {
+      display: flex;
+      align-items: center;
+      grid-gap: 16px;
+      padding: 16px;
+      border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+      &.selected {
+        background: var(--warm-stat-mint-lite-2);
+        border-radius: 8px;
+      }
+
+      .col {
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+      }
+    }
+
+    .col {
+      flex: 1;
+
+      &.name {
+        flex: none;
+        width: 324px;
+      }
+
+      &.action {
+        flex: none;
+        width: 20px;
+        height: 20px;
+
+        img {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
+        svg {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .actionBar {
+    display: flex;
+    align-items: center;
+
+    .submitBtn {}
+  }
+}
+
+.spread {
+  flex: 1;
+}

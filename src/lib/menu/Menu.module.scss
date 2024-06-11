@@ -1,0 +1,96 @@
+@import './../branding';
+
+.menu {
+    .menuCircleBtn {
+        height: 24px;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        border: none;
+        justify-content: center;
+        border-radius: 15px;
+        background: $pure-white-color;
+        outline: none;
+        font-family: "Inter";
+        font-size: 25px;
+
+        .menuCircleBtnDiv {
+            color: $semilight-gray-placeholder-color;
+            text-align: center;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 12px;
+            height: 7px;
+        }
+
+        .menuCircleBtnDivdiv:hover {
+            color: $oro-primary-green-color;
+        }
+    }
+
+    .menuCircleBtn:hover + .menuCircleBtnSpan {
+        color: $oro-primary-green-color;
+    }
+
+    .menuClicked {
+        color: $oro-primary-green-color;
+    }
+
+
+    .menuCircleBtn:hover {
+        border: 1px solid $oro-primary-green-color;
+    }
+
+    .menuCircleBtn:focus{
+        border: 1px solid $oro-primary-green-color;
+        outline: none;
+    }
+
+    .menuBox{
+        position: absolute;
+        width: 120px;
+        background: $pure-white-color;;
+        border: 1px solid $light-gray-color;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 0px 11px;
+        color: $dark-color;
+        z-index: 1;
+
+        .menuBoxul{
+            padding: 0px;
+            border-bottom: 1px solid $gray-color-2;
+            list-style: none;
+
+            .menuBoxulLi{
+                cursor: pointer;
+                list-style: none;
+                margin-top: 11px;
+                margin-bottom: 11px;
+            }
+        }
+
+        .menuBoxhr{
+            border-top: 1px solid $gray-color-2
+        }
+
+        .menuBoxul:last-child {
+            border: none;
+            padding: 0%;
+            margin-bottom: 0px;
+        }
+
+        .menuBoxul:first-child {
+            margin-top: 0px;
+        }
+        
+    }
+}

@@ -1,0 +1,98 @@
+@import './../../branding';
+@import './../../font';
+
+.heading {
+  @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500));
+}
+
+.message {
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200));
+}
+
+.item {
+  border-radius: 6px;
+  border: 1px solid var(--warm-neutral-mid-400);
+  padding: 16px 12px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid var(--warm-stat-mint-mid);
+  }
+}
+
+.selected {
+  border: 2px solid var(--warm-stat-mint-mid);
+
+  &:hover {
+    border-width: 2px;
+  }
+}
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+}
+
+.headerSelect {
+  margin-bottom: 12px;
+}
+
+.selectLink {
+  @include FONTSTYLE_BODY_M2(18px, var(--warm-prime-azure));
+  cursor: pointer;
+}
+
+.selectedLink {
+  @include FONTSTYLE_BODY_M2(18px, var(--warm-stat-mint-regular));
+  display: flex;
+  align-items: center;
+
+  & img {
+    margin-right: 4px;
+  }
+}
+
+.fileName {
+  flex-grow: 1;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+}
+
+.preview {
+  transition: height 0.5s;
+  height: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--warm-neutral-light-500);
+
+  &>div {
+    background: transparent;
+  }
+}
+
+.previewSelected {
+  height: 500px;
+}
+
+.readOnlyPreview {
+  height: 500px;
+  & > div {
+    border: 1px solid var(--warm-neutral-mid-400);
+  }
+}
+
+.fileIcon {
+  width: 18px;
+  display: inline-block;
+  margin-right: 4px;
+
+  &>svg {
+    width: 18px;
+    height: 18px;
+  }
+
+}

@@ -1,0 +1,200 @@
+@import './../../branding';
+@import './../../font';
+
+.title {
+  @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500));
+}
+
+.query {
+  margin-top: 20px;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+}
+
+.userBox {
+  background: var(--warm-stat-mint-bg-2);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 100%;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.userDetails {
+  display: flex;
+}
+
+.userName {
+  @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-500));
+}
+
+.userPic {
+  padding-right: 8px;
+  padding-top: 2px;
+}
+
+.date {
+  @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+}
+
+.query {
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+}
+
+.recommendBox {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  border-radius: 8px;
+  background: var(--warm-prime-chalk);
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.04);
+  background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 7px, transparent 7px) 0% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 7px, transparent 7px) 100% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 7px, transparent 7px) 0% 100%/8px 8px no-repeat,
+    radial-gradient(circle at 0 0, #ffffff 0, #ffffff 7px, transparent 7px) 100% 100%/8px 8px no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 2px) calc(100% - 16px) no-repeat,
+    linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 16px) calc(100% - 2px) no-repeat,
+    conic-gradient(from 188deg, #F2831D 0%, #ffb525 20%, #9de541 40%, #2cc1e2 60%, #8834f4 80%, #db28a9 100%);
+}
+
+.recommend {
+  display: flex;
+  gap: 12px;
+
+  .logo {
+    padding-top: 2px;
+  }
+}
+
+.recomendTitle {
+  @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-500));
+}
+
+.selectText {
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+}
+
+.error {
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-stat-chilli-regular))
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: 100%;
+}
+
+.category {
+  border-radius: 8px;
+  border: 1px solid var(--warm-neutral-mid-400);
+  display: flex;
+  padding: 16px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--warm-neutral-shade-300);
+  }
+
+  &.selected {
+    outline: 2px solid var(--color-primary-green);
+    border-color: transparent;
+  }
+
+  .name {
+    @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500));
+    flex-grow: 1;
+  }
+
+  .id {
+    border-radius: 4px;
+    background: var(--warm-neutral-light-400, #F5F5F5);
+    display: flex;
+    padding: 3px 8px;
+    align-items: center;
+    gap: 8px;
+    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+  }
+}
+
+.label {
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+}
+
+.value {
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+}
+
+.selectedCategory {
+  border-radius: 8px;
+  border: 1px solid var(--warm-neutral-mid-400);
+  background: var(--warm-prime-chalk);
+  display: flex;
+  padding: 16px 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+
+  .displayName {
+    @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500));
+  }
+
+  .erpId {
+    border-radius: 4px;
+    background: var(--warm-neutral-light-400);
+    display: flex;
+    padding: 3px 8px;
+    align-items: center;
+    gap: 8px;
+
+    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+  }
+
+  .cross {
+    text-align: right;
+    cursor: pointer;
+  }
+}
+
+.fakeInput {
+  display: flex;
+  padding: 10px 12px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 1px solid var(--warm-neutral-mid-600);
+  background: var(--warm-prime-chalk);
+  cursor: pointer;
+
+  span {
+    flex-grow: 1;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200));
+  }
+
+  svg {
+    stroke: var(--warm-neutral-shade-200)
+  }
+}
+
+.parents {
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+}

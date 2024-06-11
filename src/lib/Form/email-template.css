@@ -1,0 +1,815 @@
+.emailTemplate {
+    width: 100%;
+    background-color: #fff;
+}
+
+.emailHeading {
+    margin-bottom: 11px;
+    font-family: "Helvetica";
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #283041;
+}
+
+.marginB6 > div {
+    margin-bottom: 6px;
+}
+
+.emailHeadingSub {
+    margin: 13px 0 0;
+    font-family: "Helvetica";
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #283041;
+}
+
+.emailLegalDocument {
+    max-width: 511px;
+    width: 100%;
+    margin-top: 9px;
+}
+
+.emailLegalDocumentAttachment {
+    padding: 4px 12px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+.emailQuotesAttachment {
+    max-width: 511px;
+    width: 100%;
+    margin-bottom: 9px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+.emailQuotesAttachmentName {
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #2d8db7;
+}
+
+.emailQuotesAttachmentDate {
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #848484;
+}
+
+.emailQuotesAttachmentDesc {
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    color: #848484;
+}
+
+.emailLabelText {
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    color: #595959;
+}
+
+.emailLabelText.lineItemsLabel {
+    font-weight: 600;
+    color: #575F70;
+}
+
+.emailLabelValue {
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+.emailLabelValue.userName {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.emailLabelValue + .valueCurrent {
+    font-family: "Helvetica";
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--warm-neutral-shade-300);
+}
+
+.emailSvg, .emailSvg svg {
+    width: 24px;
+    height: 24px;
+}
+
+.emailQuotesAttachment .documentType {
+    width: fit-content;
+    padding: 1px 6px;
+    background: #F0F0F0;
+    border: 1px solid #D6D6D6;
+
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #595959;
+}
+
+.emailQuotesAttachment .documentName {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: #283041;
+}
+
+.emailQuotesAttachment .documentOwner {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: #3E4456;
+}
+
+table,
+tr,
+td {
+  vertical-align: middle;
+  border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-spacing: 0;
+    border:0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.listItem {
+    border-top: 1px solid #F1F0F0;
+}
+
+.listItem.last {
+    border-bottom: 1px solid #F1F0F0;
+}
+
+.marginB6.listItem > div {
+    margin-top: 6px;
+}
+
+.listBox {
+    margin-bottom: 18px;
+}
+
+.number {
+    width: 24px;
+}
+.name {
+    flex: 1;
+    width: auto;
+}
+.qty {
+    width: 70px;
+}
+.desc {
+    width: 280px;
+}
+.price {
+    width: 110px;
+}
+.billing {
+    width: 100px;
+}
+
+.description {
+    font-size: 12px; 
+}
+
+.userProfile {
+    width: 100px;
+}
+.userRole {
+    width: 100px;
+}
+
+.emailHeadingSubBox {
+    padding: 10px;
+    margin: 12px 0;
+    /* background: #F4F4F4; */
+    border-radius: 8px;
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.listHeadingBox {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    padding: 5px 0;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #595959;
+}
+
+.summaryBox {
+    padding: 10px;
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #262626;
+}
+
+.summaryBox pre {
+    white-space: pre-wrap;
+}
+
+.valuePrevious {
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #D46B08;
+    text-decoration: line-through;
+  }
+  
+.emailContentSolidBorder {
+    border: solid 1px #f0f0f0;
+    padding: 24px;
+}
+
+.emailContentSolidBorderDevelopment {
+    background: #F5F5F5;
+    border: 1px solid #D6D6D6;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.emailSupplierContactDevelopment span.emailSupplierContactItem {
+    display: block;
+    padding: 0;
+    margin-bottom: 8px;
+}
+.emailSupplierContactDevelopment span.emailSupplierContactItem img {
+    margin-right: 8px;
+}
+
+.emailSupplierLogo img {
+    height: 64px;
+    object-fit: contain;
+}
+
+.emailSupplier .emailSupplierName {
+    margin-bottom: 4px;
+    font-family: "Helvetica";
+    font-size: 24px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    color: #000;
+}
+
+.emailSupplierAddress {
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    padding-top: 4px;
+    font-family: "Helvetica";
+    font-size: 14px;
+    line-height: 1.14;
+    color: #3e4456;
+}
+
+.emailSupplierAddress span{
+    margin-right: 4px;
+}
+
+.emailSupplierContact img {
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    margin-right: 4px;
+}
+
+.emailSupplierContactItem {
+    position: relative;
+    margin-right: 8px;
+    padding: 4px 4px 4px 22px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #283041;
+}
+
+.emailSupplierContent {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed #d6d6d6;
+}
+
+.emailSupplierContentLabel {
+    font-family: "Helvetica";
+    font-size: 14px;
+    line-height: 16px;
+    color: #283041;
+}
+
+.emailSupplierNPText {
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: #848484;
+}
+
+.emailSupplierContentAttachment svg {
+    width: 24px;
+    height: 24px;
+    margin-top: 5px;
+}
+
+.emailSupplierContentAttachment span {
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: #2d8db7;
+}
+
+.emailFontWeightNormal {
+    font-weight: normal;
+}
+
+.emailSupplierContentUserPic {
+    width: 64px;
+    height: 64px;
+}
+
+.emailSupplierContentUserName {
+    margin-bottom: 4px;
+    font-family: "Helvetica";
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #283041;
+}
+
+.emailSupplierContentUserContact div {
+    margin-top: 8px;
+    margin-right: 16px;
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #283041;
+    vertical-align: middle;
+}
+
+.emailSupplierContentUserContact img {
+    margin-right: 4px;
+    vertical-align: bottom;
+}
+
+.emailSupplierStatus {
+    min-height: 150px;
+    margin-bottom: 16px;
+    padding: 24px;
+    border: solid 1px #f0f0f0;
+    background-color: #f5f5f5;
+}
+
+.emailSupplierStatusItemsTable {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed rgba(125, 151, 181, 0.3);
+}
+
+.emailSupplierStatusItemsTable svg {
+    margin-top: 5px;
+}
+
+.emailSupplierStatusItemsId {
+    margin-bottom: 8px;
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: #262626;
+}
+
+.emailSupplierStatusItemsId span {
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: #262626;
+}
+
+.active {
+    margin-left: 4px;
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.57;
+    color: #6ca635;
+}
+  
+.new {
+    margin-left: 4px;
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.57;
+    color: #f3b72c;
+}
+
+.require {
+    font-family: "Helvetica";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.57;
+    color: #6782A0;
+}
+
+.emailHeadingSubBox {
+    padding: 10px;
+    margin: 12px 0;
+    /* background: #F4F4F4; */
+    border-radius: 8px;
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.complianceEmail {
+    border-collapse: separate;
+}
+
+.complianceEmail tr:nth-child(odd) td:first-child {
+    width: 95%;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.39;
+}
+
+.complianceEmail tr:nth-child(even) td:first-child {
+    width: 95%;
+    padding-right: 20px;
+    padding-bottom: 16px;
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+}
+
+.complianceEmail tr:nth-child(even) td:last-child {
+    width: 5%;
+    padding-bottom: 16px;
+    vertical-align: baseline;
+}
+
+.complianceEmail .eg {
+    display: block;
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #8C8C8C;
+}
+
+.complianceEmail .yes {
+    display: table;
+    width: 36px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px 6px;
+    color: #FFFFFF;
+    background: #82C146;
+    border-radius: 4px;
+}
+
+.complianceEmail .no {
+    display: table;
+    width: 36px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px 8px;
+    color: #FFFFFF;
+    background: #D46B08;
+    border-radius: 4px;
+}
+
+.costDetails tr td:first-child {
+    width: 32px;
+}
+
+.costDetails {
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: #000;
+}
+
+.costDetails .costAmount {
+    display: inline-block;
+    width: 200px;
+}
+
+.costDetails tr:nth-child(2) {
+    border-collapse: separate;
+    border-bottom: 8px solid transparent;
+}
+
+.otherKpi tr {
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    color: #000;
+    vertical-align: baseline;
+    border-collapse: separate;
+    border-bottom: 8px solid transparent;
+}
+
+.emailBankCallBack {
+    padding-bottom: 16px;
+}
+
+.emailBankCallBack .bankAccount {
+    font-size: 14px; 
+    font-weight: 400; 
+    color: #575F70;
+    margin-top: 12px;
+}
+
+.emailBankCallBack .bankOutcome {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #242B3A;
+    margin-top: 12px;
+}
+
+.emailSanctionListResult {
+    padding: 10px 16px;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #283041;
+    background: #F4F4F4;
+    border-radius: 8px;
+}
+
+.searchName {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: #3E4456;
+}
+
+.overallRisk {
+    padding: 12px 16px;
+}
+
+.riskSection {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #283041;
+    padding: 16px 0px;
+}
+
+.riskSectionLabel {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #283041;
+}
+
+.riskSectionValue {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #283041;
+}
+
+.riskItem {
+    border-top: 1px dashed #CACACA;
+}
+
+.riskLevel {
+    text-transform: capitalize;
+}
+
+.marginB16 {
+    margin-bottom: 16px;
+}
+
+.marginB12 > table{
+    margin-bottom: 12px; 
+}
+
+.marginB12 > table:last-child{
+  margin-bottom: 0px; 
+}
+
+.callbackTitle {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #283041;
+    padding-bottom: 16px;
+}
+
+.formQuestion {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #6A6A6A;
+}
+
+.formAnswer {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #283041;
+}
+
+.callbackDetailTable {
+    border-top: 1px dashed #CACACA;
+}
+
+.callbackDetailTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #283041;
+    padding: 12px 0;
+}
+
+.sourceName {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #283041;
+}
+
+.userProfile {
+    margin: 20px 10px;
+    height: 30px;
+    width: 30px;
+    background-color: var(--always-white-font-color);
+    border-radius: 19px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.emailFormHeading {
+  /* font-family: "Helvetica"; */
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #283041;
+}
+
+.emailSectionBorderBottom {
+  border-bottom: 1px dashed #CACACA;
+  padding: 12px 24px 0px 24px;
+
+}
+
+.emailSelectionBorderTop{
+  border-bottom: 1px dashed #CACACA;
+}
+
+.emailFormQuestion {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #6A6A6A;
+}
+
+.emailFormAnswer {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #283041;
+}
+
+.emailSectionTitle {
+  border-radius: 8px;
+  /* font-family: 'Open Sans'; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #283041;
+  padding-bottom: 16px;
+}
+
+h1.emailFormHeading{
+  margin: 0px !important;
+}
+
+.pB4 {
+padding-bottom: 4px;
+}
+
+.emailTemplate .lastSection td.emailSectionBorderBottom{
+  border-bottom: none;
+  padding-bottom: 0px;
+}

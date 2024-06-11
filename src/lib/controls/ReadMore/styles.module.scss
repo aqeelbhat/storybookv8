@@ -1,0 +1,30 @@
+@import './../../branding';
+@import './../../font';
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .value {
+    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+  }
+  .clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .readMore {
+    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+    white-space: nowrap;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+}
+
+.grow {
+  flex-grow: 1;
+}

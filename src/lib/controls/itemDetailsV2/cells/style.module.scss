@@ -1,0 +1,49 @@
+@import './../../../branding';
+@import './../../../font';
+
+.cell {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+  &.input {
+    input[type=text], input[type=number] {
+      height: 100%;
+      border-radius: 0px;
+      padding-left: 7px;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .error {
+    background: var(--warm-stat-chilli-bg);
+  }
+
+  .value {
+    height: 100%;
+    width: 100%;
+    padding: 10px 8px;
+    word-wrap: break-word;
+    &.hover{
+      &:hover {
+        outline: 1px solid var(--warm-neutral-shade-300);
+      }
+    }
+  }
+  &.hover{
+    &:hover {
+      outline: 1px solid var(--warm-neutral-shade-300);
+    }
+  }
+
+  &.label {
+    background: var(--warm-neutral-light-200);
+  }
+
+  .disabled {
+    background: var(--warm-neutral-light-500);
+  }
+}

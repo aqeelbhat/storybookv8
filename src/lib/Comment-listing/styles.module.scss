@@ -1,0 +1,180 @@
+/************************************************************
+ * Copyright (c) 2021 Orolabs.ai to Present
+ * Author: Nitesh Jadhav
+************************************************************/
+
+@import './../branding';
+@import './../font';
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+
+  &Items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .expandBtn {
+    @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-azure));
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    svg {
+      vertical-align: middle;
+      position: relative;
+    }
+  }
+
+  .commentListSelectedFile {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: fit-content;
+    margin-top: 12px;
+    padding: 2px 4px;
+    background: var(--coco-neutral-light-500);
+    border-radius: 4px;
+    @include FONTSTYLE_BODY_R2(20px, var(--warm-prime-azure));
+
+    svg {
+      flex-shrink: 0;
+    }
+    .commentListSelectedFileDelete {
+      margin-left: 8px;
+      cursor: pointer;
+    }
+  }
+
+  .commentListInput {
+    position: relative;
+    max-width: 740px;
+    width: 100%;
+    margin-top: 12px;
+    .commentListInputTextarea {
+      width: 100%;
+      min-height: 28px !important;
+      padding: 4px 8px;
+      background: var(--coco-chalk);
+      border: 1px solid var(--warm-neutral-mid-600);
+      border-radius: 4px;
+      resize: none;
+      @include FONTSTYLE_BODY_R1(22px, var(--coco-neutral-shade-500));
+
+      &::placeholder {
+        @include FONTSTYLE_BODY_R1(22px, var(--coco-neutral-shade-100));
+      }
+
+      &:focus {
+        outline: none;
+        padding-right: 15%;
+        border: 1px solid var(--warm-stat-mint-mid) !important;
+      }
+    }
+    .commentListInputAction {
+      position: absolute;
+      right: 4px;
+      bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .commentListInputActionButton {
+        padding: 2px 16px !important;
+      }
+      .commentListInputActionAttachment {
+        position: relative;
+        .commentListInputActionAttachmentIcon {
+          cursor: pointer;
+        }
+        .commentListInputActionAttachmentFileInput {
+          font-size: 18px;
+          display: none;
+          width: 100%;
+          border: none;
+          text-transform: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .commentListRow {
+    display: flex;
+    gap: 8px;
+    .commentListRowPic {
+      img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+      }
+    }
+
+    .commentListRowDetail {
+      display: flex;
+      flex-direction: column;
+      .commentListRowDetailDoc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+        .commentListRowDetailDocItem {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 2px 4px;
+          background: var(--warm-neutral-light-400);
+          border-radius: 4px;
+          cursor: pointer;
+          @include FONTSTYLE_BODY_R2(20px, var(--warm-prime-azure));
+
+          svg {
+            flex-shrink: 0;
+          }
+        }
+      }
+      .commentListRowDetailUser {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 2px 0 4px;
+        .commentListRowDetailUserName {
+          margin-bottom: 0 !important;
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-charcoal));
+        }
+        .commentListRowDetailUserDate {
+          @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-400));
+        }
+      }
+      .commentListRowDetailMessage {
+        .commentListRowDetailMessageStatus {
+          display: flex;
+          gap: 4px;
+          margin-bottom: 6px;
+          @include FONTSTYLE_BODY_R1(20px, var(--coco-neutral-shade-500));
+          .commentListRowDetailMessageStatusType {
+            @include FONTSTYLE_BODY_M1(20px, var(--coco-neutral-shade-500));
+          }
+        }
+        .commentListRowDetailMessageText {
+          max-width: 740px;
+          width: 100%;
+          margin-bottom: 0 !important;
+          overflow-x: auto;
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+          @include FONTSTYLE_BODY_R1(20px, var(--coco-neutral-shade-500));
+        }
+      }
+    }
+  }
+}

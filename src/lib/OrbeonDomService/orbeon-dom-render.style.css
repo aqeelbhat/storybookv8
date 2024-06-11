@@ -1,0 +1,158 @@
+.form {
+  background: #FFFFFF;
+}
+
+.form .section {
+  /* No styling for now */
+}
+
+.form .section .section-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #25282B;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form .section .grid {
+  /* No styling for now */
+}
+
+.form .section .grid .tr {
+  display: flex;
+}
+
+.form .section .grid .tr .td {
+  flex-grow: 1;
+  max-width: 50%;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.form .section .grid .tr .td .control-label {
+  margin-top: 2px;
+  margin-bottom: 12px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #52575C;
+}
+
+.form .section .grid .tr  .td .control-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 28px;
+  height: auto;
+  margin-bottom: 0;
+  padding: 4px 6px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 3%);
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+  line-height: 20px;
+  font-size: 13px;
+  color: black;
+  background-image: none;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.form .section .grid .tr .control-textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 28px;
+  height: auto;
+  margin-bottom: 0;
+  padding: 9.5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 3%);
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+  line-height: 20px;
+  font-size: 13px;
+  color: black;
+  background-image: none;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.form .section .grid .tr .control-checkbox { 
+  display: flex; 
+  align-items: center;
+}
+
+.form .section .grid .tr .control-checkbox .control-checkbox__icon {
+  width: 13px;
+  margin-right: 4px;
+}
+
+.form .section .grid .tr .control-attachment { 
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 6px;
+  margin: 2px 0;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+}
+
+.form .section .grid .tr .control-attachment .control-attachment__inner { 
+  display: flex; 
+  align-items: center;
+}
+
+.form .section .grid .tr .control-attachment .control-attachment__img { 
+  width: 16px; 
+  margin-right: 4px;
+}
+
+.form .section .grid .tr .control-attachment .control-attachment__name { 
+  color: #08c; 
+  font-size: 13px; 
+  line-height: 20px;
+}
+
+.form .section .grid .tr .control-fr-explanation { 
+  box-sizing: border-box; 
+  width: 100%; 
+  min-height: 28px; 
+  height: auto; 
+  cursor: not-allowed; 
+  padding: 4px 6px; 
+  margin-bottom: 0; 
+  line-height: 20px; 
+  font-size: 13px; 
+  color: black; 
+  white-space: normal; 
+  word-wrap: break-word;
+}
+
+.form .section .grid .tr .control-yesno {
+  /* No styling for now */
+}
+.form .section .grid .tr .control-yesno--selected {
+  color: #6ca635;
+  border-color: #6ca635;
+}
+
+.form .section .grid .tr .control-yesno__yes {
+  display: inline-block; 
+  padding: 4px 16px; 
+  border: solid 1px #d9d9d9; 
+  font-size: 16px; 
+  border-radius: 6px; 
+  background-color: #ffffff;
+}
+
+.form .section .grid .tr .control-yesno__no {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 16px;
+  border: solid 1px #d9d9d9; 
+  font-size: 16px; 
+  border-radius: 6px; 
+  background-color: #ffffff;
+}

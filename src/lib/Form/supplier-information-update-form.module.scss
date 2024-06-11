@@ -1,0 +1,72 @@
+@import './../_font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * 4)) / 5);
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    &5 {
+        width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    }
+}
+
+.si {
+    &SecHeader {
+        padding: 12px 16px;
+        background: var(--primary-vendor-form-background-color);
+        border-radius: 4px;
+        @include FONTSTYLE_SUBTITLE_SB2(24px, var(--always-black-font-color));
+    }
+
+    &Container {
+        padding: 16px;
+        &Label {
+            margin-bottom: 4px;
+            @include FONTSTYLE_BUTTON(22px, var(--primary-checkbox-label-font-color));
+        }
+        &Item {
+            // max-width: 420px !important;
+            // width: 100%;
+            margin-bottom: 16px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+            &Radio {
+                display: flex;
+                align-items: center;
+                flex-direction: row !important;
+                margin-right: 16px;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+                input {
+                    height: 16px;
+                    width: 16px;
+                }
+
+                span {
+                    // margin-left: 4px;
+                    @include FONTSTYLE_BODY_R1(22px, var(--always-black-font-color));
+                }
+            }
+        }
+    }
+}

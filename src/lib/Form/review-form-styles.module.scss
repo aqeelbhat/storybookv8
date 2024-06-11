@@ -1,0 +1,109 @@
+@import './../branding';
+@import 'src/lib/_font.scss';
+
+.reviewForm {
+  width: 100%;
+  padding-bottom: 36px;
+  background-color: $pure-white-color;
+
+  label {
+    font-family: $primary-18px-above-font-family;
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-align: left;
+    color: $dark-color;
+  }
+
+  .msgContainer {
+
+    .msgWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0px 20px 0px;
+
+      .personInfo {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+
+        .logo {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 15px;
+          border-radius: 50%;
+          background-color: $semilight-gray-placeholder-color;
+        }
+
+        p {
+          margin: 0px;
+          font-size: 16px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.25;
+          letter-spacing: normal;
+          color: $dark-color;
+        }
+
+        .jobProfile {
+          display: block;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.43;
+          letter-spacing: normal;
+          color: $dark-light-gray-font-color;
+        }
+
+        .website {
+          display: block;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.43;
+          letter-spacing: normal;
+          color: $link-blue-color;
+        }
+      }
+
+      .msgBox {
+        max-width: 656px;
+        width: 100%;
+        height: 100px;
+        padding: 15px;
+        border: solid 1px $panel-border-color;
+        background-color: $pure-white-color;
+        outline: none;
+      }
+    }
+  }
+
+  .btnContainer {
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .processContainer {
+
+    label {
+      @include FONTSTYLE_HEADING_H6(28px, var(--coco-neutral-shade-500))
+    }
+
+    .processWrapper {
+      width: 100%;
+      padding-top: 42px;
+    }
+  }
+
+}

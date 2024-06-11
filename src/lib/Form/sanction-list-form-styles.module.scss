@@ -1,0 +1,284 @@
+
+@import './../branding';
+@import './../_font';
+
+.sanctionListForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .headerContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .formTitle {
+      padding-bottom: 16px;
+      @include FONTSTYLE_SUBTITLE_SB1(28px, $dark-light-color)
+    }
+
+    .subTitle {
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300))
+    }
+
+    &Wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-top: 16px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--warm-neutral-light-400);
+        border-radius: 4px;
+        margin-bottom: 16px;
+
+        &MobileTitle {
+            padding: 8px 12px !important;
+        }
+
+        &Title {
+            padding: 10px 16px;
+            gap: 10px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+            .match {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+            }
+
+            .term {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+            }
+        }
+    }
+
+    &Container {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0px 16px 12px;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--warm-neutral-mid-400);
+        background: var(--warm-prime-chalk);
+
+        &ColumnW5 {
+            flex: 5;
+        }
+    
+        &ColumnW4 {
+            flex: 4;
+        }
+    
+        &ColumnW3 {
+            flex: 3;
+        }
+    
+        &ColumnW2 {
+            flex: 2;
+        }
+    
+        &ColumnW1 {
+            flex: 1;
+        }
+
+        .header {
+            display: flex;
+            gap: 24px;
+            padding: 12px 16px 12px 24px;
+            background: var(--warm-prime-chalk);
+            border-bottom: 1px dashed var(--warm-neutral-mid-400);
+            width: 100%;
+
+            .text{
+              @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-200));
+            }
+        }
+
+        .mobileContent {
+            padding: 8px 4px !important;
+        }
+
+        .row {
+            width: 100%;
+            background: var(--warm-prime-chalk);
+
+            &Content {
+                display: flex;
+                flex-direction: row;
+                padding: 12px 16px 12px 24px;
+                border-bottom: 1px solid var(--warm-neutral-mid-400);
+                gap: 24px;
+
+                &:last-of-type {
+                    border-bottom: none;
+                }
+
+                .value {
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+                }
+
+                .count {
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500))
+                }
+
+                .name {
+                    cursor: pointer;
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+                }
+    
+                .score {
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-stat-chilli-regular));
+                }
+
+                .link {
+                    a {
+                        cursor: pointer;
+                        text-decoration: none;
+                        @include FONTSTYLE_BODY_SB2(20px, var(--warm-prime-azure));
+
+                        svg {
+                            margin-top: 3px;
+                        }
+                    }
+                }
+
+                .nameSanctionList {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+
+                    .sanctionSource {
+                        @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-500))
+                    }
+                }
+            }
+
+            .btnContainer {
+                display: flex;
+                margin-bottom: 24px;
+                .actionBtn {
+                  @include FONTSTYLE_BUTTON(22px, var(--warm-prime-azure))
+                }
+            }
+        }
+
+        &Detail {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+
+            .name {
+                cursor: pointer;
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+                .count {
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300)); 
+                }
+            }
+
+            .titleRow {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+
+        .btnContainer {
+            display: flex;
+            .actionBtn {
+              @include FONTSTYLE_BUTTON(22px, var(--warm-prime-azure))
+            }
+        }
+    }
+
+    &EmptyState {
+        display: flex;
+        padding: 16px;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid var(--warm-neutral-mid-400);
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500))
+    }
+    
+}
+
+.sanctionListReadOnlyForm {
+    padding-bottom: 24px;
+}
+
+.santionSourceModal {
+
+    .modalHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 24px;
+        width: 100%;
+
+        .group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+
+            .counter {
+                padding: 0 16px;
+            }
+        }
+    }
+
+    .modalBody {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-bottom: 32px;
+        max-height: 615px;
+        overflow-y: scroll;
+        overscroll-behavior: contain;
+
+        .sanctionSourceContainer {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+            .source {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+                
+                &Name {
+                   @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+                }
+
+                &LinkContainer{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    .link {
+                        display: block;
+                        text-decoration: none !important;
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-prime-azure));
+                        cursor: pointer;
+                        &:hover {
+                            color: var(--warm-prime-azure);
+                        }
+
+                        svg {
+                            margin-top: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

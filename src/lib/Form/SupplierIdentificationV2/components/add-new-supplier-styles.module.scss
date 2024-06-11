@@ -1,0 +1,278 @@
+@import './../../../branding';
+@import './../../../font';
+
+#freeSolo {
+  height: 38px;
+  padding: 0 0 0 8px;
+  border: solid 1px var(--warm-neutral-mid-600);
+  border-radius: 4px;
+  transition: none;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+  &:focus {
+      outline: auto;
+      outline-color: var(--warm-stat-mint-mid);
+  }
+  &:hover {
+    border-color: var(--warm-neutral-shade-300);
+  }
+}
+
+.supplierIdForm {
+  width: 100%;
+  padding: 24px;
+  background: var(--warm-prime-chalk);
+  box-sizing: border-box;
+  border: 1px solid var(--warm-stat-mint-mid);
+  border-radius: 8px;
+
+  &Row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+}
+
+.supplierIdFormHeading {
+  margin-top: 0;
+  @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-600));
+}
+
+.supplierInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.supplierInfoRadioFlexbox {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  row-gap: 12px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.supplierInfoFlexbox {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gridHeader {
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--warm-neutral-mid-600);
+}
+
+.supplierInfoFlexboxWidth > * {
+  flex: 1 1 340px;
+}
+
+.supplierContact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--warm-neutral-mid-600);
+}
+
+.taxDetailsLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+
+  .changeBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+  }
+
+  .popUp {
+    position: absolute;
+    // right: 10px;
+    max-height: 220px;
+    width: 386px;
+    white-space: nowrap;
+    padding: 16px 24px;
+    background: var(--warm-prime-chalk);
+    border: 1px solid var(--warm-neutral-mid-400);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 16px;
+
+    .popupHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .group {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+      }
+    }
+
+    .popupBody {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      cursor: pointer;
+
+      .taxTypeContainer {
+        display: flex;
+        padding: 6px 12px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+      }
+
+      .selectedTaxType {
+        border-radius: 4px;
+        background: var(--warm-stat-mint-lite-2);
+      }
+    }
+
+  }
+  .backdrop {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba($pure-black-color, 0);
+      cursor: default;
+    }
+}
+
+.toolTip {
+  position: absolute;
+  left: 73px;
+  top: 2px;
+  cursor: pointer;
+}
+
+.fwrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.titlewrapper{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.label{
+  margin-bottom: 8px;
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+}
+
+.roleLabel {
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+}
+
+.labelOnboarding {
+  @include FONTSTYLE_SUBTITLE_M2(20px, var(--warm-neutral-shade-500));
+}
+
+.supplierIdForm .action {
+  button:disabled,
+  button[disabled]{
+    opacity: 0.5;
+    border: 1px solid var(--warm-stat-mint-mid);
+    color: var(--warm-stat-mint-mid);
+    background: var(--coco-chalk);
+    cursor: not-allowed;
+  }
+}
+
+.supplierIdForm .action .addSupplier {
+  padding: 5px 16px;
+  background: var(--warm-stat-mint-mid);
+  border: 1px solid var(--warm-stat-mint-mid);
+  border-radius: 4px;
+  cursor: pointer;
+  @include FONTSTYLE_BODY_M1(24px, var(--coco-chalk));
+}
+
+.radioLabel {
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+}
+
+.radioSelector {
+  display: flex;
+  align-items: center;
+}
+
+.radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+  margin-right: 8px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 1px solid var(--warm-neutral-shade-100);
+  background-color: var(--coco-chalk);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked.radio {
+  border: 1px solid var(--warm-stat-mint-mid);
+  background-color: var(--warm-stat-mint-mid);
+}
+
+.taxIdTypeListModal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: var(--warm-prime-chalk);
+
+}
+
+.error {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding-top: 0;
+  padding-bottom: 6px;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-stat-chilli-regular));
+
+  img {
+    height: 18px;
+    margin-right: 4px;
+  }
+}

@@ -1,0 +1,405 @@
+.header {
+  position: relative;
+  padding: 24px 0 0 0;
+  background-color: var(--always-white-background-color);
+  cursor: pointer;
+
+  &Shrink {
+    padding: 20px 0 0 0;
+    cursor: default;
+  }
+
+  &Status {
+    &Draft {
+      cursor: default;
+    }
+  }
+}
+
+.goBack {
+  position: absolute;
+  top: 24px;
+  left: 18px;
+  cursor: pointer;
+}
+
+.row1 {
+  display: none;
+  margin-bottom: 8px;
+  padding: 0 30px 0 24px;
+
+  &Shrink {
+    margin-bottom: 4px;
+    padding: 0 30px 0 54px;
+  }
+}
+
+.row2 {
+  display: flex;
+  flex-direction: column;
+  padding: 0 56px 0 24px;
+
+  &Shrink {
+    padding: 0 30px 0 54px;
+  }
+}
+
+.row3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 -24px 0;
+  padding: 16px 56px 16px 24px;
+  background-color: var(--always-snow-background-color);
+
+  &Shrink {
+    padding: 16px 30px 16px 54px;
+  }
+}
+
+.col1 {
+  display: flex;
+  flex-direction: column;
+  width: 64%;
+}
+
+.col2 {
+  display: none;
+  gap: 12px;
+  width: 36%;
+
+  &Shrink {
+    margin-top: -18px;
+  }
+}
+
+.verticalSeparator {
+  margin: 0 14px;
+  height: 22px;
+  width: 0px;
+  border: 1px solid var(--light-light-gray-font-color);
+}
+
+.dotSeperator {
+  margin: 0 12px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--secondary-blue-grays-background-color);
+}
+.programLabel {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--blue-gray-paragraphy);
+}
+
+.capsule {
+  margin-right: 8px;
+  padding: 1px 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--blue-gray-paragraphy);
+  background-color: var(--semi-dark-border-divider-color);
+  border-radius: 25px;
+
+  &DraftEngagement {
+    color: var(--darker-yellow-font-color);
+    background-color: var(--always-white-background-color);
+    border: 1px solid var(--darker-yellow-border-color);
+  }
+
+  &CompletedEngagement {
+    color: var(--primary-green-background-color);
+    background-color: var(--always-white-background-color);
+    border: 1px solid var(--primary-green-background-color);
+  }
+}
+
+.title {
+  padding-right: 80px;
+  margin-bottom: 6px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 27px;
+  color: var(--body-text-blue-gray-font-color);
+
+  &Click {
+    cursor: pointer;
+  }
+
+  &Sublist {
+    display: none;
+    margin-bottom: 6px;
+    align-items: center;
+
+    &Container {
+      display: flex;
+      align-items: center;
+    }
+
+    &Item {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: var(--body-text-blue-gray-font-color);
+    }
+
+    &BudgetItem {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: var(--body-text-blue-gray-font-color);
+    }
+  }
+}
+
+.budget {
+  display: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--body-text-blue-gray-font-color);
+}
+
+.role {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 50%;
+
+  &Label {
+    margin-bottom: 6px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--dark-light-gray-font-color);
+  }
+
+  &UserDetailsContainer{
+    display: flex;
+    align-items: center;
+  }
+
+  &UserDP {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
+  &Details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &UserName, &SupplierName {
+    min-height: 21px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--body-text-blue-gray-font-color);
+  }
+
+  &UserName {
+    width: 166px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &SupplierName {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &UserTitle {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &UserTitle {
+    min-height: 20px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--body-text-blue-gray-font-color);
+  }
+
+  &MoreSuppliers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+    border-radius: 50%;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--primary-goback-link-font-color);
+    background-color: var(--tertiory-blue-grays-background-color);
+    cursor: pointer;
+  }
+}
+
+.status {
+  &Draft {
+    display: flex;
+    align-items: center;
+    gap: initial;
+    margin-top: 8px;
+    margin-left: 16px;
+  }
+
+  &CreationInProgress {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--darker-yellow-font-color);
+  }
+
+  &Icon {
+    cursor: pointer;
+  }
+  
+  &Button {
+    cursor: pointer;
+  }
+}
+
+.supplier {
+  &PopoverContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 12px 36px 12px 16px;
+    border-radius: 4px;
+    background-color: var(--always-white-background-color);
+    box-shadow: 0px 0px 20px rgba(113, 113, 113, 0.18);
+  }
+}
+
+@media (min-width: 820px) {
+  .header {
+    padding: 24px 0 24px 0;
+
+    &Shrink {
+      padding: 24px 0 24px 0;
+    }
+  }
+
+  .row1 {
+    padding: 0 30px 0 24px;
+
+    &Shrink {
+      padding: 0 30px 0 24px;
+    }
+  }
+
+  .row2 {
+    padding: 0 30px 0 24px;
+
+    &Shrink {
+      padding: 0 30px 0 24px;
+    }
+  }
+
+  .row3 {
+    margin: 16px 0 -24px 0;
+    padding: 16px 30px 16px 24px;
+
+    &Shrink {
+      padding: 16px 30px 16px 24px;
+    }
+  }
+
+  .goBack {
+    display: block;
+    top: 50px;
+  }
+
+  .row1, .budget {
+    display: block;
+  }
+
+  .row2, .titleSublist {
+    display: flex;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 960px) {
+  .header {
+    padding: 24px 0 24px 0;
+
+    &Shrink {
+      padding: 20px 0 24px 0;
+      cursor: default;
+    }
+  }
+
+  .row1 {
+    padding: 0 36px 0 24px;
+
+    &Shrink {
+      padding: 0 36px 0 54px;
+    }
+  }
+
+  .row2 {
+    flex-direction: row;
+    padding: 0 36px 0 24px;
+
+    &Shrink {
+      padding: 0 36px 0 54px;
+    }
+  }
+
+  .row3 {
+    flex-direction: row;
+    margin: 16px 0 -24px 0;
+    padding: 16px 36px 16px 24px;
+
+    &Shrink {
+      padding: 16px 36px 16px 54px;
+    }
+  }
+
+  .col2 {
+    display: flex;
+  }
+}

@@ -1,0 +1,455 @@
+@import './../../branding';
+@import './../../font';
+@import './../../oroStyles.scss';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 6;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+$question-number-of-columns: 4;
+$question-number-of-gaps: calc(#{$question-number-of-columns} - 1);
+$question-column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$question-number-of-gaps})) / #{$question-number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    &5 {
+        width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    }
+
+    &6 {
+        width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    }
+}
+.subcol {
+  &1 {
+      width: $question-column-width
+  }
+
+  &2 {
+      width: calc((#{$question-column-width} * 2) + #{$column-padding})
+  }
+
+  &3 {
+      width: calc((#{$question-column-width} * 3) + (#{$column-padding} * 2))
+  }
+
+  &4 {
+    width: calc((#{$question-column-width} * 4) + (#{$column-padding} * 3))
+  }
+}
+
+.floatL {
+  float: left;
+}
+
+.floatR {
+  float: right;
+}
+
+.action {
+  position: sticky;
+  bottom: 0;
+  padding-top: 16px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: var(--warm-prime-chalk);
+  border-top: 1px solid var(--warm-neutral-mid-500);
+
+  &.quetionnaireAction {
+    justify-content: space-between;
+  }
+
+  .formBtnGroup {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+  }
+}
+
+.count {
+  flex: 1;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+  position: relative;
+  top: 6px;
+  text-align: center;
+}
+
+.questionnaireContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+    flex: 1;
+    padding: 20px 26px 0 0;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    @include FORCE_SCROLLBAR();
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    &.basfTheme {
+      border-bottom: none;
+    }
+    &.sectionHidden {
+      display: none;
+    }
+  }
+
+  &Title {
+    margin: 0px;
+    background: var(--warm-prime-chalk);
+    border-radius: 4px;
+    @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-600));
+  }
+
+  &Description {
+    margin: 0;
+    @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-300));
+  }
+}
+
+.field {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &.indented {
+      padding-left: 24px;
+      border-left: 4px solid var(--warm-neutral-mid-300);
+    }
+
+    .fieldTitle {
+      color: var(--coco-charcoal);
+      font-family: $primary-16px-below-font-family;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+      letter-spacing: 0em;
+      text-align: left;
+
+      .imageWrapper {
+        margin-bottom: 20px;
+      }
+
+      .fieldName {
+        display: inline;
+
+        .helpText {
+          display: inline;
+          margin-left: 6px;
+        }
+
+        .displayIndex {
+          display: inline;
+          margin-right: 6px;
+        }
+
+        .infoIcon {
+          outline: none;
+          color: var(--warm-neutral-shade-200);
+          &:hover {
+            color: var(--warm-neutral-shade-600);
+          }
+          &Active {
+            color: var(--warm-neutral-shade-600);
+          }
+        }
+      }
+    }
+
+    .fieldDescription {
+      margin: 0;
+      font-family: "Inter";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #8C8C8C;
+    }
+  }
+}
+
+.readonly {
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+
+:global {
+  .questionContainer.inactive {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 1024px) {
+  .col, .subcol {
+    &1, &2, &3, &4, &5, &6 {
+      width: 100%;
+    }
+  }
+}
+
+
+.isMobileView {
+  flex-direction: column;
+}
+
+.invalidSection {
+  border-color: var(--warm-stat-chilli-regular) !important;
+}
+
+.backToSectionLink {
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  span {
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-600));
+  }
+  svg {
+    margin-right: 14px;
+  }
+}
+
+.questionnaireView {
+  display: flex;
+  grid-gap: 20px;
+  height: 100%;
+
+  &.isMobileView {
+    height: unset;
+    max-height: unset;
+  }
+
+  .sectionNavigationNoBorder {
+    border-right: none !important;
+  }
+
+  .sectionNavigation {
+    height: 100%;
+    border-right: 1.5px solid var(--warm-neutral-mid-300);
+    @include FORCE_SCROLLBAR();
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: var(--always-white-background-color);
+  
+    &_navContainer {
+      height: 100%;
+        &_nav {
+            list-style: none;
+            padding: 0px;
+            overflow-y: scroll;
+            height: 100%;
+            max-height: 100%;
+            width: 100%;
+            overscroll-behavior: contain;
+            margin-left: 7px;
+    
+            li.active {
+              // margin-right: -1px;
+              background-color: var(--warm-neutral-light-500);
+              border-color: var(--warm-stat-mint-mid);
+              cursor: unset;
+
+              .sidebar_navContainer_item_index {
+                color: var(--warm-prime-chalk) !important;
+                background-color: var(--warm-stat-mint-mid) !important;
+              }
+
+              &.inApplicable {
+                .sidebar_navContainer_item_index {
+                  color: var(--warm-neutral-shade-100) !important;
+                  background-color: var(--warm-neutral-light-200) !important;
+                }
+              }
+            }
+
+            li.invalidSection {
+              .sidebar_navContainer_item_index {
+                color: var(--warm-prime-chalk) !important;
+                background-color: var(--warm-stat-chilli-regular) !important;
+              }
+            }
+        }
+
+        &_navMob {
+          width: 100%;
+          padding: 0px;
+
+          li {
+            border-radius: 8px;
+            border: 1px solid #E3E3E3;
+            margin: 16px 0;
+          }
+        }
+  
+        &_item {
+            display: flex;
+            align-items: center;
+            border-right: 2px solid transparent;
+            padding: 16px 0px 16px 24px;
+            cursor: pointer;
+
+            .titleWrapper {
+              display: flex;
+              align-items: center;
+              grid-gap: 8px;
+            }
+
+            &_index {
+              width: 24px;
+              height: 24px;
+              border-radius: 24px;
+              text-align: center;
+              vertical-align: middle;
+              background-color: var(--warm-neutral-mid-100);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400));
+
+              &.invalid {
+                color: var(--warm-prime-chalk) !important;
+                background-color: var(--warm-stat-chilli-regular) !important;
+              }
+            }
+
+            .title {
+              @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+              transition: background 50ms ease-in-out;
+              text-decoration: none;
+            }
+    
+            &:hover {
+              text-decoration: none;
+              background-color: var(--warm-neutral-light-200);
+            }
+
+            &.active {
+              .title {
+                @include FONTSTYLE_BODY_M1(17px, var(--warm-neutral-shade-600));
+              }
+            }
+
+            &.inApplicable {
+              display: none;
+              cursor: default;
+
+              &:hover {
+                background-color: var(--warm-prime-chalk);
+              }
+
+              .sidebar_navContainer_item_index {
+                background-color: var(--warm-neutral-light-200) !important;
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-100));
+              }
+
+              .title {
+                cursor: default;
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-100));
+              }
+            }
+    
+            svg {
+              margin-right: 8px;
+            }
+    
+            &__icon {
+                margin-right: 1.125rem;
+            }
+        }
+    }
+  
+    &_link {
+        display: flex;
+        align-items: center;
+    }
+  
+    &_companyBranding {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2rem;
+  
+        span {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.5rem;
+            color: var(--body-text-blue-gray-font-color);
+            margin-bottom: 0.75rem;
+        }
+  
+        img {
+            max-width: 40%;
+            width: 100%;
+        }
+    }
+  }
+}
+
+.spread {
+  flex: 1;
+}
+
+.defaultSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+  width: 935px;
+  padding: 16px;
+  background: var(--warm-neutral-light-200);
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  &Title {
+      margin: 24px 0 6px;
+      @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-500));
+  }
+  &SubTitle {
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+  }
+}

@@ -1,0 +1,264 @@
+@import './../branding';
+@import './../_font';
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * 3)) / 4);
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+}
+
+#freeSolo {
+    height: 38px;
+    padding: 0 0 0 8px;
+    border: 1px solid var(--warm-neutral-mid-600);
+    border-radius: 4px;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    transition: none;
+
+    &:focus {
+        outline: none;
+        border-color: var(--warm-stat-mint-mid);
+        border-width: 1.4px;
+    }
+
+    &:hover {
+        border-color: var(--warm-neutral-shade-300);
+    }
+  }
+
+  
+  
+.label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 4px;
+    @include FONTSTYLE_BODY_R1(22px, var(--light-blue-gray-color));
+    img {
+        margin-right: 5px;
+    }
+}
+
+.accordion{
+    border: 1.5px solid $gray-color-2;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    margin-bottom: 8px !important;
+
+    .title {
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+    
+        &Spacing {
+            margin-bottom: 16px;
+        }
+    }
+
+    &Expanded {
+        margin-bottom: 8px;
+        border: 1px solid $oro-primary-green-color;
+    }
+
+    .trash {
+        position: absolute;
+        right: 12px;
+    }
+}
+
+
+
+.supplierBankInfoForm {
+    width: $form-width;
+    padding: $form-padding;
+    display: flex;
+    flex-direction: column;
+    position: static;
+    background-color: $pure-white-color;
+    font-family: "Inter";
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    // margin-bottom: 16px;
+    // padding-bottom: 8px;
+    // border-bottom: 1px dotted $gray-color-2;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 0px;
+            margin-right: $column-padding;
+
+            &.flex {
+                flex: 1;
+            }
+
+            &:last-child {
+                margin-right: 0
+            }
+
+            &.action {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            &Rowlabel {
+                padding-bottom: 4px;
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+            }
+            &BankSuggestionContainer{
+                min-width: fit-content;
+                min-height: fit-content;
+                background-color: var(--warm-neutral-light-300);
+                padding: 16px;
+                border-radius: 4px;
+                span {
+                    font-size: 0.875rem;
+                }
+            }
+            &FreeSolo {
+                input {
+                    height: auto;
+                    padding: 4px 4px 4px 6px;
+                    border: none
+                }
+
+                &.error {
+                    padding: 0;
+                    input {
+                        outline: none;
+                        border: 1.4px solid var(--warm-stat-chilli-regular) !important;
+                        border-radius: 4px !important;
+                    }
+                }
+            }
+
+        }
+        &BankHeader {
+            padding-bottom: 0px !important;
+            span:last-child {
+                float: right;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: none
+    }
+  }
+}
+
+.section {
+    .row {
+        flex-direction: column;
+        padding-bottom: 8px;
+
+        &.actionBar {
+            align-items: flex-end;
+            cursor: pointer;
+            padding-bottom: 20px;
+
+            .item {
+                width: 100%;
+                left: 0px;
+                top: 0px;
+                background: $white-smoke-color;
+                border-radius: 4px;
+                display: flex;
+                flex-direction: row;
+                flex: none;
+                position: static;
+                order: 0;
+                flex-grow: 1;
+                padding: 12px 8px 12px 16px;
+                margin: 0px 0px;
+
+                span {
+                    @include FONTSTYLE_BUTTON(22px, var(--$dark-light-color));
+                    padding-left: 9px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1324px) and (min-width: 1099px) {
+    .supplierBankInfoForm {
+        .section {
+            .row {
+                flex-direction: column;
+                padding-bottom: 8px;
+
+                &.actionBar {
+                    align-items: flex-end;
+                }
+
+                .item {
+                    min-width: fit-content;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .supplierBankInfoForm {
+        .section {
+            .row {
+                flex-direction: column;
+                padding-bottom: 8px;
+
+                &.actionBar {
+                    align-items: flex-end;
+                }
+
+                .item {
+                    min-width: fit-content;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+.error {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 6px;
+
+    img {
+      height: 18px;
+      margin-right: 4px;
+    }
+
+    
+    letter-spacing: normal;
+    text-align: left;
+    @include FONTSTYLE_BODY_R1(1.14, var(--$oro-error-red-color));
+  }

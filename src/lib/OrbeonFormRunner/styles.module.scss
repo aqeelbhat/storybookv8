@@ -1,0 +1,50 @@
+/************************************************************
+ * Copyright (c) 2021 Orolabs.ai to Present
+ * Author: Rohit Ingle
+ ************************************************************/
+
+ .orbFRContainer {
+  display: inline-block;
+  padding: 16px;
+ }
+
+ .orbFRContainer__loader {
+  color: var(--dark-light-gray-font-color);
+ }
+
+ // TODO: Remove from here once Orbeon runner UX changes are implemented
+#fr-view {
+  width: 100% !important;
+  padding: 0;
+  border-radius: 8px 8px 8px 8px;
+}
+
+// TODO: Remove from here once Orbeon runner UX changes are implemented
+.fr-orbeon-version {
+  display: none !important;
+}
+
+ // TODO: Remove from here once Orbeon runner UX changes are implemented
+.navbar-inverse {
+  display: none !important;
+}
+
+// TODO: Remove from here once Orbeon runner UX changes are implemented
+.fr-body {
+  margin-top: 10px;
+}
+
+// TODO: Remove from here once Orbeon runner UX changes are implemented
+.fr-buttons {
+  display: none !important;
+}
+
+// TODO: Remove from here once Orbeon runner UX changes are implemented
+.orbeon .row {
+  margin-left: 0 !important;
+}
+
+// TODO: Remove from here once Orbeon runner UX changes are implemented
+.orbeon .span12 {
+  width: auto !important;
+}

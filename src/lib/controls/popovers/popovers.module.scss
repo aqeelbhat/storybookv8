@@ -1,0 +1,138 @@
+@import 'src/lib/_font.scss';
+
+.popover {
+  &Body {
+    padding: 16px 36px 21px 32px;
+    box-shadow: 0 0 20px 0 rgba(113, 113, 113, 0.18);
+    border: solid 1px var(--dark-border-divider-color);
+    border-radius: 4px;
+    background-color: var(--always-white-background-color);;
+  }
+
+  &Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    .title {
+      @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600))
+    }
+    
+    .close {
+      cursor: pointer;
+    }
+  }
+
+  &Hint {
+    max-width: 440px;
+    margin-top: 8px;
+    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+  }
+
+  &More {
+    padding: 0;
+  }
+
+  &Title {
+    margin-bottom: 6px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+  }
+
+  &Label {
+    margin-top: 16px;
+    padding-bottom: 6px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+
+    .optional {
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200))
+    }
+  }
+
+  &Cost {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 18px 66px 18px 16px;
+    border-radius: 4px;
+    background-color: var(--primary-vendor-form-background-color);
+
+    &Label {
+      flex-grow: 0;
+      font-family: "Inter";
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--body-text-blue-gray-font-color);
+    }
+
+    &Value {
+      flex-grow: 0;
+      font-family: "Inter";
+      font-size: 16px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--dark-green-font-color);
+    }
+  }
+
+  &TextArea {
+    width: 288px;
+    max-width: 288px;
+    min-width: 288px;
+    outline-color: var(--primary-green-border-color);
+
+    &ValidationError {
+      border: 1px solid var(--red-error-background-color);
+    }
+  }
+
+  &TextAreaShare {
+    width: 440px;
+    max-width: 440px;
+    min-width: 440px;
+    border-radius: 4px;
+
+    &:hover{
+      border: 1px solid var(--warm-neutral-shade-300);
+    }
+
+    &:focus {
+      outline: none;
+      border: solid 1.4px var(--warm-stat-mint-mid);
+    }
+  }
+
+  &Button {
+    &Wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    &WrapperShare {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      width: 50%;
+      margin-top: 12px;
+      margin-left: 50%;
+    }
+
+    &Elem {
+      flex-grow: 1;
+    }
+  }
+}

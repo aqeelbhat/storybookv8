@@ -1,0 +1,10 @@
+@import './../../branding';
+@import './../../font';
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 6px;
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+}

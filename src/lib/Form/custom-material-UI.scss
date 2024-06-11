@@ -1,0 +1,30 @@
+ /* material UI css Override for contact popup role typeahead */
+ #materialUIAutocomplete .css-1kpdewa-MuiAutocomplete-root .MuiOutlinedInput-root {
+    padding: 0;
+    height: 40px;
+    border-radius: 2px;
+}
+#materialUIAutocomplete .MuiAutocomplete-hasPopupIcon.css-1kpdewa-MuiAutocomplete-root .MuiOutlinedInput-root,
+#materialUIAutocomplete .MuiAutocomplete-hasClearIcon.css-1kpdewa-MuiAutocomplete-root .MuiOutlinedInput-root,
+#materialUIAutocomplete .MuiAutocomplete-hasPopupIcon.css-1kpdewa-MuiAutocomplete-root .MuiAutocomplete-inputRoot,
+#materialUIAutocomplete .MuiAutocomplete-hasClearIcon.css-1kpdewa-MuiAutocomplete-root .MuiAutocomplete-inputRoot,
+#materialUIAutocomplete .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon.css-1kpdewa-MuiAutocomplete-root .MuiOutlinedInput-root {
+    padding: 0;
+}
+
+#materialUIAutocomplete .css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator:hover,
+#materialUIAutocomplete .css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator:hover {
+    background-color: transparent;
+}
+
+#materialUIAutocomplete .css-1q60rmi-MuiAutocomplete-endAdornment {
+    top: calc(50% - 12px);
+}
+
+#materialUIAutocomplete fieldset {
+    border: none;
+}
+
+#materialUIAutocomplete .css-1kpdewa-MuiAutocomplete-root {
+    padding-bottom: 8px;
+}

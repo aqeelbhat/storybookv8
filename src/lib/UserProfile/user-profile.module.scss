@@ -1,0 +1,52 @@
+@import './../_font';
+.user {
+  &Info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--warm-neutral-mid-200);
+    &:last-of-type {
+      border-bottom: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    &Name {
+      text-transform: capitalize;
+      line-break: anywhere;
+      @include FONTSTYLE_HEADING_H6(28px, var(--warm-neutral-shade-500));
+    }
+    &Items {
+      display: flex;
+      flex-direction: column;
+      &Label {
+        line-break: anywhere;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+      }
+      &Value {
+        line-break: anywhere;
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+      }
+      &Groups {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 4px;
+        &Name {
+          padding: 2px 6px;
+          border-radius: 4px;
+          background: var(--warm-stat-mint-bg-2);
+          line-break: anywhere;
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        }
+      }
+    }
+    &Pic {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 1px solid var(--warm-prime-chalk);
+    }
+  }
+}

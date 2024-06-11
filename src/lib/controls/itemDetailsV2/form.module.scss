@@ -1,0 +1,83 @@
+@import './../../branding';
+@import './../../font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+// For Edit Item  Form override table
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 16px;
+  .hide {
+    display: none;
+  }
+
+  & .table {
+    border: 1px solid var(--warm-neutral-mid-300);
+    border-bottom: 0px;
+    border-radius: 0px;
+
+    background: var(--always-white-color);
+
+    & .td {
+      border-right: 1px solid var(--warm-neutral-mid-300);
+      border-bottom: 1px solid var(--warm-neutral-mid-300);
+
+      &.readOnly {
+        border-right: 0px;
+      }
+
+      &:nth-child(2n) {
+        border-right: 0px;
+      }
+    }
+  }
+
+  & .subTitle {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @include FONTSTYLE_SUBTITLE_M2(24px, var(--oro-color-blue-gray-field-value));
+    .toggle {
+      cursor: pointer;
+      &:hover{
+        svg {
+          stroke: var(--warm-neutral-shade-400);
+        }
+      }
+      svg {
+        stroke:var(--warm-neutral-shade-200);
+      }
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+}
+
+.smallView {
+  padding: 0px;
+
+  .table {
+    border-right: 0px;
+    border-left: 0px;
+  }
+
+}
+
+
+.mediumView {}

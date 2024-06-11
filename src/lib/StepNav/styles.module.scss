@@ -1,0 +1,255 @@
+@import './../branding';
+@import './../font';
+
+$step-number-size: 32px;
+$step-width: 124px;
+$progress-line-stroke: 2px;
+
+.tabSpan {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+
+  font-family: "Inter";
+
+  .activeTabs {
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $step-number-size;
+      height: $step-number-size;
+
+      border-radius: calc(#{$step-number-size} / 2);
+      cursor: pointer;
+
+      background: var(--warm-stat-mint-mid);
+      border: 2px var(--warm-stat-mint-mid);
+
+      font-size: 14px;
+      color: var(--warm-prime-chalk);
+      font-weight: 500;
+    }
+
+    p {
+      color: var(--warm-neutral-shade-500);
+    }
+  }
+
+  .inactiveTabs {
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: $step-number-size;
+      height: $step-number-size;
+
+      background: var(--warm-prime-chalk);
+      border: 2px solid var(--warm-neutral-mid-200);
+      border-radius: calc(#{$step-number-size} / 2);
+      cursor: default;
+
+      font-size: 14px;
+      color: var(--warm-neutral-shade-500);
+      font-weight: 500;
+    }
+
+    p {
+      color: var(--warm-neutral-shade-100);
+    }
+  }
+
+  .checkedTabs {
+    span {
+      border: 2px solid var(--warm-stat-mint-mid);
+      cursor: pointer;
+    }
+  }
+
+  .skippedTabs {
+    span {
+      border: 2px solid var(--warm-neutral-shade-100);
+    }
+  }
+}
+
+.idvTab {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  min-width: $step-width;
+  max-width: calc(#{$step-width} + 56px);
+
+  &:last-of-type {
+    flex: none;
+  }
+
+  p {
+    padding-top: 13px;
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57;
+    color: var(--warm-neutral-shade-500);
+  }
+}
+
+.stepNum {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: $step-width;
+  z-index: 1;
+}
+
+.progressLine {
+  flex: 1;
+  margin-top: calc(calc(#{$step-number-size} / 2) - #{$progress-line-stroke});
+  margin-bottom: calc(calc(#{$step-number-size} / 2) - #{$progress-line-stroke});
+  margin-right: calc(calc(#{$step-number-size} / 2) * -1);
+  margin-left: calc(calc(#{$step-width} - calc(#{$step-number-size} / 2)) * -1);
+  height: $progress-line-stroke;
+  background-color: var(--warm-neutral-mid-200);
+
+  &.active {
+    background-color: var(--warm-stat-mint-mid);
+  }
+}
+
+
+.newProgressBar {
+  position: relative;
+
+  .container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .step {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:first-child .visitedNode .lineContainer {
+        justify-content: flex-start;
+
+        &:hover {
+          padding: 0px;
+          padding-right: 7px;
+          -webkit-transition: ease-out 0.4s;
+          -moz-transition: ease-out 0.4s;
+          transition: ease-out 0.4s;
+
+          .bullet {
+            min-width: 10px;
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+
+      .visitedNode {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        flex: 1;
+
+        .lineContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          position: relative;
+
+          .bullet {
+            position: absolute;
+            min-width: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 8px;
+            background-color: var(--warm-stat-mint-mid);
+
+            -webkit-transition: ease-out 0.4s;
+            -moz-transition: ease-out 0.4s;
+            transition: ease-out 0.4s;
+          }
+
+          .currentBullet {
+            position: absolute;
+            min-width: 12px;
+            height: 12px;
+            border-radius: 12px;
+            background-color: var(--warm-stat-mint-mid);
+          }
+
+          .progressBarLine {
+            height: 2px;
+            min-width: 100%;
+            background-color: var(--warm-stat-mint-mid);
+          }
+
+          .firstStepProgressLine {
+            background-color: var(--warm-neutral-mid-400);
+          }
+        }
+
+        &:hover {
+          .lineContainer {
+            padding: 0px 7px;
+            -webkit-transition: ease-out 0.4s;
+            -moz-transition: ease-out 0.4s;
+            transition: ease-out 0.4s;
+            .bullet {
+              min-width: 10px;
+              width: 10px;
+              height: 10px;
+            }
+          }
+          // transform: scale(0.95, 1.0);
+        }
+
+        .title {
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+        }
+        .currentNodeTitle {
+          @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-500));
+        }
+        .pastVisitedContainer {
+          margin-top: 2px;
+        }
+        .currentContainer {
+          justify-content: flex-end;
+        }
+      }
+
+      .notVisitedProgressBarLine {
+        height: 2px;
+        min-width: 100%;
+        background-color: var(--warm-neutral-mid-400);
+      }
+      .pastVisitedNode {
+        align-items: center;
+      }
+
+      .currentNode:hover {
+        .lineContainer {
+          padding: 0px;
+        }
+      }
+
+      .currentNode {
+        align-items: flex-end;
+      }
+
+
+      &:first-child .pastVisitedNode {
+        align-items: flex-start;
+      }
+    }
+  }
+}
+

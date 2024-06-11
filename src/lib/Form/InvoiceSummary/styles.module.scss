@@ -1,0 +1,51 @@
+@import './../../branding';
+@import './../../font';
+
+.bgArea {
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  align-items: left;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: var(--warm-neutral-light-200);
+}
+
+.invoiceKey {
+  @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+  margin-right: 5px;
+}
+
+.invoiceValue {
+  @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500));
+}
+
+.key {
+  color: var(--warm-neutral-shade-300);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-right: 5px;
+}
+
+.value {
+  color: var(--warm-neutral-shade-500, #3E4456);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin-right: 10px;
+}
+
+.vandorValue {
+  @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-300))
+}
+
+.detailKey {
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+}

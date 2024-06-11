@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap');
+
+$primary-16px-below-font-family: 'Inter';
+$primary-18px-above-font-family: 'Inter';
+
+$oro-primary-green-color: #82c146;
+$oro-primary-red-color:#f55f44;
+$oro-error-red-color: #d67268;
+$link-blue-color: #2d8db7;
+$link-blue-color-1: #1976d2;
+$link-blue-color-2: #135EF2;
+$light-blue-status-color: #cce0ff;
+$badge-yellow-color: #F3B72C;
+$badge-dark-yellow-color: #F3B72C;
+$badge-background-yellow-color: #FFFBE6;
+$badge-dark-background-yellow-color: #FFF1B8;
+$oro-font-color: #495057;
+$oro-edit-color: #31353a;
+
+$panel-font-color: #595959;
+$pure-white-color: #ffffff;
+$white-light-smoke-color: #FAFAFA;
+$white-smoke-color: #F5F5F5;
+$white-smoke-color-2: #F4F4F4;
+$light-light-gray-color: #F0F0F0;
+$light-gray-color: #E6E6E6;
+$gray-color: #d9d9d9;
+$gray-color-2: #d6d6d6;
+$light-dark-gray-color: #CCCCCC;
+$light-dark-gray-color-2: rgba(196, 196, 196, 0.08);
+$semilight-gray-placeholder-color: #bfbfbf;
+$semilight-dark-gray-color: #ABABAB;
+$dark-gray-color: #8C8C8C;
+$dark-light-color: #283041;
+$light-blue-color: #6782a0;
+$dark-color: #262626;
+$disabled-dark-color: #ADADAD;
+$pure-black-color: #000000;
+
+$light-light-light-blue-gray-color: #a3c2e7;
+$light-light-blue-gray-color: #7d97b5;
+$light-blue-gray-color: #575F70;
+$blue-gray-color: #3E4456;
+$blue-grays-font-color: #324552;
+$semi-dark-border-divider-color-3: #CACACA;
+
+$dark-green-color: #6CA635;
+$dark-green-font-color: #618f37;
+$disabled-dark-green-color: #CFE4BA;
+$light-blue-color: #7F9BBA;
+
+$panel-border-color: #d8d8d8;
+$dark-light-gray-font-color: #848484;
+$lightest-green-background-color: #fbfff8;
+$lightest-green-border-color: #f8fff1;
+$primary-badge-background-color: #F7F7F7;
+$primary-badge-background-color-1: #F6F6F6;
+$light-blue-harmony-color: #ECEDEE;
+
+$green-light-highlight-background-color: #F3FBEA;
+$green-dark-highlight-background-color: #E1EDD4;
+$red-light-highlight-background-color: #FBECEC;
+$red-dark-highlight-background-color: #F2CDCD;
+$primary-background-color: #E5E5E5;
+
+$oro-gold-font-color: #D48806;
+$oro-light-gold-background-color: #FFFBE6;
+
+$oro-high-risk-font-color: #BE4236;
+
+$oro-notes-background-color: #F6FCFF;
+$link-blue-font-color: #1890FF;
+
+$max-app-width: 1440px;
+$right-panel-width: 440px;
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter";
+  margin: 0;
+}
+
+.flexGrow {
+  flex: 1;
+}
+
+label {
+  display: inline-block;
+}
+
+input[type="text"], input[type="number"], input[type="date"], input[type="password"], textarea {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: .25rem .7rem;
+  font-family: inherit;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .2rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+:root {
+  --always-charleston-green-background-color: #282828;
+  --oro-blue-font-color: #2D8DB7;
+
+  --coco-light-neutrals: #CCD2D8;
+  --coco-neutral-light: #FAFCFE;
+
+  /* prims */
+  --coco-dark: #24303C;
+  --coco-chalk: #FFFFFF;
+  --coco-azure: #0C48D0;
+  --coco-charcoal: #283041;
+
+  /* coco honey */
+  --coco-honey: #F8C618;
+  --coco-honey-lite: #FEF9E8;
+  --coco-honey-burnt: #AD6800;
+
+  /* coco chilli */
+  --coco-chilli: #D83418;
+  --coco-chilli-mid: #FA765D;
+  --coco-chilli-lite: #FEEBE8;
+  --coco-chilli-burnt: #95240E;
+
+  /* coco light */
+  --coco-light-200: #FAFCFE;
+  --coco-light-300: #F8FAFC;
+  --coco-light-400: #F4F6F8;
+  --coco-light-500: #F0F2F4;
+
+  /* coco berry */
+  --coco-berry: #179AFA;
+  --coco-berry-burnt: #0B4D7D;
+  --coco-berry-lite: #E7F5FF;
+
+  /* coco shade */
+  --coco-shade-100: #909CA8;
+  --coco-shade-200: #788490;
+  --coco-shade-300: #606C78;
+  --coco-shade-400: #485460;
+  --coco-shade-500: #303C48;
+  --coco-neutral-mid-200:#E6E6E6;
+
+  /* coco mid */
+  --coco-mid-100: #ECEEF0;
+  --coco-mid-200: #EAECEE;
+  --coco-mid-300: #E4E6E8;
+  --coco-mid-400: #E0E4E8;
+  --coco-mid-500: #D8DCE0;
+  --coco-mid-600: #D0D4D8;
+
+  /* coco mint */
+  --coco-mint: #249C54;
+  --coco-mint-lite: #E9F7EE;
+  --coco-mint-burnt: #10592B;
+
+  --coco-neutral-light-200: #F8F8F8;
+  --coco-neutral-shade-500: #3E4456;
+
+  /* misc colors */
+  --warm-misc-bold-cherry: #D83418;
+  --warm-misc-bold-gold: #F8C618;
+  --warm-misc-bold-water: #179AFA;
+  --warm-misc-bold-grass: #249C54;
+
+  --warm-neutral-light-200: #F8F8F8;
+  --warm-neutral-light-300: #F6F6F6;
+  --warm-neutral-light-400: #F5F5F5;
+  --warm-neutral-light-500: #F1F1F1;
+  
+  --warm-neutral-shade-100: #ABABAB;
+  --warm-neutral-shade-200: #848484;
+  --warm-neutral-shade-300: #6A6A6A;
+  --warm-neutral-shade-400: #575F70;
+  --warm-neutral-shade-500: #3E4456;
+  --warm-neutral-shade-600: #283041;
+  
+  --warm-neutral-mid-100: #F0F0F0;
+  --warm-neutral-mid-200: #EBEBEB;
+  --warm-neutral-mid-300: #E6E6E6;
+  --warm-neutral-mid-400: #E3E3E3;
+  --warm-neutral-mid-500: #D6D6D6;
+  --warm-neutral-mid-600: #CACACA;
+
+  --warm-stat-chilli-bg: #FDF4F4;
+  --warm-stat-chilli-regular: #CC483B;
+  --warm-stat-honey-lite: #FAECBC;
+  --warm-stat-honey-mid: #F7DA7C;
+  --warm-stat-honey-regular: #F3B72C;
+  --warm-stat-honey-burnt-light: #B5830D;
+  --warm-prime-chalk: #FFFFFF;
+  --warm-primary-charcoal: #242B3A;
+  --warm-prime-azure: #0072C6;
+  --warm-stat-mint-regular: #6CA635;
+  --warm-stat-mint-mid: #82C146;
+  --warm-stat-mint-light: #E1EDD4;
+  --warm-stat-mint-lite-1: #E1EDD4;
+  --warm-stat-mint-lite-2: #EFF6E7;
+  --warm-stat-chilli-mid: #EE8785;
+  --warm-stat-chilli-lite: #FBECEC;
+  --warm-stat-berry-mid: #40B5E8;
+  --warm-stat-berry-lite: #E6F7FF;
+  --warm-stat-berry-bg: #F6FCFF;
+  --warm-stat-mint-bg: #F3FBEA;
+  --warm-stat-mint-bg-2: #F7FBF2;
+  --warm-stat-honey-bg: #FDF8E5;
+
+  --dark-blue-icon-color: #3971DE; // TODO: Ask proper color name to designers
+  --light-blue-icon-color: #44B8BF; // TODO: Ask proper color name to designers
+  --red-error-background-color: #D67268; // TODO: Ask proper color name to designers
+}
+
+@mixin HIDDEN_SCROLLBAR() {
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  &.scrollHidden {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+}

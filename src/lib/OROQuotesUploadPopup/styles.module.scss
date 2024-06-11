@@ -1,0 +1,128 @@
+@import './../branding';
+
+.oroUpload{
+    max-width: 533px;
+    width: 100%;
+    padding: 12px 0 24px;
+    border-radius: 4px;
+    box-shadow: 0 0 20px 0 rgba(113, 113, 113, 0.18);
+    border: solid 1px $light-gray-color;
+    background-color: $pure-white-color;
+
+    &File {
+        padding: 0 24px;
+        &Title {
+            display: inline-block;
+            margin-bottom: 6px;
+            font-family: "Inter";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.29;
+            color: $blue-gray-color;
+        }
+
+        &Error {
+            margin: 8px 0;
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 1.29;
+            color: $oro-error-red-color
+        }
+
+        &Action {
+            display: flex;
+            justify-content: flex-end;
+            &Continue {
+                max-width: 100px;
+                padding: 8px 12px;
+                border-radius: 2px;
+                border: solid 1.5px $oro-primary-green-color;
+                background-color: $oro-primary-green-color;
+                font-family: "Inter";
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1.71;
+                color: $pure-white-color;
+            }
+        }
+
+        &Note {
+            margin-bottom: 16px;
+            h4 {
+                margin-bottom: 6px;
+                font-family: "Inter";
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.29;
+                color: $blue-gray-color;
+
+                span {
+                    font-family: "Inter";
+                    font-size: 14px;
+                    font-weight: normal;
+                    line-height: 1.29;
+                    color: $semilight-dark-gray-color;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                height: 64px;
+                outline: none;
+            }
+        }
+
+        &Info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+            margin-bottom: 18px;
+
+            &Name, &Attribute {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                label {
+                    margin-bottom: 6px;
+                    font-family: "Inter";
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 1.29;
+                    color: $blue-gray-color;
+                }
+
+                input {
+                    padding: 10px 12px;
+                    border-radius: 2px;
+                    border: solid 1px $gray-color;
+                    background-color:  $pure-white-color;
+                    font-family: "Inter";
+                    font-size: 14px;
+                    line-height: 1.29;
+                    color: $blue-gray-color;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    &Close {
+        cursor: pointer;
+    }
+
+    &Header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 24px 12px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid $light-gray-color;
+        h3 {
+            font-family: "Inter";
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: $dark-color;
+        }
+    }
+}

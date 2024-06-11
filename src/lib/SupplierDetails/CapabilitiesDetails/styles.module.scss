@@ -1,0 +1,316 @@
+@import './../../branding';
+@import './../../_font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    // &5 {
+    //     width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    // }
+
+    // &6 {
+    //     width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    // }
+}
+
+.supplierCapabilities {
+    display: flex;
+    &Dropdowns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 16px;
+        flex-wrap: wrap;
+
+        &Item {
+            width: fit-content;
+        }
+        &Other {
+            min-height: 40px;
+            padding: 0px 8px;
+            background: var(--coco-chalk);
+            border: 1px solid var(--warm-neutral-mid-600);
+            border-radius: 4px;
+            cursor: pointer;
+            @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+
+            &:hover {
+                border-color: var(--warm-neutral-shade-300);
+            }
+
+            &Badge {
+                height: 20px;
+                margin-left: 5px;
+                padding: 2px 6px;
+                background-color: var(--warm-neutral-mid-300);
+                border-radius: 4px;
+                @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+            }
+        }
+    }
+    .details {
+        width: 100%;
+
+        &Section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .row {
+                display: flex;
+                flex-direction: column;
+                grid-gap: 6px;
+                width: 100%;
+                padding-bottom: 20px;
+
+                .selectedScope {
+                    margin-top: 2px;
+                }
+
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    grid-gap: 6px;
+        
+                    &.flex {
+                        flex: 1;
+                    }
+        
+                    &:last-child {
+                        margin-right: 0
+                    }
+
+                    &Hint {
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400));
+                    }
+
+                    &Label{
+                        @include FONTSTYLE_BODY_M1(18px, var(--warm-neutral-shade-400));
+                    }
+
+                    &List {
+                        padding-left: 15px;
+                        margin-bottom: 0px;
+                        .text {
+                            @include FONTSTYLE_BODY_M1(22px, var(--warm-neutral-shade-500));
+                            strong {
+                                margin-right: 8px;
+                                @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-300));
+                            }
+                        }
+                    }
+
+                    .checkBox {
+                        display: flex;
+                        flex-direction: column;
+                        grid-gap: 6px;
+                    }
+                }
+
+                .restrictions {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+                    grid-gap: 12px;
+                    cursor: pointer;
+                }
+
+                .addRestrictions {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 5px;
+                    cursor: pointer;
+
+                    .label {
+                        @include FONTSTYLE_BUTTON(18px, var(--coco-azure))
+                    }
+
+                    svg {
+                        margin-top: 3px;
+                    }
+                }
+
+                .actionBtn {
+                    display: flex;
+                    flex-direction: row;
+                    grid-gap: 10px;
+                    justify-content: flex-end;
+                    padding-top: 20px;
+                    margin-top: 4px;
+                    border-top: 1px dotted var(--warm-neutral-mid-500);
+                    
+                    .cancelBtn {
+                        background-color: $pure-white-color;
+                        border-color: var(--warm-neutral-mid-600);
+                        padding: 4px 16px;
+                        @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+                      }
+              
+                    .submitBtn {
+                       padding: 4px 16px;
+                       @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-chalk));
+                    }
+                }
+            }
+
+            .titleRow {
+                display: flex;
+                flex-direction: column;
+                border-top: 1px solid var(--warm-neutral-mid-500);
+                padding: 20px 0;
+
+                &Label{
+                    @include FONTSTYLE_SUBTITLE_M2(18px, var(--warm-neutral-shade-600));
+                }
+            }
+
+            .title {
+                padding: 12px 16px;
+                margin-bottom: 24px;
+                background: var(--coco-light-400);
+                border-radius: 8px;
+                @include FONTSTYLE_SUBTITLE_SB2(24px, var(--coco-dark))
+            }
+
+            .subTitle {
+                padding: 15px;
+                @include FONTSTYLE_BODY_R2(18px, var(--coco-shade-200))
+            }
+
+            &Currency {
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                height: 40px;
+                background: $primary-badge-background-color-1;
+                border-radius: 2px;
+            }
+
+            .pdBt0 {
+              padding-bottom: 0px !important;
+            }
+        }
+    }
+
+    .logoSection {
+        padding: 24px;
+        background: var(--coco-chalk);
+    }
+}
+
+.capabilityModal {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 8px;
+
+    .modalHeader {
+        width: 100%;
+        padding: 10px;
+        border-bottom: none;
+
+        .modalTitle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            span {
+                display: inherit;
+                justify-content: center;
+                gap: 13px;
+                margin-left: 8px;
+                @include FONTSTYLE_SUBTITLE_SB1(26px, $blue-gray-color);
+            }
+            .closeBtn {
+                border: none;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                background-color: var(--always-white-background-color);
+                height: fit-content;
+                color: var(--always-black-font-color-2);
+            }
+        }
+    }
+
+    .modalBody {
+        width: 100%;
+        padding: 16px;
+
+        &Section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+
+            .row {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+            
+                .item {
+                    width: 100%;
+                    padding: 10px;
+                    margin-right: 20px;
+        
+                    &.flex {
+                        flex: 1;
+                    }
+        
+                    &:last-child {
+                        margin-right: 0
+                    }
+                }
+            }
+        }
+
+        &SelectedRestriction {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+
+            .restrictions {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                padding: 10px;
+                margin-right: 20px;
+                background-color: var(--coco-neutral-light-200);
+                @include FONTSTYLE_SUBTITLE_R2(24px, $dark-light-gray-font-color)
+            }
+        }
+    }
+
+    .modalFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        grid-gap: 16px;
+    
+        width: 100%;
+        padding: 12px 0;
+        border-top: none;
+    }
+}
+

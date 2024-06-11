@@ -1,0 +1,47 @@
+@import './../branding';
+@import '../font';
+
+.shareHolderDetails {
+    .action {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+
+      .optional {
+        @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-200));
+      }
+    }
+
+    .subTitle {
+      padding-top: 6px;
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300))
+    }
+}
+
+.shareHolderDetailsReadOnly {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .title {
+        @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500))
+      }
+
+      .subTitle {
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+      }
+    }
+    
+}

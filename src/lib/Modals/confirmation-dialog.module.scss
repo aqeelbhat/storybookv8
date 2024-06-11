@@ -1,0 +1,211 @@
+@import './../branding';
+@import './../font';
+
+.confirmationModal {
+    &.themecoco {
+        .modalheader {
+            padding-bottom: 6px;
+        }
+        .modalBody {
+            padding: 6px 0;
+            p {
+                overflow-wrap: break-word;
+            }
+            &.alert {
+                padding-left: 34px;
+            }
+        }
+        .modalFooter {
+            padding-top: 10px;
+            .buttonCancel {
+                display: flex;
+                align-items: center;
+                @include FONTSTYLE_BODY_M1(24px, var(--warm-primary-charcoal));
+                padding: 4px 16px;
+                border-radius: 4px;
+                border: solid 1px $gray-color;
+                background-color: var(--warm-prime-chalk);
+    
+                &:hover {
+                    color: $dark-color;
+                }
+            }
+            .buttonCancel:hover {
+                cursor: pointer;
+            }
+            .buttonPrimary {
+                margin-left: 10px;
+                border-radius: 4px;
+                background-color: $oro-primary-green-color; // var(--coco-berry-burnt);
+                border-color: $oro-primary-green-color; // var(--coco-berry-burnt);
+                &.danger {
+                    background-color: $oro-primary-red-color; // var(--coco-chilli);
+                    border-color: $oro-primary-red-color; // var(--coco-chilli);
+                }
+            }
+            .buttonPrimary:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .modalHeader {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: none;
+
+        .group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            .icon {
+                margin-top: 3px;
+                border: 1px solid var(--warm-stat-mint-regular);
+                border-radius: 34px;
+                width: 17px;
+                text-align: center;
+                height: 17px;
+                display: flex;
+                align-items: center;
+                padding: 2px;
+            }
+            .title {
+                @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600));
+            }
+        }
+
+        .closeBtn {
+            margin-top: -2px; // TODO: This should be removed. Negative margins in the layouts is discouraged
+        }
+
+        .closeBtn:focus-visible {
+            outline: invert;
+        }
+
+        .closeBtn:hover {
+            cursor: pointer;
+        }
+
+        h5 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: $dark-color;
+        }
+    }
+
+    .modalBody {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        grid-gap: 8px;
+        padding: 4px 0;
+
+        @include FONTSTYLE_BODY_R1($line-height: 20px, $color: var(--warm-neutral-shade-500));
+
+        p {
+          @include FONTSTYLE_BODY_R1($line-height: 20px, $color: var(--warm-neutral-shade-500));
+        }
+
+        .description {
+            @include FONTSTYLE_BODY_R1($line-height: 20px, $color: var(--warm-neutral-shade-300));   
+        }
+
+        strong {
+          @include FONTSTYLE_BODY_M1($line-height: 20px, $color: var(--warm-neutral-shade-500));
+        }
+        
+        .inputArea {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            &label {
+                @include FONTSTYLE_BODY_M1($line-height: 20px, $color: var(--warm-neutral-shade-400));
+
+                .optional {
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200))
+                }
+            }
+        }
+
+        textarea {
+            resize: none;
+            height: 92px;
+            padding: 8px;
+
+            border: solid 1px $gray-color-2;
+            border-radius: 4px;
+
+            font-family: "Inter";
+            font-size: 14px;
+            color: $dark-light-color;
+        }
+    }
+
+    .modalFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        width: 100%;
+        padding-top: 20px;
+        border-top: none;
+
+        .buttonCancel {
+            display: flex;
+            align-items: center;
+            @include FONTSTYLE_BODY_M1(24px, var(--warm-primary-charcoal));
+            padding: 4px 16px;
+            border-radius: 4px;
+            border: solid 1px $gray-color;
+            background-color: var(--warm-prime-chalk);
+
+            &:hover {
+                color: $dark-color;
+            }
+        }
+
+        .buttonPrimary {
+            display: flex;
+            align-items: center;
+            padding: 5px 16px;
+            margin-left: 16px;
+            border-radius: 4px;
+            background-color: $oro-primary-green-color;
+            font-size: 14px;
+            line-height: 1.57;
+            color: $pure-white-color;
+            border: solid 1px $oro-primary-green-color;
+
+            svg {
+                margin-right: 10px;
+            }
+
+            &.danger {
+                background-color: $oro-error-red-color;
+                border: solid 1px $oro-error-red-color;
+            }
+
+            &.newDanger {
+                background-color: var(--warm-stat-chilli-regular);
+                border: solid 1px var(--warm-stat-chilli-regular);
+            }
+
+            &:disabled {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .seperator {
+        padding-top: 16px !important;
+        margin-top: 10px !important;
+        border-top: 1px solid var(--warm-neutral-mid-400) !important;
+      }
+}

@@ -1,0 +1,168 @@
+@import './../branding';
+
+.quotes {
+    position: relative;
+
+    &Action {
+        display: flex;
+        justify-content: flex-end;
+        &Continue {
+            padding: 8px 16px !important;
+            max-width: 116px;
+            height: 40px;
+            font-size: 16px !important;
+            line-height: 24px;
+        }
+    }
+
+    &Heading {
+        font-family: "Inter";
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.57;
+        color: $dark-color;
+    }
+
+    &SecondaryHeading {
+        margin-bottom: 12px;
+        font-family: "Inter";
+        font-size: 16px;
+        line-height: 1.57;
+        color: $dark-gray-color;
+    }
+
+    &SelectedFiles {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 627px;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 24px 26px;
+        border-radius: 8px;
+        border: dashed 1px $gray-color-2;
+        background-color: $green-light-highlight-background-color;
+        &GivenName {
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 1.57;
+            color: $dark-light-color;
+        }
+
+        &ActualName {
+            display: flex;
+            align-items: center;
+            font-family: "Inter";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.29;
+            color: $link-blue-color;
+
+            svg {
+                margin-left: 8px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &AdditionalFiles {
+        margin-bottom: 15px; 
+    }
+
+    &Proposal {
+        display: flex;
+        align-items: center;
+        max-width: 627px;
+        width: 100%;
+        height: 69px;
+        padding: 20px 25px;
+        margin-bottom: 45px;
+        border-radius: 8px;
+        border: dashed 1px $gray-color-2;
+        cursor: pointer;
+
+        span {
+            margin-left: 16px;
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 1.57;
+            color: $dark-light-color;
+        }
+    }
+
+    &AdditionalDoc {
+        margin-bottom: 156px;
+        &Header {
+            margin-bottom: 12px;
+            font-family: "Inter";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.57;
+            color: $dark-color;
+        }
+
+        &Upload {
+            display: flex;
+            align-items: center;
+            max-width: 627px;
+            width: 100%;
+            height: 69px;
+            padding: 20px 25px;
+            margin-bottom: 45px;
+            border-radius: 8px;
+            border: dashed 1px $gray-color-2;
+            cursor: pointer;
+
+            span {
+                margin-left: 16px;
+                font-family: "Inter";
+                font-size: 14px;
+                line-height: 1.57;
+                color: $dark-light-color;
+            }
+        }
+    }
+
+    &FileUploadContainer {
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    &SpinnerWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 627px;
+        width: 100%;
+        height: 69px;
+        margin-bottom: 15px;
+        padding: 26px 22px 23px;
+        border-radius: 8px;
+        border: dashed 1px #d6d6d6;
+
+        &Uploading {
+            display: flex;
+            align-items: center;
+        }
+
+        &Cancel {
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 1.57;
+            color: #2d8db7;
+            cursor: pointer;
+        }
+
+        &Text {
+            margin-left: 11px;
+            font-family: "Inter";
+            font-size: 14px;
+            line-height: 1.57;
+            color: #262626;
+        }
+    }
+}

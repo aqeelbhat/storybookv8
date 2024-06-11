@@ -1,0 +1,39 @@
+@import 'src/lib/_font.scss';
+
+//>> PO Status
+.status {
+    display: inline-block;
+    padding: 2px 8px;
+    margin-left: 8px;
+    background: var(--warm-neutral-light-500);
+    border-radius: 4px;
+    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+}
+
+.draft {
+    background: var(--warm-neutral-light-500);
+}
+
+.inApproval {
+    background: var(--warm-stat-berry-lite);
+}
+
+.approved {
+    background: var(--warm-misc-lite-lime);
+}
+
+.pendingReceipt {
+    background: var(--warm-stat-honey-lite);
+}
+
+.partiallyReceived {
+    background: var(--warm-stat-honey-lite);
+}
+
+.pendingBill {
+    background: var(--warm-stat-honey-lite);
+}
+
+.closed {
+    background: var(--warm-stat-chilli-lite);
+}

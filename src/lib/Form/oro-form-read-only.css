@@ -1,0 +1,1158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600&display=swap');
+
+:root{
+  --form-width: 100%;
+  --form-padding: 0;
+  --column-padding: 20px;
+  /* // --column-width: calc((var(--form-width - (2 * --form-padding)) - (var(--column-padding) * 4)) / 5); */
+  --column-width: calc(((var(--form-width) - (2 * var(--form-padding)) - (var(--column-padding) * 4))) / 5)
+}
+
+.col1 {
+        width: var(--column-width)
+    }
+
+.col2 {
+    width: calc((var(--column-width) * 2) + var(--column-padding))
+}
+
+.col3 {
+    width: calc((var(--column-width) * 3) + (var(--column-padding) * 2))
+}
+
+.col4 {
+    width: calc((var(--column-width) * 4) + (var(--column-padding) * 3))
+}
+
+.col5 {
+    width: calc((var(--column-width) * 5) + (var(--column-padding) * 4))
+}
+
+.oroFormReadOnly:last-child{
+  padding-bottom: 24px;
+}
+
+.oroFormReadOnly > .pageTitle {
+  display: none;
+  padding-bottom: 36px;
+
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  color: var(--coco-charcoal);
+}
+
+.marginBottom12 {
+  margin-bottom: 12px;
+}
+
+.oroFormReadOnly > .formFields {
+  padding: 0px;
+  margin-bottom: 24px;
+}
+
+.oroFormReadOnly > .formFields:last-child {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+.oroFormReadOnly > .listHeader {
+  padding: 0 10px;
+  margin-bottom: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--panel-font-color);
+}
+
+.oroFormReadOnly > .listItem {
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--always-black-font-color);
+}
+
+.oroFormReadOnly > .listHeader > .number {
+  width: 24px;
+}
+.oroFormReadOnly > .listHeader > .name {
+  flex: 1;
+}
+.oroFormReadOnly > .listHeader > .qty {
+  width: 70px;
+}
+.oroFormReadOnly > .listHeader > .desc {
+  width: 280px;
+}
+.oroFormReadOnly > .listHeader > .price {
+  width: 110px;
+}
+.oroFormReadOnly > .listHeader > .billing {
+  width: 100px;
+}
+
+.oroFormReadOnly > .listItem > line > .number {
+  width: 24px;
+  color: var(--panel-font-color);
+}
+.oroFormReadOnly > .listItem > line > .name {
+  flex: 1;
+}
+.oroFormReadOnly > .listItem > line > .qty {
+  width: 70px;
+}
+.oroFormReadOnly > .listItem > line > .desc {
+  width: 280px;
+}
+.oroFormReadOnly > .listItem > line > .price {
+  width: 110px;
+}
+.oroFormReadOnly > .listItem > line > .billing {
+  width: 100px;
+}
+
+.oroFormReadOnly > .listItem {
+  border-top: 1px solid #F1F0F0;
+}
+
+.oroFormReadOnly > .listItem.last {
+  border-bottom: 1px solid #F1F0F0;
+  margin-bottom: 18px;
+}
+
+.oroFormReadOnly > .listItem > .line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.oroFormReadOnly > .listItem > .line.description {
+  margin-left: 32px;
+  font-size: 12px;
+}
+
+.formFieldsNP {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.14;
+  color: var(--warm-neutral-shade-200);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+.oroFormReadOnly > .formFields > .keyValuePair.lineItems {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair:last-child {
+  margin-bottom: 0px;
+}
+
+.oroFormReadOnly.singleColumn > .formFields > .keyValuePair {
+  flex-direction: column;
+  gap: 0px;
+}
+
+.oroFormReadOnly.singleColumn > .formFields > .keyValuePair .value {
+  min-width: 511px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .label {
+  display: flex;
+  flex: 1;
+  width: calc((var(--column-width) * 2) + var(--column-padding));
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--warm-neutral-shade-300);
+  margin-right: 32px;
+}
+.oroFormReadOnly > .formFields > .keyValuePair.lineItems > .label {
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: var(--warm-neutral-shade-400);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value.preWrapDescription {
+  white-space: pre-wrap;
+  display: block !important;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .multiValueInline {
+  display: flex;
+  gap: 12px;
+  flex: 2;
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--coco-charcoal);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc((calc(var(--column-width)) * 4) + (var(--column-padding) * 3));
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--warm-neutral-shade-500);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value.diffValue {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  color: var(--warm-neutral-shade-500);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value span.updatedValue {
+  color: var(--warm-neutral-shade-500);
+  background: var(--warm-stat-honey-lite);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value span.oldValue {
+  font-size: 14px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--warm-neutral-shade-200);
+  text-decoration: line-through;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .supplierCard {
+  flex: 2;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value .validation {
+  padding-left: 8px;
+  margin-left: 8px;
+  border-left: 1px solid var(--warm-neutral-mid-400);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value .reverify {
+  padding-left: 8px;
+  margin-left: 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--warm-prime-azure);
+  border-left: 1px solid var(--warm-neutral-mid-400);
+  cursor: pointer;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value .validation .tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--warm-neutral-shade-500);
+  background-color: var(--warm-stat-honey-bg);
+  border-radius: 5px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value .ocredTag {
+  display: flex;
+  gap: 4px;
+  padding: 3px 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--warm-neutral-shade-500);
+  background-color: var(--warm-stat-honey-lite);
+  border-radius: 5px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value .ocredTag svg {
+  flex-shrink: 0;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value .ocredTag strong {
+  font-weight: 500;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value .validation .greenTag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--warm-neutral-shade-500);
+  background-color: var(--warm-stat-mint-light);
+  border-radius: 5px;
+}
+
+.sentence {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--warm-prime-chalk);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value.multiline {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .separatedItems {
+  margin-left: -8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .separatedItems .item {
+    padding: 0 8px;
+    border-right: 1px solid var(--dark-border-divider-color);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .separatedItems .item:last-of-type {
+  border: none;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .separatedItems .item span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--warm-prime-azure);
+  cursor: pointer;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .attachmentList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* align-items: center; */
+  grid-gap: 12px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .attachmentList .attachmentBox {
+    min-width: 152px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .value .showHide {
+  margin-left: 12px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .valuePrevious {
+  flex: 2;
+
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--darker-yellow-font-color);
+  text-decoration: line-through;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair .valueCurrent {
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--warm-neutral-shade-300);
+}
+
+.oroFormReadOnly > .sectionTitle {
+  padding: 24px 10px 16px 0px;
+  border-top: 1px solid var(--coco-neutral-mid-200);
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--warm-neutral-shade-600);
+}
+
+.oroFormReadOnly > .sectionTitle:first-child {
+  border-top: none;
+  padding-top: 0px;
+}
+
+.oroFormReadOnly > .fieldTitle {
+  padding: 5px 10px;
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--panel-font-color);
+}
+
+.oroFormReadOnly > .listTitle {
+  margin-top: 12px;
+  margin-bottom: 4px;
+  padding: 5px 10px;
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--panel-font-color);
+}
+
+.oroFormReadOnly > .sectionTitle.sectionTitleNoBackground {
+  background: none;
+}
+
+.oroFormReadOnly > .summary {
+
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--primary-checkbox-label-font-color);
+}
+
+@media (max-width: 576px) {
+  .oroFormReadOnly > .pageTitle {
+    padding-bottom: 24px;
+  }
+
+  .oroFormReadOnly > .formFields > .keyValuePair {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 5px 0;
+  }
+}
+
+
+
+#bankInfoUpdateReadOnlyForm > .oroFormReadOnly {
+  border-top: 1px solid var(--warm-neutral-mid-600);
+
+}
+
+#bankInfoUpdateReadOnlyForm > .oroFormReadOnly:first-child {
+  border-top: none;
+
+}
+
+#bankInfoUpdateReadOnlyForm > .oroFormReadOnly > .sectionTitle {
+  padding: 16px 10px 16px 0px;
+}
+
+#bankInfoUpdateReadOnlyForm > .oroFormReadOnly:first-child > .sectionTitle {
+  padding-top: 0px;
+}
+
+#bankInfoUpdateReadOnlyForm > .oroFormReadOnly:last-child > .formFields {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+#bankInfoUpdateReadOnlyForm > .oroFormReadOnly > .formFields {
+  padding: 0px;
+  margin-bottom: 16px;
+}
+
+#changePOReadOnlyForm.oroFormReadOnly .sectionTitle {
+  padding: 16px 0 8px;
+  border-top: 1px dashed var(--warm-neutral-mid-300);
+}
+
+#changePOReadOnlyForm.oroFormReadOnly .sectionTitle:first-child {
+  border-top: none;
+  padding: 0px;
+}
+
+.attachmentSection {
+  display: flex;
+  align-items: center;
+  max-width: 511px;
+  width: 100%;
+  min-height: 58px;
+  padding: 8px 12px;
+  margin-bottom: 11px;
+  border-radius: 4px;
+  border: 1px solid var(--primary-vendor-form-background-color);
+  background-color: var(--primary-vendor-form-background-color);
+}
+
+.attachmentSection:hover .attachmentSectionInfoDownload {
+  display: flex;
+  align-items: center;
+}
+
+.oroFormReadOnly > .attachmentSection:hover {
+  border-color: rgba(125, 151, 181, 0.4);
+  background-color: rgba(221, 233, 242, 0.3);
+}
+
+.attachmentSection:hover .attachmentSectionInfoDate {
+  display: none;
+}
+
+.oroFormReadOnly .fileIcon,
+.oroFormReadOnly .fileIcon svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.attachmentSectionInfo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: 8px;
+}
+
+.attachmentSectionInfo svg {
+  flex-shrink: 0;
+}
+
+.attachmentSectionInfoDownload {
+  display: none;
+}
+
+.attachmentSectionInfoName {
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+}
+
+.attachmentSectionInfoName h3 {
+  margin-bottom: 2px;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  color: var(--coco-charcoal);
+  line-break: anywhere;
+}
+
+.attachmentSectionInfoName span {
+  display: inline-block;
+  height: 20px;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  color: var(--warm-neutral-shade-200);
+  line-break: anywhere;
+}
+
+.attachmentSectionInfoDate {
+  flex-shrink: 0;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.67;
+  color: var(--warm-neutral-shade-200);
+}
+
+.attachmentSectionInfoDownloadLabel {
+  display: flex;
+}
+.attachmentSectionInfoDownloadNoLabel {
+  display: none !important;
+}
+
+@media (max-width: 500px) {
+  .attachmentSectionInfoDownloadLabel {
+    display: none;
+  }
+  .attachmentSectionInfoDownloadNoLabel, .attachmentSectionInfoDownload {
+    display: flex !important;
+  }
+}
+
+.supplier {
+  margin-bottom: 16px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .supplierInfoSection {
+  width: 62%;
+  min-height: 248px;
+  padding: 24px 24px 34px;
+  border: 1px solid var(--coco-neutral-mid-200);
+  background-color: var(--coco-chalk);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .supplierStatusSection {
+  width: 38%;
+  min-height: 248px;
+  padding: 24px;
+  border: 1px solid var(--coco-neutral-mid-200);
+  background-color: var(--primary-vendor-form-background-color);
+}
+
+.supplierInfoSection > .supplierInfoSectionSubsidiaries {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--warm-neutral-mid-500);
+}
+
+.supplierInfoSectionSubsidiaries > .supplierInfoSectionSubsidiariesText {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.29;
+  color: var(--coco-charcoal);
+}
+.supplierInfoSectionSubsidiaries > .supplierInfoSectionSubsidiariesText > span {
+  font-weight: normal;
+}
+
+.keyValuePair > .supplierInfoSection > .supplierInfoDetails {
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--warm-neutral-mid-500);
+}
+
+.supplierInfoDetails  > .supplierInfoDetailsContact {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.supplierInfoDetailsContact > .supplierInfoDetailsContactItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 8px;
+  margin-top: 8px;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: var(--primary-vendor-form-background-color);
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--coco-charcoal);
+  line-break: anywhere;
+  text-decoration: none;
+}
+
+.supplierInfoDetailsContact > .supplierInfoDetailsContactItem > a {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--coco-charcoal);
+  line-break: anywhere;
+  text-decoration: none;
+}
+
+.supplierInfoSection > .supplierInfoDetails > .supplierInfoDetailsAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.supplierInfoSection > .supplierCrm {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.supplierInfoSection > .supplierCrm > label {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.14;
+  color: var(--coco-charcoal);
+}
+
+.supplierInfoSection > .supplierCrm > span {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.14;
+  color: var(--warm-neutral-shade-200);
+}
+
+.supplierInfoDetails > .supplierInfoDetailsAll > .supplierInfoDetailsNameAddress {
+  display: flex;
+  flex-direction: column;
+}
+
+.supplierInfoDetailsNameAddress > .supplierInfoName {
+  margin-bottom: 4px;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.17;
+  color: var(--always-black-font-color);
+}
+
+.supplierInfoDetailsNameAddress > .supplierInfoAddress {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  line-height: 1.57;
+  color: var(--coco-neutral-shade-500);
+  margin-top: 8px;
+}
+
+.supplierInfoDetailsAll > .supplierInfoLogo {
+  width: 64px;
+  height: 64px;
+  margin-left: 16px;
+}
+
+.supplierInfoDetailsAll > .supplierInfoLogo > img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.supplierInfoSection > .supplierInfoSectionLegalDocs {
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--warm-neutral-mid-500);
+}
+
+.supplierInfoSectionTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.14;
+  color: var(--coco-charcoal);
+}
+
+.supplierInfoSectionLegalDocs .attachmentSection {
+  max-width: 100%;
+  min-height: 0;
+  margin-bottom: 0;
+  padding: 8px;
+  background-color: transparent;
+  border: solid 1px transparent;
+}
+
+.supplierInfoSectionLegalDocs .attachmentSection:hover {
+  border-radius: 4px;
+  border: solid 1px rgba(125, 151, 181, 0.4);
+  background-color: rgba(221, 233, 242, 0.3);
+}
+
+.supplierInfoSectionLegalDocs .attachmentSection svg:hover {
+  stroke: var(--primary-goback-link-font-color);
+}
+
+.supplierInfoSectionLegalDocs .supplierInfoSectionLegalDocsExpiration {
+  display: flex;
+  align-items: center;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  line-height: 1.57;
+  color: var(--warm-neutral-shade-200);
+}
+
+.supplierInfoSectionLegalDocs .supplierInfoSectionLegalDocsExpiration svg {
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair.supplier {
+  align-items: unset;
+  max-width: 945px;
+  width: 100%;
+}
+
+.supplierInfoSectionContacts {
+  display: flex;
+  margin-top: 16px;
+}
+
+.supplierInfoSectionContacts > .supplierInfoSectionContactsPic {
+  width: 64px;
+  height: 64px;
+  padding: 16px;
+  margin-right: 13px;
+  border-radius: 50%;
+  background-color: var(--warm-neutral-mid-500);
+}
+
+.supplierInfoSectionContacts > .supplierInfoSectionContactsDetail h3 {
+  margin-bottom: 4px;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--coco-charcoal);
+}
+
+.supplierInfoSectionContacts > .supplierInfoSectionContactsDetail > .supplierInfoSectionContactsDetailRole {
+  margin-bottom: 8px;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--coco-charcoal);
+}
+
+.supplierInfoSectionContacts > .supplierInfoSectionContactsDetail > .supplierInfoSectionContactsDetailPhone {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.supplierInfoSectionContacts > .supplierInfoSectionContactsDetail > .supplierInfoSectionContactsDetailPhone span {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--coco-charcoal);
+  line-break: anywhere;
+}
+
+.supplierInfoSectionContacts > .supplierInfoSectionContactsDetail > .supplierInfoSectionContactsDetailPhone span svg {
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+
+.supplierStatusSection .supplierStatusSectionStatus {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed rgba(125, 151, 181, 0.3);
+}
+
+.supplierStatusSection .supplierStatusSectionStatus > div {
+  display: flex;
+  align-items: baseline;
+  margin-left: 12px;
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+  color: var(--primary-checkbox-label-font-color);
+}
+
+.supplierStatusSection .supplierStatusSectionStatus > div > span {
+  margin-left: 4px;
+}
+
+.active {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+  color: var(--dark-green-font-color);
+}
+
+.new {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+  color: var(--dark-yellow-font-color);
+}
+
+.require {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+  color: var(--primary-blue-grays-font-color);
+}
+
+.supplierStatusSection .supplierStatusSectionDesc,
+.supplierStatusSection .supplierStatusSectionId {
+  font-family: var(--primary-16px-below-font-family);
+  font-size: 14px;
+  line-height: 1.57;
+  color: var(--primary-checkbox-label-font-color);
+}
+
+.supplierStatusSection .supplierStatusSectionId {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  margin-bottom: 8px;
+  overflow: hidden;
+  line-break: anywhere;
+}
+
+.supplierStatusSection .supplierStatusSectionId span {
+  font-weight: 600;
+}
+
+.complianceFormReadOnly > .formTitle {
+  padding-bottom: 16px;
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  color: var(--coco-charcoal);
+}
+
+.complianceFormReadOnly > .section {
+  display: flex;
+  flex-direction: column;
+}
+
+.complianceFormReadOnly > .section > label{
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.39;
+}
+
+.complianceFormReadOnly > .section > .ques {
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.complianceFormReadOnly > .section > .ques > .para {
+  display: flex;
+}
+
+.complianceFormReadOnly > .section > .ques > .para > .num {
+  display: block;
+  padding-right: 16px;
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.complianceFormReadOnly > .section > .ques > .para > p {
+  display: inline;
+  padding-right: 32px;
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--coco-charcoal);
+}
+
+.complianceFormReadOnly > .section > .ques > .para > p > .eg {
+  display: block;
+  font-family: var(--primary-16px-below-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--dark-light-2-gray-font-color);
+}
+
+.complianceFormReadOnly > .section > .ques > .yes {
+  width: 36px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  color: var(--coco-chalk);
+  background: var(--warm-stat-mint-mid);
+  border-radius: 4px;
+}
+
+.complianceFormReadOnly > .section > .ques > .no {
+  width: 36px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  color: var(--coco-chalk);
+  background: var(--darker-yellow-font-color);
+  border-radius: 4px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value.softwareList {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  grid-gap: 12px;
+  margin-bottom: 8px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  height: 100%;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .profile img {
+  width: 100%;
+  height: 100%;
+  max-width: 40px;
+  max-height: 48px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  grid-gap: 6px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info .row.attachmentWrapper {
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info .row .name {
+  width: fit-content;
+  flex: 1;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--warm-neutral-shade-500);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard.contractCard .info .row .name {
+  flex: none;
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info .row .name .preferredTag {
+  padding: 4px 8px;
+  margin-left: 8px;
+  background: var(--warm-stat-honey-lite);
+  border-radius: 4px;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--warm-neutral-shade-500);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info .row .contractId {
+  padding: 2px 6px;
+  width: fit-content;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--warm-neutral-shade-500);
+  border-left: 1px solid var(--warm-neutral-shade-200);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info .row .contractValue {
+  margin-right: 8px;
+  width: fit-content;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--warm-neutral-shade-500);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info .row .property {
+  padding-right: 8px;
+  width: fit-content;
+  border-right: 1px solid var(--warm-neutral-mid-400);
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--warm-neutral-shade-200);
+}
+
+.oroFormReadOnly > .formFields > .keyValuePair > .value > .softwareCard .info .row .property:last-of-type {
+  padding-right: 0;
+  border-right: none;
+}
+
+@media (max-width: 800px) {
+  .oroFormReadOnly > .formFields > .keyValuePair > .supplierInfoSection,
+  .oroFormReadOnly > .formFields > .keyValuePair > .supplierStatusSection {
+    width: 100%;
+  }
+
+  .supplier {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .supplierInfoSectionContacts {
+    flex-wrap: wrap;
+  }
+  .supplierInfoSectionContactsPic {
+    margin-bottom: 12px;
+  }
+  .supplierInfoSectionTitle {
+    flex-wrap: wrap;
+  }
+  .formFieldsNP {
+    margin-top: 8px;
+  }
+}

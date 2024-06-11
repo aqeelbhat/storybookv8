@@ -1,0 +1,122 @@
+/************************************************************
+ * Copyright (c) 2024 Orolabs.ai to Present
+ * Author: Manoj Kumar
+ ************************************************************/
+@import 'src/lib/_font.scss';
+
+$dot-color : var(--warm-neutral-shade-300);
+$dot-size: 4px;
+
+.responseLabel {
+  @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-500));
+  padding-bottom: 10px;
+}
+.stage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+
+/**
+ * ==============================================
+ * Dot Typing
+ * ==============================================
+ */
+
+.dot_typing {
+  position: relative;
+  left: -9999px;
+  bottom: 4px;
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: calc($dot-size/2);
+  background-color: $dot-color;
+  color: $dot-color;
+  box-shadow: 9984px 0 0 0 $dot-color, 9999px 0 0 0 $dot-color, 10014px 0 0 0 $dot-color;
+  animation: dot-typing 1.5s infinite linear;
+}
+
+@keyframes dot-typing {
+  0% {
+    box-shadow: 9984px 0 0 0 $dot-color, 9999px 0 0 0 $dot-color, 10014px 0 0 0 $dot-color;
+  }
+
+  16.667% {
+    box-shadow: 9984px -10px 0 0 $dot-color, 9999px 0 0 0 $dot-color, 10014px 0 0 0 $dot-color;
+  }
+
+  33.333% {
+    box-shadow: 9984px 0 0 0 $dot-color, 9999px 0 0 0 $dot-color, 10014px 0 0 0 $dot-color;
+  }
+
+  50% {
+    box-shadow: 9984px 0 0 0 $dot-color, 9999px -10px 0 0 $dot-color, 10014px 0 0 0 $dot-color;
+  }
+
+  66.667% {
+    box-shadow: 9984px 0 0 0 $dot-color, 9999px 0 0 0 $dot-color, 10014px 0 0 0 $dot-color;
+  }
+
+  83.333% {
+    box-shadow: 9984px 0 0 0 $dot-color, 9999px 0 0 0 $dot-color, 10014px -10px 0 0 $dot-color;
+  }
+
+  100% {
+    box-shadow: 9984px 0 0 0 $dot-color, 9999px 0 0 0 $dot-color, 10014px 0 0 0 $dot-color;
+  }
+}
+
+
+/**
+ * ==============================================
+ * Dot Flashing
+ * ==============================================
+ */
+ .dot_flashing {
+  position: relative;
+  bottom: 4px;
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: calc($dot-size/2);
+  background-color: $dot-color;
+  color: $dot-color;
+  animation: dot_flashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+.dot_flashing::before, .dot_flashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot_flashing::before {
+  left: -10px;
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: calc($dot-size/2);
+  background-color: $dot-color;
+  color: $dot-color;
+  animation: dot_flashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+.dot_flashing::after {
+  left: 10px;
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: calc($dot-size/2);
+  background-color: $dot-color;
+  color: $dot-color;
+  animation: dot_flashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dot_flashing {
+  0% {
+    background-color: $dot-color;
+  }
+  50%, 100% {
+    background-color: rgba(152, 128, 255, 0.2);
+  }
+}

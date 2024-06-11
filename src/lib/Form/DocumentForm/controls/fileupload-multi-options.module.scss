@@ -1,0 +1,60 @@
+@import './../../../branding';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 22px;
+  border: 1px dashed $gray-color;
+  border-radius: 8px;
+}
+
+.text {
+  font-family: $primary-16px-below-font-family;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: $dark-light-color;
+}
+
+.link {
+  font-family: $primary-16px-below-font-family;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: $link-blue-color;
+  cursor: pointer;
+}
+
+.ul {
+  display: flex;
+  gap: 24px;
+
+  .li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+  }
+}
+
+.circle {
+  &Box {
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: $white-smoke-color;
+  }
+
+  &Text {
+    font-family: $primary-16px-below-font-family;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $panel-font-color;
+  }
+}

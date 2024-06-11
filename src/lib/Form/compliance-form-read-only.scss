@@ -1,0 +1,93 @@
+.complianceFormReadOnly > .formTitle {
+    padding-bottom: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    color: #283041;
+}
+
+.complianceFormReadOnly > .section {
+    display: flex;
+    flex-direction: column;
+}
+
+.complianceFormReadOnly > .section > label{
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.39;
+}
+
+.complianceFormReadOnly > .section > .ques {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.complianceFormReadOnly.singleColumn > .section {
+    flex-direction: column;
+    gap: 0px;
+}
+
+.complianceFormReadOnly > .section > .ques > .para {
+    display: flex;
+}
+
+.complianceFormReadOnly > .section > .ques > .para > .num {
+    display: block;
+    padding-right: 16px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.complianceFormReadOnly > .section > .ques > .para > p {
+    display: inline;
+    padding-right: 32px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #283041;
+}
+
+.complianceFormReadOnly > .section > .ques > .para > p > .eg {
+    display: block;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #8C8C8C;
+}
+
+.complianceFormReadOnly > .section > .ques > .yes {
+    width: 36px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    color: #FFFFFF;
+    background: #82C146;
+    border-radius: 4px;
+}
+
+.complianceFormReadOnly > .section > .ques > .no {
+    width: 36px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    color: #FFFFFF;
+    background: #D46B08;
+    border-radius: 4px;
+}

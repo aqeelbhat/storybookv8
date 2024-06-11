@@ -1,0 +1,320 @@
+@import './../../branding';
+@import './../../font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+@mixin ColAction {
+  width: 30px;
+  max-width: 30px;
+  min-width: 30px;
+  padding: 12px 6px;
+  position: relative;
+  display: flex;
+  align-items: start;
+}
+
+// START
+// flex
+.flexCol {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.flexGrow {
+  flex-grow: 1;
+}
+
+// show/hide
+.hide {
+  display: none;
+}
+
+.scrollbar {
+  overflow: auto;
+}
+
+// For outer main table
+.table {
+  min-width: 100%;
+  width: fit-content;
+  box-sizing: border-box;
+  border: 1px solid var(--warm-neutral-mid-300);
+  border-radius: 4px;
+  background: var(--always-white-color);
+
+  .td {
+    width: 100px;
+    border-left: 1px solid var(--warm-neutral-mid-300);
+
+    &:first-child {
+      border-left-width: 0px;
+    }
+
+    &.error {
+      background: var(--warm-stat-chilli-bg);
+    }
+
+    &.noLB {
+      border-left-width: 0px;
+    }
+
+  }
+
+  .th {
+    position: relative;
+    background: var(--warm-neutral-light-200);
+    text-transform: uppercase;
+    display: flex;
+    @include FONTSTYLE_BODY_SB2(20px, var(--warm-neutral-shade-200));
+    border-bottom: 1px solid var(--warm-neutral-mid-300);
+
+    .td {
+      padding: 10px 8px;
+      overflow-wrap: break-word;
+    }
+
+    .Col_Action {
+      @include ColAction;
+      cursor: default;
+    }
+
+    .Col_Compare {
+      position: absolute;
+      padding: 0;
+      right: 0;
+      width: unset;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .tbody {
+    flex-direction: column;
+    display: flex;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+  }
+
+  .tr {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--warm-neutral-mid-300);
+
+    &.noBtmBorder {
+      border-bottom-width: 0px;
+    }
+
+    & .menuDotsWrap {
+      position: relative;
+      line-height: 1px;
+      display: inline-block;
+    }
+
+    .menuDots {
+      cursor: pointer;
+      stroke: var(--warm-neutral-mid-600);
+
+      &:hover {
+        stroke: var(--warm-neutral-shade-400);
+      }
+    }
+
+    &.highlightRow {
+      &:hover {
+        svg {
+          stroke: var(--warm-neutral-shade-600);
+        }
+
+        .maximize {
+          svg {
+            stroke: var(--warm-neutral-shade-600);
+          }
+        }
+      }
+    }
+  }
+
+  .Col {
+
+    &_Action {
+      @include ColAction;
+    }
+
+    &_Name {
+      flex: 1px;
+      min-width: 120px;
+      width: initial;
+      // position: relative;
+
+      >div {
+        height: 100%;
+      }
+
+      .maximize {
+        padding: 9px 6px 0px 6px;
+        display: flex;
+        align-items: start;
+
+        .maxIcon {
+          svg {
+            stroke: var(--warm-neutral-mid-600);
+            cursor: pointer;
+
+            &:hover {
+              stroke: var(--warm-neutral-shade-400);
+            }
+          }
+        }
+
+        .maxBox {
+          line-height: 10px;
+          position: relative;
+          padding: 4px;
+          cursor: pointer;
+
+          &.rowAlert {
+            // border: 1px solid red;
+            background-color: var(--warm-stat-chilli-bg);
+            border-radius: 4px;
+          }
+
+          .alertIcon {
+            position: absolute;
+            line-height: 10px;
+            right: 1px;
+            top: 13px;
+
+            svg {
+              stroke: var(--always-white-color);
+              fill: var(--warm-stat-chilli-regular);
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
+  .addItemRow {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+    .divide {
+      margin: 12px 10px;
+      border-left: 1px solid var(--warm-neutral-mid-300);
+      margin-left: 20px;
+    }
+
+    button {
+      padding: 10px 0px;
+      color: var(--warm-neutral-shade-200);
+      margin-left: 10px;
+
+      &:hover {
+        color: var(--warm-prime-azure);
+      }
+    }
+
+    &.zeroItems {
+      button {
+        color: var(--warm-prime-azure);
+      }
+    }
+  }
+
+  .footer {
+    border-right: 1px solid var(--warm-neut-mid-300, #E6E6E6);
+    background: var(--warm-stat-mint-bg-2);
+    display: flex;
+    padding: 12px 50px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-self: stretch;
+
+    &.readOnly {
+      padding: 12px 30px;
+    }
+  }
+}
+
+// main error message
+.validationError {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8px;
+
+  @include FONTSTYLE_BODY_R1($color: var(--warm-stat-chilli-regular));
+
+  img {
+    margin-right: 5px;
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+    margin-bottom: 1px;
+  }
+}
+
+// menu backdrop
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  cursor: default;
+  z-index: 1;
+}
+
+// for Inner table
+.formCell {
+  width: 100%;
+  //background: var(--warm-stat-mint-bg-2);
+  border: 1px solid var(--warm-stat-mint-regular);
+
+  & .itemNameWrap {
+    padding: 10px 16px;
+  }
+
+  & .itemName {
+    @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-500))
+  }
+}
+
+.childrenCount {
+  background-color: var(--warm-stat-mint-lite);
+  border-radius: 4px;
+  margin: 9px 6px;
+  margin-right:0px;
+  width: 21px;
+  height: 22px;
+  text-align: center;
+  line-height: 22px;
+}
+
+// NarrowView - best suited for around 650px / 700px. case - email invoicing output review form
+.mediumView {
+  .table {
+    .td {
+      width: 96px;
+    }
+  }
+}
+
+// SlimView - best suited for less than 650px
+.smallView {}

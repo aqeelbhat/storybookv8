@@ -1,0 +1,200 @@
+@import './../branding';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    // &5 {
+    //     width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    // }
+
+    // &6 {
+    //     width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    // }
+}
+
+.measureDetailsForm {
+  display: flex;
+  flex-direction: column;
+
+  width: $form-width;
+  padding: $form-padding;
+  
+  background-color: $pure-white-color;
+  border-radius: 8px;
+
+  font-family: "Inter";
+
+  .formTitle {
+    margin-bottom: 8px;
+    font-family: $primary-16px-below-font-family;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: $dark-color;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dotted $gray-color-2;
+
+    .title {
+        margin: 0 -16px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: $dark-color;
+
+        padding: 16px;
+        border-radius: 8px;
+    }
+    
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 24px;
+
+        .item {
+            margin-right: $column-padding;
+
+            &.flex {
+                flex: 1;
+            }
+
+            &:last-child {
+                margin-right: 0
+            }
+
+            &.action {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            textarea {
+                height: 196px;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: none
+    }
+  }
+
+  .checkboxPadding {
+    padding-bottom: 10px !important;
+  }
+}
+
+.measureDetailsFormReadOnly {
+    div, span {
+        font-family: $primary-16px-below-font-family;
+        font-size: 14px;
+        line-height: 22px;
+        color: $blue-gray-color;
+    }
+
+    .section {
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px dashed var(--coco-mid-600);
+
+        &:last-of-type {
+            border: none;
+            margin-bottom: 0;
+        }
+
+        .sectionTitle {
+            padding: 8px 0 4px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 16px;
+
+            .col {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+
+                .label {
+                    font-weight: 600;
+                    margin-bottom: 4px;
+                }
+
+                .value {
+                    &.descriptionWrapper {
+                        white-space: pre-wrap;
+            
+                        .descLabel {
+                            font-weight: 600;
+                        }
+                    }
+
+                    &.separatedItems {
+                        display: flex;
+
+                        .item {
+                            padding: 0 8px;
+                            border-right: 1px solid $semilight-gray-placeholder-color;
+            
+                            span {
+                                font-weight: 600;
+                                line-height: 20px;
+                                color: $link-blue-color-2;
+                                cursor: pointer;
+                            }
+
+                            &:first-of-type {
+                                padding-left: 0;
+                            }
+            
+                            &:last-of-type {
+                                border: none;
+                            }
+                        }
+                    }
+
+                    &.attachmentList {
+                        display: flex;
+                        align-items: center;
+                        grid-gap: 12px;
+                        padding: 4px 0;
+            
+                        .attachmentBox {
+                            min-width: 152px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

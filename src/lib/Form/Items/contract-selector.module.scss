@@ -1,0 +1,516 @@
+@import './../../branding';
+@import './../../font';
+
+.contractSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .label {
+    @include FONTSTYLE_BODY_M1 (20px, var(--warm-neutral-shade-400));
+  }
+
+  .validationError {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-stat-chilli-regular));
+
+    img {
+      height: 15px;
+      width: 15px;
+      vertical-align: middle;
+      margin-bottom: 1px;
+    }
+  }
+
+  .addContractBtn {
+    display: flex;
+    align-items: center;
+    grid-gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    background: var(--warm-neutral-light-200);
+    border: 1px dashed var(--warm-neutral-mid-600);
+    border-radius: 4px;
+    cursor: pointer;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+
+    &:hover {
+      background: var(--warm-neutral-light-500);
+    }
+  }
+
+  .contractCard {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 12px;
+    margin-bottom: 2px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--warm-neutral-mid-600);
+
+    &.clickable {
+      padding: 8px;
+      margin-bottom: 0;
+      border-radius: 4px;
+      grid-gap: 4px;
+      border: none;
+
+      &:hover {
+        background-color: var(--warm-neutral-light-500);
+      }
+
+      .info {
+        grid-gap: 4px;
+
+        .row {
+          .name {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+          }
+
+          .property {
+            @include FONTSTYLE_BODY_R2(20px, var(--warm-neutral-shade-300));
+          }
+        }
+      }
+    }
+
+    &.preferred {
+      border-color: var(--warm-stat-honey-regular);
+    }
+
+    .action {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 22px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      grid-gap: 6px;
+
+      .row {
+        display: flex;
+        align-items: center;
+        grid-gap: 8px;
+
+        .spread {
+          flex: 1;
+        }
+
+        &.ownerRow {
+          margin-top: 6px;
+          padding-top: 12px;
+          border-top: 1px dashed var(--warm-neutral-mid-400);
+        }
+
+        &.attachmentWrapper {
+          flex-wrap: wrap;
+          border-top: 1px dashed var(--warm-neutral-mid-400);
+          padding-top: 16px;
+          margin-top: 8px;
+        }
+
+        .name {
+          max-width: 288px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @include FONTSTYLE_SUBTITLE_M2(26px, var(--warm-neutral-shade-500));
+
+          .preferredTag {
+            padding: 4px 8px;
+            margin-left: 8px;
+            background: var(--warm-stat-honey-lite);
+            border-radius: 4px;
+            @include FONTSTYLE_BODY_M2(24px, var(--warm-neutral-shade-500));
+          }
+        }
+
+        .contractId {
+          padding: 2px 6px;
+          background: var(--warm-neutral-light-400);
+          border-radius: 4px;
+          @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+        }
+
+        .description {
+          overflow-y: hidden;
+          white-space: pre-wrap;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+        }
+
+        .contractValue {
+          margin-right: 8px;
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        }
+
+        .actions {
+          display: flex;
+          align-items: center;
+          grid-gap: 10px;
+
+          .btn {
+            cursor: pointer;
+          }
+        }
+
+        .property {
+          padding-right: 8px;
+          border-right: 1px solid var(--warm-neutral-mid-400);
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+
+          &:last-of-type {
+            padding-right: 0;
+            border-right: none;
+          }
+        }
+
+        .contract {
+          display: flex;
+          align-items: center;
+          grid-gap: 5px;
+
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+
+          .status {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+          }
+        }
+
+        .owner {
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        }
+
+        .email {
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+        }
+      }
+    }
+  }
+
+  
+}
+
+.manualContractForm {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+
+  padding: 20px;
+  background: var(--warm-stat-mint-bg-2);
+  border: 1px dashed var(--warm-stat-mint-mid);
+  border-radius: 8px;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600));
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 16px;
+
+    .manufacturerField {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      .selectedValue {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+
+        background-color: var(--warm-neutral-light-200);
+        border: 1px solid var(--warm-neutral-mid-600);
+        border-radius: 4px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--warm-neutral-shade-500);
+      }
+    }
+  }
+}
+
+.search {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--coco-chalk);
+  border: 1px solid var(--warm-neutral-mid-600);
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200));
+
+  padding: 0 8px;
+
+  &.visible {
+    display: flex;
+  }
+
+  &.focus {
+    border: 1px solid var(--warm-stat-mint-mid);
+  }
+
+  &:hover{
+    border: 1px solid var(--warm-neutral-shade-300);
+  }
+
+  &.error {
+    border-color: var(--warm-stat-chilli-regular);
+  }
+
+  input[type="text"] {
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  &:focus-within {
+    border: 1px solid var(--warm-stat-mint-mid);
+  }
+
+  .searchDropdown {
+    padding: 10px 12px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.optionsWrapper {
+  position: absolute;
+  top: 42px;
+  left: 0px;
+  width: 100%;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 8px 8px 0;
+  border-radius: 4px;
+  background-color: var(--coco-chalk);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+
+  .optionItem {
+    display: flex;
+    align-items: center;
+    grid-gap: 4px;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 2.57;
+    color: $dark-color;
+    cursor: default;
+
+    &:hover {
+      background: var(--warm-neutral-light-400);
+    }
+
+    &.selected {
+      background: var(--coco-berry-lite);
+    }
+
+    &.active {
+      background: var(--warm-neutral-light-400);
+    }
+
+    &.clear {
+      color: var(--coco-berry-burnt);
+      font-weight: 500;
+      div {
+        color: inherit;
+      }
+    }
+
+    &.hint {
+      padding-bottom: 8px;
+      color: var(--warm-neutral-shade-200);
+
+      &:hover {
+        background: unset;
+      }
+    }
+
+    &.addManualBtn {
+      position: sticky;
+      bottom: 0;
+      display: flex;
+      padding: 8px 12px;
+      margin: 0 -8px;
+      background: var(--coco-chalk);
+      border-top: 1px solid var(--warm-neutral-mid-400);
+
+      .btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        grid-gap: 6px;
+        padding: 6px 6px;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+        cursor: pointer;
+        border-radius: 4px;
+
+        &:hover {
+          background: var(--warm-neutral-light-400);
+        }
+      }
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(var(--coco-dark), 0);
+  cursor: default;
+}
+
+.contractSelector2 {
+  .fieldLabel {
+    padding-bottom: 6px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+  }
+
+  .addBtn {
+    width: 66%;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 12px;
+    padding: 12px 24px;
+    background: var(--warm-stat-mint-bg-2);
+    border: 1px dashed var(--warm-stat-mint-mid);
+    border-radius: 4px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+    cursor: pointer;
+  }
+}
+
+.contractCard2 {
+  display: flex;
+  grid-gap: 12px;
+  padding: 20px;
+  background: var(--warm-neutral-light-200);
+  border-radius: 8px; 
+
+  .expandBtn {
+    cursor: pointer;
+  }
+
+  .body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200));
+  
+    .header {
+      display: flex;
+      grid-gap: 24px;
+
+      .info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 4px;
+
+        .row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          grid-gap: 4px;
+
+          &.title {}
+
+          .prop {
+            display: flex;
+            align-items: center;
+            grid-gap: 4px;
+
+            .label {}
+
+            .value {
+              @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+            }
+
+            .code {
+              background: var(--warm-neutral-mid-200);
+              border-radius: 4px;
+              padding: 1px 6px;
+              margin-right: 2px;
+              @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+            }
+
+            .name {
+              @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+            }
+          }
+
+          .amount {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+          }
+
+          .status {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+          }
+        }
+      }
+
+      .deleteBtn {}
+    }
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      grid-gap: 12px;
+      padding-top: 8px;
+      padding-right: 36px;
+      border-top: 1px dashed var(--warm-neutral-mid-500);
+
+      .prop {
+        display: flex;
+        align-items: center;
+        grid-gap: 4px;
+
+        padding-right: 12px;
+        border-right: 1px solid var(--warm-neutral-mid-600);
+        &:last-of-type {
+          padding-right: none;
+          border-right: none;
+        }
+
+        .label {}
+
+        .value {
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        }
+      }
+
+      .verdict {
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+      }
+    }
+  }
+}

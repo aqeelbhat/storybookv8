@@ -1,0 +1,135 @@
+@import './../branding';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * 4)) / 5);
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    &5 {
+        width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    }
+}
+
+.purchaseForm {
+  display: flex;
+  flex-direction: column;
+
+  width: $form-width;
+  padding: $form-padding;
+  
+  background-color: $pure-white-color;
+  border-radius: 8px;
+
+  font-family: "Inter";
+
+  .toggleSwitch {
+    label {
+        span {
+            box-shadow: 0 0 0 1px $oro-primary-green-color, 0 0 1px $oro-primary-green-color !important;
+            background: $oro-primary-green-color !important;
+        }
+    }
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    border-bottom: 1px dotted $gray-color-2;
+
+    .title {
+        margin-bottom: 24px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.39;
+        color: $dark-color;
+    }
+    
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 24px;
+
+        .item {
+            margin-right: $column-padding;
+
+            &.flex {
+                flex: 1;
+            }
+
+            &:last-child {
+                margin-right: 0
+            }
+
+            &.action {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: none
+    }
+  }
+}
+
+@media (max-width: 1324px) and (min-width: 1099px) {
+    .purchaseForm {
+        .section {
+            .row {
+                flex-direction: column;
+                padding-bottom: 8px;
+
+                &.actionBar {
+                    align-items: flex-end;
+                }
+
+                .item {
+                    min-width: fit-content;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .purchaseForm {
+        .section {
+            .row {
+                flex-direction: column;
+                padding-bottom: 8px;
+
+                &.actionBar {
+                    align-items: flex-end;
+                }
+
+                .item {
+                    min-width: fit-content;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+    }
+}

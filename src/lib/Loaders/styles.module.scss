@@ -1,0 +1,22 @@
+@import './../branding';
+
+.spinner {
+    border: 2px solid $oro-primary-green-color;
+    border-radius: 50%;
+    border-top: 2px solid $oro-primary-green-color;
+    border-right: 2px solid $oro-primary-green-color;
+    border-bottom: 2px solid $oro-primary-green-color;
+    border-left: 2px solid $pure-white-color;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

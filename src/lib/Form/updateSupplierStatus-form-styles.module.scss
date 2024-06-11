@@ -1,0 +1,90 @@
+@import './../branding';
+@import './../_font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    &5 {
+        width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    }
+
+    &6 {
+        width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    }
+}
+
+.supplierStatusForm {
+    display: flex;
+    flex-direction: column;
+  
+    width: $form-width;
+    padding: $form-padding;
+    padding-top: 18px;
+    
+    background-color: $pure-white-color;
+    border-radius: 8px;
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 20px;
+        padding: 24px 0;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            .item {
+                margin-right: $column-padding;
+    
+                &.flex {
+                    flex: 1;
+                }
+    
+                &:last-child {
+                    margin-right: 0
+                }
+    
+                &.action {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .col {
+      &1, &2, &3, &4, &5, &6 {
+        width: 100%;
+      }
+    }
+  }

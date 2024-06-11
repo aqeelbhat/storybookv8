@@ -1,0 +1,747 @@
+@import './branding';
+@import './font';
+.dropdown-item.rbt-menu-custom-option {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 16px 16px;
+  border-top: 1px solid $light-light-gray-color;
+  background: $pure-white-color;
+  color: $link-blue-color;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 5;
+
+  &:hover {
+      background: $pure-white-color;
+  }
+
+  .rbt-highlight-text {
+      position: relative;
+      color: $link-blue-color;
+      font-weight: 600;
+      margin-left: 7px;
+      background-color: $pure-white-color;
+
+      &::before {
+          content: '\201C';
+          color: $link-blue-color;
+          font-size: 18px;
+      }
+      &::after {
+          content: '\201D';
+          color: $link-blue-color;
+          font-size: 18px;
+      }
+  }
+}
+
+.str-chat__input-flat-wrapper {
+  position: relative;
+} 
+
+.rbt {
+  width: 100%;
+  input.rbt-input-main {
+      padding: 8px 12px !important;
+      color: $dark-color !important;
+      background: $pure-white-color;
+      border: 1px solid $gray-color;
+      border-radius: 2px;
+      font-family: "Inter";
+      font-size: 16px;
+      line-height: 24px;
+      outline: none;
+
+      &::placeholder {
+          font-size: 16px;
+          line-height: 24px;
+          color: $semilight-gray-placeholder-color;
+      }
+
+      &:hover, &:focus {
+          box-shadow: none;
+          border-color: $dark-green-color;
+      }
+  }
+
+  .rbt-input-hint {
+      display: none !important;
+  }
+}
+
+.dropdown-item.rbt-menu-custom-option::before {
+  content: '\002B';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 19px;
+  margin-right: 8px;
+  border: 2px solid $link-blue-color;
+  border-radius: 50%;
+  color: $link-blue-color;
+  font-size: 20px;
+}
+
+.rbt-menu.dropdown-menu {
+  border: none;
+  width: 100% !important;
+  border-radius: 8px;
+  box-shadow: 0px 9px 28px 8px rgba(0, 0, 0, 0.05), 0px 6px 16px rgba(0, 0, 0, 0.08), 0px 3px 6px -4px rgba(0, 0, 0, 0.12);
+  background-color: $pure-white-color;
+  z-index: 2;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0 16px;
+  margin-bottom: 16px;
+  margin: 0;
+
+  &.disabled {
+      padding: 14px 16px;
+  }
+
+  &:hover {
+      background: rgba(130, 193, 70, 0.12);
+  }
+
+  &-customFormat {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 14px;
+      border-bottom: 1px solid $gray-color-2;
+
+      img {
+          max-width: 120px;
+          max-height: 64px;
+          border-radius: 32px;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          flex-shrink: 0;
+      }
+
+      &-name {
+          font-family: "Inter";
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: $pure-black-color;
+
+          span {
+            display: inline-block;
+          }
+      }
+
+      &-address {
+          display: inline-block;
+          margin-top: 4px;
+          font-family: "Inter";
+          font-size: 14px;
+          line-height: 1.6;
+          color: $dark-light-gray-font-color;
+      }
+
+      &-email {
+          display: inline-block;
+          margin-top: 4px;
+          font-family: "Inter";
+          font-size: 14px;
+          line-height: 1.6;
+          color: $dark-light-gray-font-color;
+      }
+  }
+}
+
+.dropdown-item.active {
+  background: rgba(130, 193, 70, 0.12);
+}
+
+/* material UI css Override for contact popup role typeahead */
+#materialUIAutocomplete .MuiOutlinedInput-root {
+  padding: 0;
+  height: 40px;
+}
+#materialUIAutocomplete .MuiAutocomplete-hasPopupIcon .MuiOutlinedInput-root,
+#materialUIAutocomplete .MuiAutocomplete-hasClearIcon .MuiOutlinedInput-root,
+#materialUIAutocomplete .MuiAutocomplete-hasPopupIcon .MuiAutocomplete-inputRoot,
+#materialUIAutocomplete .MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot,
+#materialUIAutocomplete .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiOutlinedInput-root {
+  padding: 0;
+}
+
+#materialUIAutocomplete .css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator:hover,
+#materialUIAutocomplete .css-113ntv0-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator:hover {
+  background-color: transparent;
+}
+
+#materialUIAutocomplete .css-1q60rmi-MuiAutocomplete-endAdornment {
+  top: calc(50% - 12px);
+}
+
+#materialUIAutocomplete fieldset {
+  border: none;
+}
+
+#materialUIAutocomplete {
+  padding-bottom: 8px;
+}
+
+.sclListPagination .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: var(--primary-green-background-color);
+
+  &:hover {
+      background-color: $dark-green-color
+  }
+}
+
+.vendorPopupRadioLabel .MuiFormControlLabel-label {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.57;
+  color: $dark-color;
+}
+
+.MuiOutlinedInput-input {
+  border: none !important;
+}
+
+.MuiCalendarPicker-viewTransitionContainer .MuiMonthPicker-root {
+  width: 320px;
+  .MuiTypography-subtitle1 {
+    background: $pure-white-color;
+    border: none;
+    margin: 8px 0;
+    height: 36px;
+    width: 62px;
+    border-radius: 32px;
+    flex: 1 0 33.33%;
+
+    &:hover {
+      background: rgba(0,0,0,0.04);
+    }
+  }
+
+  .Mui-selected {
+    flex: 1 0 33.33%;
+    margin: 8px 0;
+    height: 36px;
+    width: 62px;
+    font-size: 1.2rem;
+    border-radius: 32px;
+    color: $pure-white-color;
+    background-color: $link-blue-color-1;
+    border: none;
+  }
+}
+
+.datetimeContainer {
+  .MuiFormControl-root {
+     width: 100%;
+  }
+}
+
+#supplier-assessment-owner-field {
+  .rbt input.rbt-input-main {
+    width: 100%;
+    padding: 8px 10px !important;
+    height: 40px !important;
+    font-size: 14px !important;
+    line-height: 24px !important;
+
+    &::placeholder {
+      font-size: 14px !important;
+      line-height: 24px !important;
+    }
+  }
+}
+
+.reactBootstrapSearchTypeahead.owner .rbt input.rbt-input-main {
+    border: none !important;
+    outline: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+}
+
+.contactSourceInvoiceLabel {
+  .MuiFormControlLabel-label {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: $light-blue-gray-color !important;
+  }
+  .Mui-checked {
+    color: $oro-primary-green-color !important;
+  }
+}
+
+.contractSelectionCheckbox {
+  .Mui-checked {
+    color: var(--warm-stat-mint-mid) !important;
+  }
+}
+
+.css-14pt8u3-MuiButtonBase-root-MuiRadio-root {
+  padding: 8px !important;
+}
+
+.reactBootstrapSearchTypeahead {
+  .typeaheadCustomOption + mark{
+      display: none !important;
+  }
+  .typeaheadCustomOption {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .typeaheadCustomOptionNew {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 40px;
+          padding: 6px 12px;
+          border: 1px solid var(--warm-neutral-mid-600);
+          border-radius: 4px;
+          margin-bottom: 8px;
+          cursor: pointer;
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+          strong {
+              max-width: 200px;
+              font-weight: 500 !important;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+          }
+          svg {
+              margin-right: 8px;
+              flex-shrink: 0; 
+          }
+          &:hover {
+              background: var(--warm-neutral-light-500);
+          }
+      }
+  }
+}
+
+.reactBootstrapSearchTypeahead.reactBootstrapSearchTypeaheadError input.rbt-input-main {
+  border-color: var(--warm-stat-chilli-regular) !important;
+}
+
+.reactBootstrapSearchTypeahead input.rbt-input-main {
+  padding: 10px 12px !important;
+  border: 1.4px solid var(--warm-neutral-mid-600);
+  border-radius: 4px;
+  background: var(--coco-chalk);
+  outline: none !important;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+  &::placeholder {
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200));
+  }
+
+  &:focus {
+      outline: none !important;
+      box-shadow: none !important;
+      border: 1.4px solid var(--warm-stat-mint-mid);
+  }
+}
+
+.reactBootstrapSearchTypeahead.onboardingSupplierSearch .rbt-menu{
+    min-width: 520px !important;
+    max-width: 625px !important;
+}
+
+.reactBootstrapSearchTypeahead .rbt-menu {
+  padding: 8px 8px 8px;
+  background: var(--coco-chalk);
+  border: 1px solid var(--warm-neutral-mid-300);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  max-height: 320px !important;
+
+  .dropdown-item {
+      padding: 8px !important;
+      &:hover {
+          background: var(--warm-neutral-light-500);
+          border-radius: 4px;
+      }
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+      background: var(--warm-neutral-light-500) !important;
+      border-radius: 4px !important;
+  }
+
+  .supplierSearchTypeaheadList {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      .supplierSearchTypeaheadListExisting {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+
+          .supplierSearchTypeaheadListExistingIcon {
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              background-color: var(--warm-stat-mint-regular);
+          }
+      }
+      .supplierSearchInRightPanel {
+          min-width: 380px !important; 
+      }
+      .supplierSearchTypeaheadListInfoContainer {
+          align-items: unset !important;
+          min-width: 480px;
+
+          .supplierSearchTypeaheadListInfoContainerHeading {
+              display: flex;
+              flex-direction: row;
+              gap: 4px;
+              justify-content: space-between;
+              @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+              .supplierSearchTypeaheadListinfoHeading {
+                  max-width: 100%;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+              }
+          }
+      }
+      .supplierSearchTypeaheadListinfo {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+          border-radius: 4px;
+          max-width: calc(100% - 125px); // 120px is max width of image
+          .supplierSearchTypeaheadListinfoHeading {
+              max-width: 100%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+          }
+          .supplierSearchTypeaheadListinfoHeadingWrapper {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              flex-wrap: wrap;
+              row-gap: 4px;
+          }
+          .supplierSearchTypeaheadListInfoAttribute {
+              display: flex;
+              align-items: center;
+              flex-shrink: 0;
+              gap: 4px;
+              @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+          }
+          .supplierSearchTypeaheadListInfoAttributeLabel {
+              @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+          }
+          .supplierSearchTypeaheadListInfoAttributeText {
+              @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-300));
+          }
+          .supplierSearchTypeaheadListinfoHeadingSub {
+              padding-right: 8px;
+              border-right: 1px solid var(--warm-neutral-mid-400);
+              @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+              &:last-of-type {
+                  padding-right: 0;
+                  border-right: none;
+              }
+          }
+          .supplierSearchTypeaheadListinfoHeadingHighlighter {
+              @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+
+              .supplierSearchTypeaheadListinfoHeadingHighlighterRow {
+                  @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+                  em {
+                      font-style: normal !important;
+                      @include FONTSTYLE_BODY_SB2(18px, var(--warm-neutral-shade-500));
+                  }
+              }
+          }
+          .supplierSearchTypeaheadListinfoHeadingSeperator {
+              padding-right: 8px;
+              border-right: 1px solid var(--warm-neutral-mid-400);
+
+              &:last-of-type {
+                  padding: 0;
+                  border-right: none;
+              }
+          }
+          .supplierSearchTypeaheadListinfoHeadingSubsidiary {
+              font-weight: 500 !important;
+          }
+      }
+      .supplierSearchTypeaheadListImg {
+          height: 40px;
+          max-width: 120px;
+          width: auto;
+          flex-shrink: 0;
+          object-fit: contain;
+          border-radius: 5px;
+      }
+  }
+  .rbt-menu-custom-option {
+      position: sticky;
+      bottom: -8px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0 !important;
+      background: var(--coco-chalk);
+      z-index: 5;
+
+      &:hover {
+          background: var(--coco-chalk) !important;
+          border-radius: 0 !important;
+
+          .createCustomOption, .rbt-highlight-text {
+              background: var(--warm-neutral-light-500);
+          }
+          .createCustomOption {
+              border-radius: 4px 0 0 4px;
+          }
+          .rbt-highlight-text {
+              border-radius: 0 4px 4px 0;
+          }
+      }
+
+      .createCustomOption {
+          margin: 8px 0;
+          padding: 8px 8px 8px 12px;
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+      }
+      .rbt-highlight-text {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 8px 0;
+          margin: 8px 0;
+          background-color: var(--coco-chalk);
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+          &::before {
+              content: '\201C';
+              color: var(--warm-neutral-shade-500);
+              font-size: 18px;
+          }
+          &::after {
+              content: '\201D';
+              color: var(--warm-neutral-shade-500);
+              font-size: 18px;
+          }
+      }
+  }
+}
+
+.reactBootstrapSearchTypeahead .rbt-menu {
+  padding: 8px 8px 8px;
+  background: var(--coco-chalk);
+  border: 1px solid var(--warm-neutral-mid-300);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  max-height: 320px !important;
+
+  .dropdown-item {
+      padding: 8px !important;
+      &:hover {
+          background: var(--warm-neutral-light-500);
+          border-radius: 4px;
+      }
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+      background: var(--warm-neutral-light-500) !important;
+      border-radius: 4px !important;
+  }
+
+  .supplierSearchTypeaheadList {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      .supplierSearchTypeaheadListExisting {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+
+          .supplierSearchTypeaheadListExistingIcon {
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              background-color: var(--warm-stat-mint-regular);
+          }
+      }
+      .supplierSearchInRightPanel {
+          min-width: 380px !important; 
+      }
+      .supplierSearchTypeaheadListInfoContainer {
+          align-items: unset !important;
+          min-width: 480px;
+
+          .supplierSearchTypeaheadListInfoContainerHeading {
+              display: flex;
+              flex-direction: row;
+              gap: 4px;
+              justify-content: space-between;
+              @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+              .supplierSearchTypeaheadListinfoHeading {
+                  max-width: 100%;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+              }
+          }
+      }
+      .supplierSearchTypeaheadListinfo {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4px;
+          border-radius: 4px;
+          max-width: calc(100% - 125px); // 120px is max width of image
+          .supplierSearchTypeaheadListinfoHeading {
+              max-width: 100%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+          }
+          .supplierSearchTypeaheadListinfoHeadingWrapper {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              flex-wrap: wrap;
+              row-gap: 4px;
+          }
+          .supplierSearchTypeaheadListInfoAttribute {
+              display: flex;
+              align-items: center;
+              flex-shrink: 0;
+              gap: 4px;
+              @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+          }
+          .supplierSearchTypeaheadListInfoAttributeLabel {
+              @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+          }
+          .supplierSearchTypeaheadListInfoAttributeText {
+              @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-300));
+          }
+          .supplierSearchTypeaheadListinfoHeadingSub {
+              padding-right: 8px;
+              border-right: 1px solid var(--warm-neutral-mid-400);
+              @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+              &:last-of-type {
+                  padding-right: 0;
+                  border-right: none;
+              }
+          }
+          .supplierSearchTypeaheadListinfoHeadingHighlighter {
+              @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+
+              .supplierSearchTypeaheadListinfoHeadingHighlighterRow {
+                  @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+                  em {
+                      font-style: normal !important;
+                      @include FONTSTYLE_BODY_SB2(18px, var(--warm-neutral-shade-500));
+                  }
+              }
+          }
+          .supplierSearchTypeaheadListinfoHeadingSeperator {
+              padding-right: 8px;
+              border-right: 1px solid var(--warm-neutral-mid-400);
+
+              &:last-of-type {
+                  padding: 0;
+                  border-right: none;
+              }
+          }
+          .supplierSearchTypeaheadListinfoHeadingSubsidiary {
+              font-weight: 500 !important;
+          }
+      }
+      .supplierSearchTypeaheadListImg {
+          height: 40px;
+          max-width: 120px;
+          width: auto;
+          flex-shrink: 0;
+          object-fit: contain;
+          border-radius: 5px;
+      }
+  }
+  .rbt-menu-custom-option {
+      position: sticky;
+      bottom: -8px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0 !important;
+      background: var(--coco-chalk);
+      z-index: 5;
+
+      &:hover {
+          background: var(--coco-chalk) !important;
+          border-radius: 0 !important;
+
+          .createCustomOption, .rbt-highlight-text {
+              background: var(--warm-neutral-light-500);
+          }
+          .createCustomOption {
+              border-radius: 4px 0 0 4px;
+          }
+          .rbt-highlight-text {
+              border-radius: 0 4px 4px 0;
+          }
+      }
+
+      .createCustomOption {
+          margin: 8px 0;
+          padding: 8px 8px 8px 12px;
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+      }
+      .rbt-highlight-text {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 8px 0;
+          margin: 8px 0;
+          background-color: var(--coco-chalk);
+          @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+          &::before {
+              content: '\201C';
+              color: var(--warm-neutral-shade-500);
+              font-size: 18px;
+          }
+          &::after {
+              content: '\201D';
+              color: var(--warm-neutral-shade-500);
+              font-size: 18px;
+          }
+      }
+  }
+}
+
+.reactBootstrapSearchTypeahead.owner  input.rbt-input-main {
+    border: none !important;
+    outline: none !important;
+}
+

@@ -1,0 +1,185 @@
+@import './../branding';
+@import './../font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$column-padding: 20px;$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    // &5 {
+    //     width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    // }
+
+    // &6 {
+    //     width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    // }
+}
+
+.supplierBankInfoForm {
+  display: flex;
+  flex-direction: column;
+
+  width: $form-width;
+  padding: $form-padding;
+  
+  background-color: $pure-white-color;
+  border-radius: 8px;
+
+  font-family: "Inter";
+
+  .noBorder {
+    border-bottom: none !important;
+  }
+  .noMargin {
+    margin-bottom: 0px !important;
+  }
+
+  .existingBankListSection {
+    padding-bottom: 32px !important;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid $gray-color-2;
+
+    .title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.39;
+        color: var(--warm-neutral-shade-500);
+    }
+    
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 4px;
+            margin-right: $column-padding;
+
+            .label {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400))
+            }
+
+            &.flex {
+                flex: 1;
+            }
+
+            &:last-child {
+                margin-right: 0
+            }
+
+            &.action {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            .bankKeyDropdown {
+                border: none;
+                width: fit-content;
+                margin-left: -8px;
+                margin-bottom: -8px;
+                background-color: transparent;
+
+                div:first-child {
+                    div:first-child {
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 22px;
+                        color: #262626;
+                    }
+                }
+            }
+
+            .accountType {
+                display: flex;
+                flex-direction: row;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                span {
+                    margin-left: 4px;
+                    padding: 4px;
+                    @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-400));
+                }
+            }
+            .validationError {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+              
+                @include FONTSTYLE_BODY_R1($color: var(--warm-stat-chilli-regular));
+              
+                img {
+                  margin-right: 5px;
+                  height: 15px;
+                  width: 15px;
+                  vertical-align: middle;
+                  margin-bottom: 1px;
+                }
+              }
+        }
+
+        .customItem {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+        border-bottom: none
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+    .col {
+        &1, &2, &3, &4, &5, &6 {
+            width: 100%;
+        }
+    }
+
+    .supplierBankInfoForm .section .row .item .bankKeyDropdown {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+}

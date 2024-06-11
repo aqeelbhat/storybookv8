@@ -1,0 +1,159 @@
+@import './../../branding';
+@import './../../_font';
+
+.assessmentList {
+  width: 100%;
+  &Table {
+    width: 100%;
+    margin-bottom: 24px;
+    &Header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      &Column {
+          min-height: 22px;
+          text-transform: capitalize;
+          @include FONTSTYLE_BODY_SB2(18px, var(--warm-neutral-shade-200));
+          &Name {
+            width: 55%;
+            padding: 0px 16px;
+          }
+          &Type {
+            width: 15%;
+            padding: 0px 16px 0px 6px;
+          }
+          &Owner {
+            width: 15%;
+            padding: 0px 16px 0px 4px;
+          }
+          &Action {
+            min-height: 32px;
+            width: 15%;
+          }
+      }
+    }
+    &Body {
+      display: flex;
+      flex-direction: column;
+        &Row {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 16px 0px;
+            background: var(--coco-chalk);
+            border-top: 1px solid var(--coco-mid-200);
+
+            &Content {
+              display: flex;
+              width: 100%;
+            }
+        }
+        &Column {
+            min-height: 22px;
+            padding: 0px 10px 0px 16px;
+            &Name {
+                display: flex;
+                flex-direction: column;
+                width: 55%;
+                &Title {
+                    display: flex;
+                    align-items: center;
+                    svg {
+                      margin-right: 4px;
+                      flex-shrink: 0;
+                    }
+                }
+                .highlights {
+                    &Container {
+                      padding: 0;
+                      margin: 0;
+                    }
+                  
+                    &Item {
+                      display: inline;
+                      flex-wrap: wrap;
+                      align-items: center;
+                      list-style: none;
+
+                      &:last-child {
+                        .highlightsSeperator {
+                          display: none;
+                        }
+                      }
+                    }
+
+                    &Label {
+                      margin-right: 4px;
+                      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                    }
+                  
+                    &Text {
+                      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                    }
+                  
+                    &Seperator {
+                      margin: 0 8px;
+                      width: 2px;
+                      height: 16px;
+                      border-right: 1px solid var(--warm-neutral-mid-400);
+                    }
+                }
+
+                .file {
+                  width: fit-content;
+                  display: flex;
+                  align-items: center;
+                  gap: 4px;
+                  padding: 4px 4px;
+                  border-radius: 4px;
+                  @include FONTSTYLE_BODY_R2(20px, var(--warm-prime-azure));
+                  background: var(--warm-neutral-light-200);
+                  cursor: pointer;
+                  margin-top: 4px;
+              
+                  svg {
+                    width: 16px;
+                    height: 16px;
+                    flex-shrink: 0;
+                  }
+              
+                  span {
+                    color: var(--coco-azure) !important;
+                    cursor: pointer;
+                  }
+                }
+            }
+            &Type {
+              width: 15%;
+            }
+            &Owner {
+              width: 15%;
+            }
+            &Action {
+                display: flex;
+                justify-content: flex-end;
+                gap: 15px;
+                width: 16%;
+                span {
+                  cursor: pointer;
+                }
+                &Download {
+                    width: 24px;
+                    height: 24px;
+                    cursor: pointer;
+                    &:hover {
+                      svg {
+                        stroke: var(--coco-berry) !important;
+                      }
+                      span {
+                        color: var(--coco-berry) !important;
+                      }
+                    }
+                }
+            }
+        }
+    }
+ }
+}

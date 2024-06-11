@@ -1,0 +1,474 @@
+
+@import './../branding';
+@import './../_font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    &5 {
+        width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    }
+
+    &6 {
+        width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    }
+}
+
+.supplierScopeForm {
+
+    .headerContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        grid-gap: 12px;
+        gap: 12px;
+        margin-bottom: 16px;
+
+        &Title {
+            margin-bottom: 0px;
+            @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-600));
+        }
+
+        &Action {
+            display: flex;
+            align-items: center;
+            grid-gap: 4px;
+            cursor: pointer;
+
+            .label {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure))
+            }
+        }
+
+        &Add {
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--warm-neutral-mid-600);
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+        }
+
+        .disableAdd {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-200));
+
+            &:hover {
+                cursor: default !important;
+                color: var(--warm-neutral-shade-200) !important;
+                background: var(--warm-prime-chalk) !important;
+            }
+        }
+    }
+
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 20px;
+        border: 1px dashed var(--warm-stat-mint-mid);
+        border-radius: 4px;
+        background: rgba(238, 246, 229, 0.5);
+        margin-top: 16px;
+
+        .formHeader {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+      
+            .title {
+              @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-400));
+            }
+        }
+    }
+
+    .readOnlyForm {
+
+        border-bottom: 8px solid var(--warm-neutral-light-400);
+        margin-bottom: 16px;
+        
+        &ScopeList {
+            background: var(--warm-prime-chalk); 
+        }
+
+        &:last-of-type {
+          border-bottom: none  
+        }
+
+        .readOnlyContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-bottom: 6px;
+            padding-top: 16px;
+    
+            &:first-of-type {
+                padding-top: 0px;
+            }
+    
+            .title {
+                @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500))
+            }
+        }
+
+        .deletedScopeList {
+            background-color: var(--warm-neutral-light-200);
+        }
+    }
+
+    .capabilities {
+
+        &Section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .actionBtn {
+                display: flex;
+                flex-direction: row;
+                width: fit-content;
+                align-items: center;
+                padding: 4px 12px;
+                border-radius: 4px;
+                border: 1px solid var(--warm-neutral-mid-600);
+                cursor: pointer;
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+            }
+        }
+
+        &List {
+            background: var(--warm-prime-chalk);
+            border-bottom: 1px solid var(--warm-neutral-mid-400);
+        }
+
+        &Container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        &OfferingsContainer {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: flex-start;
+            max-width: 820px;
+        }
+
+        .expandedContainer {
+            align-items: flex-start !important;
+            border-color: var(--warm-neutral-shade-100);
+        }
+
+        .expanded {
+            background: var(--warm-neutral-light-200); 
+        }
+
+        &Row {
+            padding: 16px 8px;
+
+            &Item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .expandedView {
+                    font-weight: 500 !important;  
+                }
+                
+                .title {
+                    display: flex;
+                    gap: 12px;
+                    grid-gap: 12px;
+                    max-width: 750px;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500))
+                }
+
+                .shrinkTitle {
+                    max-width: 750px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500))
+                }
+
+                .details {
+                    display: flex;
+                    gap: 8px;
+                    flex-wrap: wrap;
+                    row-gap: 8px;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+
+                    .text {
+                        padding-right: 8px;
+                        border-right: 1px solid var(--warm-neutral-mid-500);
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+                        &:last-of-type {
+                            padding-right: 0;
+                            border-right: none;
+                        }
+                    }
+
+                    .boldBorder {
+                        border-color: var(--warm-neutral-shade-500) !important;
+                    }
+                }
+            }
+
+            &ActionBtn {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: flex-start;
+                min-width: 100px;
+                gap: 15px;
+
+                &Expand {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .actionContainer {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+                    align-items: center;
+                    margin-top: 2px;
+                }
+            }
+
+            .moreDetails {
+                display: flex;
+                gap: 12px;
+
+                &Action {
+                    position: relative;
+                    width: 18px;
+      
+                    svg {
+                      cursor: pointer;
+                    }
+      
+                    &Popover {
+                      &Container {
+                        position: absolute;
+                        top: 24px;
+                        right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0;
+                        padding: 2px 4px;
+                        border-radius: 4px;
+                        background-color: var(--coco-chalk);
+                        filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.12));
+                        z-index: 1;
+                        cursor: default;
+                      }
+      
+                      &Backdrop {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        cursor: default;
+                      }
+                    }
+      
+                    &List {
+                      display: flex;
+                      flex-direction: column;
+                      margin: 0;
+                      padding: 0;
+      
+                      &Item {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        line-height: 22px;
+                        padding: 6px 10px;
+                        @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-300));
+                        border: 1px solid transparent;
+                        border-radius: 4px;
+                        cursor: pointer;
+      
+                        &:hover {
+                          background-color: var(--warm-neutral-light-200);
+                        }
+                      }
+                    }
+                  }
+            }
+
+            &Description {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                border-top: 1px dashed var(--warm-neutral-mid-400);
+                margin-top: 12px !important;
+                margin-bottom: 0px !important;
+                max-width: 720px;
+                padding-top: 8px;
+
+                .sectionTitle {
+                    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+                }
+
+                .description {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    max-width: 85%;
+                    &Label {
+                        @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+                    }
+                    &Text {
+                        @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-500));
+                    }
+                }
+
+                &ConstrainLabel {
+                    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500)); 
+                }
+
+                &Constrain {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 8px;
+                    grid-gap: 8px;
+                    flex-wrap: wrap;
+                
+                    &Items {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        gap: 4px;
+                        padding: 1px 6px;
+                        border: 1px solid var(--warm-neutral-light-200);
+                        border-radius: 4px;
+                        background-color: var(--warm-neutral-light-200);
+
+
+                        &Label {
+                            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+                        }
+                        &Text {
+                            @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-400));
+                        }
+
+                        .deletedScope {
+                            color: var(--warm-neutral-shade-200) !important;
+                        }
+                    }
+
+                }
+            }
+
+            &Dimension {
+                margin-bottom: 0px !important;
+                margin-top: 12px;
+            }
+
+            .offeringHomeView {
+                padding: 0 0 0 28px;
+            }
+        }
+    }
+
+    .readOnlyRow {
+        padding: 16px !important;
+        border-radius: 8px;
+        border: 1px solid var(--warm-neutral-mid-300);
+        margin-bottom: 16px;
+    }
+
+    .emptyState {    
+        &Icon {
+            margin-top: 12px;
+            margin-bottom: 10px;
+        }
+    
+        &Row{
+            position: relative;
+            display: flex;
+            padding: 28px;
+            margin-top: 10px;
+            border: 1px solid var(--coco-mid-200);
+            border-radius: 8px;
+            background-color: var(--warm-neutral-light-200);
+    
+            &Details {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 24px;
+    
+                &Container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+    
+                .line1{
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400))
+                }
+    
+                .line2 {
+                  display: flex;
+                  flex-direction: row;
+                  gap: 4px;
+                  align-items: center;
+                  cursor: pointer;
+                  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400));
+    
+                  .action {
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-prime-azure))
+                  }
+                }
+            }
+        }
+    }
+
+    .actionContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        padding-top: 32px;
+
+        .actionBtn {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            padding-top: 32px;
+        }
+    }
+
+    .deletedScope {
+        color: var(--warm-neutral-shade-200) !important;
+    }
+}

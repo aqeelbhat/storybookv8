@@ -1,0 +1,137 @@
+
+@import './../../../branding';
+@import './../../../font';
+
+.transactionTable{
+    &Header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid var(--warm-neutral-mid-300);
+        padding: 8px 0px;
+        background-color: var(--warm-neutral-light-200);
+
+        &Item {
+            padding: 1px 16px;
+            text-transform: uppercase;
+            @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-200));
+        }
+
+        .productService {
+            flex: 1 0;
+            max-width: 200px;
+        }
+
+        .requester {
+            flex: 1 1;
+            max-width: 120px;
+        }
+
+        .department {
+            flex: 1 1;
+            max-width: 160px;
+        }
+
+        .date {
+            flex: 1 1;
+            max-width: 120px;
+        }
+
+        .total {
+            flex: 1 1;
+            max-width: 160px;
+        }
+    }
+
+    &Data {
+        &Body {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid var(--warm-neutral-mid-400);
+  
+            &:last-of-type {
+              border-bottom: none;
+            }
+              
+            &Row {
+                display: flex;
+                justify-content: space-between;
+
+                &Item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 16px;
+                    gap: 10px;
+                    width: 100%;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                }
+
+                .title {
+                    flex: 1 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    max-width: 200px;
+
+                    .name {
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                    }
+                }
+
+                .requester {
+                    max-width: 120px;
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                }
+
+                .transactionDate {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    max-width: 120px;
+                    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-400));
+
+                    .dateContainer {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 2px 0px;
+                        .title {
+                            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-400));
+                        }
+
+                        .value {
+                            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400))
+                        }
+                    }
+                }
+
+                .department {
+                  max-width: 160px;
+
+                  &Container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+
+                    .value {
+                      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                    }
+
+                    .subValue {
+                      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                    }
+                  }
+                }
+        
+                .amount {
+                    max-width: 160px;
+                    &Value {
+                        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                    }
+                }
+            }
+        }
+    }
+}

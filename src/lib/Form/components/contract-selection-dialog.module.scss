@@ -1,0 +1,268 @@
+@import './../../branding';
+@import './../../font';
+
+.tablePaginationNextArrow, .tablePaginationBackArrow {
+    background-color: var(--always-white-background-color) !important;
+    width: 24px !important;
+    height: 32px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 0 !important;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        font-size: 42px;
+        stroke: var(--light-light-gray-font-color);
+        stroke-width: 0.1px;
+    }
+}
+
+.tablePaginationBackArrow {
+    margin-right: 8px !important;
+}
+
+.contract {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    &Container {
+        max-width: 920px;
+        width: 100%;
+        max-height: calc(100vh - 40px);
+        padding: 24px;
+        background: var(--warm-prime-chalk);
+        box-shadow: 0px 4px 30px rgba(6, 3, 34, 0.15);
+        border-radius: 8px;
+
+        &Header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 24px;
+            @include FONTSTYLE_SUBTITLE_SB1(26px, var(--warm-neutral-shade-600));
+            svg {
+                flex-shrink: 0;
+                cursor: pointer;
+            }
+        }
+
+        &Filters {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+            &Search {
+                display: flex;
+                align-items: center;
+                margin: 4px;
+                padding: 0 8px;
+                background: var(--warm-neutral-light-400);
+                border-radius: 4px;
+                max-width: 300px;
+                width: 100%;
+
+                input[type="text"] {
+                    height: 32px;
+                    background: var(--warm-neutral-light-400);
+                    border: none;
+                    border-radius: 4px;
+              
+                    &:focus {
+                      outline: none;
+                    }
+                  }
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                margin: 4px;
+                padding: 0 8px;
+                background: var(--warm-neutral-light-400);
+                border-radius: 4px;
+            
+                input[type="text"] {
+                  height: 32px;
+                  background: var(--warm-neutral-light-400);
+                  border: none;
+                  border-radius: 4px;
+            
+                  &:focus {
+                    outline: none;
+                  }
+                }
+            }
+        }
+
+        &List {
+            display: flex;
+            flex-direction: column;
+            margin-top: 24px;
+            &Columns {
+                display: flex;
+                gap: 24px;
+                width: 100%;
+                padding: 0 12px 8px;
+                border-bottom: 1px solid var(--warm-neutral-mid-400);
+            }
+            &Column {
+                flex-wrap: wrap;
+                @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-300));
+            }
+            &ColumnCheckbox {
+                flex: 1.6 0;
+            }
+            &ColumnName {
+                flex: 11 0;
+            }
+            &ColumnOwner {
+                flex: 4 0;
+            }
+            &ColumnDept {
+                flex: 4 0;
+            }
+            &ColumnRenewalDate {
+                flex: 4 0;
+            }
+            &ColumnTCV {
+                flex: 4 0;
+            }
+
+            &Rows {
+                flex: 1;
+                min-height: 50vh;
+                max-height: 50vh;
+                overflow-y: scroll;
+
+                &Empty {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 50vh;
+
+                    &Icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 160px;
+                        height: 160px;
+                        background: var(--warm-neutral-light-400);
+                        border-radius: 50%;
+                        margin-bottom: 20px;
+                    }
+                    &Head {
+                        margin-bottom: 12px;
+                        @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+                    }
+                    &Sub {
+                        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                    }
+                }
+            }
+
+            &Row {
+                display: flex;
+                gap: 24px;
+                width: 100%;
+                padding: 12px;
+                border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+                &:hover {
+                    background-color: var(--warm-neutral-light-200);
+
+                    .contractContainerListRowAction {
+                        button {
+                            display: flex;
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    border-bottom: none !important;
+                }
+                &Item {
+                    flex-wrap: wrap;
+                    line-break: anywhere;
+                }
+                &Checkbox {
+                    flex: 1.2 0;
+                }
+                &Name {
+                    display: flex;
+                    gap: 8px;
+                    flex: 11 0;
+                    flex-wrap: nowrap;
+
+                    &Details {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 4px;
+                        max-width: 210px;
+                        width: 100%;
+
+                        &Title {
+                            white-space: nowrap; 
+                            overflow: hidden;
+                            text-overflow: ellipsis; 
+                            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                        }
+                        &Period {
+                            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+                        }
+                    }
+                }
+                &Owner {
+                    flex: 4 0;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                }
+                &Department {
+                    flex: 4 0;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                }
+                &Renewal {
+                    display: flex;
+                    gap: 4px;
+                    flex: 4 0;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                }
+                &TCV {
+                    flex: 4 0;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                }
+            }
+        }
+        &Footer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 16px;
+            border-top: 1px solid var(--warm-neutral-mid-400);
+
+            .actionButton {
+                padding: 4px 16px;
+                border-radius: 4px;
+                background-color: var(--warm-stat-mint-mid);
+                border: solid 1px var(--warm-stat-mint-mid);
+                @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-chalk));
+                cursor: pointer;
+            }
+        }
+        &Pagination {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 16px;
+            text-align: right;
+        }
+
+    }
+}

@@ -1,0 +1,133 @@
+@import 'src/lib/_font.scss';
+
+.reviewSteps {
+    width: 100%;
+
+    &Title {
+        margin-bottom: 16px;
+        @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500))
+    }
+
+    &Box {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding: 8px 18px 8px 18px;
+        border: 1px solid var(--warm-neutral-mid-400);
+        border-radius: 7px;
+        background-color: var(--warm-neutral-light-200);
+
+        &Clock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+
+        &Wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &Est {
+                @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-400))
+            }
+
+            &Days {
+                @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500))
+            }
+        }
+    }
+
+    &Vert {
+        display: block;
+        width: fit-content;
+        height: 22px;
+        margin-left: 33px;
+        border: 0.5px dashed var(--warm-neutral-mid-600);
+    }
+
+    &Empty {
+        display: block;
+        width: fit-content;
+        height: 22px;
+        margin-left: 33px;
+    }
+
+    &Tree {
+        position: relative;
+        padding-left: 10px;
+
+        &Cnt {
+            margin-bottom: 0px;
+            padding-left: 19.5px;
+            list-style: none;
+          
+            &Item {
+                position: relative;
+                padding-left: 20px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                
+                &:after {
+                    position: absolute;
+                    top: 4px;
+                    bottom: 0;
+                    left: 4px;
+                    height: 100%;
+                    content: '';
+                    border: 0.5px dashed var(--warm-neutral-mid-600);
+                }
+                
+                /* &:last-child:after {
+                    height: 0px;
+                } */
+    
+                &:last-child {
+                    padding-bottom: 0px;
+                }
+
+                &Index {
+                    position: absolute;
+                    top: -2px;
+                    left: -12.5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 32px;
+                    width: 32px;
+                    border-radius: 50%;
+                    background-color: var(--warm-neutral-mid-100);
+                    z-index: 1;
+                    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500))
+                }
+            }
+        }
+
+        &Show {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding-left: 8px;
+
+            &Arrow {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 31px;
+                width: 31px;
+                border-radius: 50%;
+                z-index: 1;
+                border: 1px solid var(--warm-neutral-mid-400);
+                background-color: var(--warm-prime-chalk);
+                cursor: pointer;
+            }
+
+            &Link {
+                cursor: pointer;
+                @include FONTSTYLE_BODY_R2(20px, var(--warm-prime-azure))
+            }
+        }
+    }
+}

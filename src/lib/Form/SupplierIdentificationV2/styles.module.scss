@@ -1,0 +1,381 @@
+@import './../../branding';
+@import './../../font';
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 8px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+}
+
+.landingLogo {
+    display: flex;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.supplierList {
+    .supplierListError {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-stat-chilli-regular));
+    }
+}
+
+.typeaheadResults {
+    display: flex;
+    flex-direction: column;
+    max-height: 250px;
+    overflow-y: scroll;
+    @include HIDDEN_SCROLLBAR();
+    svg {
+        flex-shrink: 0;
+    }
+    .searchTerm {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 10px 16px;
+        cursor: pointer;
+        border-left: 4px solid var(--warm-stat-mint-mid);
+        background: var(--warm-neutral-light-200);
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 4px;
+
+        .searchKey {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+        }
+
+        .searchText {
+            padding-left: 10px;
+            border-left: 1px solid var(--warm-neutral-mid-400);
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+        }
+    }
+    .typeaheadNoResults {
+        display: flex;
+        gap: 8px;
+        padding: 10px 16px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        // &:hover {
+        //     background-color: var(--warm-stat-mint-bg-2);
+        // }
+        // cursor: pointer;
+        .typeaheadNoResultsNotFound {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            row-gap: 4px;
+            column-gap: 8px;
+            margin-top: -1px;
+        }
+        .typeaheadNoResultsText {
+            border-right: 1px solid var(--warm-neutral-mid-400);
+            padding-right: 8px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+        }
+        .typeaheadNoResultsName {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400));
+            .typeaheadNoResultsNameKeyword {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+            }
+        }
+    }
+    .typeaheadResultsMore {
+        position: sticky;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 16px;
+        background-color: var(--warm-prime-chalk);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--warm-stat-mint-bg-2);
+        }
+        .typeaheadResultsMoreAction {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 0;
+            border-top: 1px solid var(--warm-neutral-mid-500);
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+        }
+    }
+    .typeaheadResultsDivider {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        padding: 0 16px;
+        padding-bottom: 4px;
+        // background-color: var(--warm-prime-chalk);
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 4px;
+        .typeaheadResultsDividerLine {
+            width: 100%;
+            border-top: 1px solid var(--warm-neutral-mid-500);
+        }
+    }
+    .typeaheadResultsDividerGoesBottom {
+        top: unset;
+        bottom: 0;
+    }
+    .typeaheadResultsItems {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        padding: 10px 16px;
+        cursor: pointer;
+        &:hover {
+            background-color: var(--warm-neutral-light-200); // var(--warm-stat-mint-bg-2);
+            &:last-of-type {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+            .typeaheadResultsItemsViewParent {
+                display: flex;
+            }
+        }
+        .typeaheadResultsItemsViewParent {
+            display: none;
+            align-items: center;
+            gap: 4px;
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+        }
+        .typeaheadResultsItemsWrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .typeaheadResultsItemsContents {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            .typeaheadResultsItemsContentsName {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                line-break: anywhere;
+                height: 20px;
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+            }
+            .typeaheadResultsItemsContentsAddress {
+                flex-shrink: 0;
+                padding-left: 8px;
+                border-left: 1px solid var(--warm-neutral-mid-400);
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+            }
+            .typeaheadResultsItemsContentsId {
+                flex-shrink: 0;
+                padding-left: 8px;
+                border-left: 1px solid var(--warm-neutral-mid-400);
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+            }
+        }
+    }
+    .typeaheadResultsItemsMore {
+        border-radius: 0 !important;
+    }
+}
+
+.searchFocused {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.searchWrapper {
+    position: relative;
+    min-height: 40px;
+    .searchWrapperInput {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
+    .searchGptWrapperInput {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
+    .searchWrapperInputGoesUp {
+        top: unset;
+        bottom: 0;
+
+        .typeaheadResults {
+            .searchTerm {
+                border-top-left-radius: 4px;
+                border-top-right-radius: 8px;
+            }
+        }
+    }
+}
+
+.searchActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .searchActionsClear {
+        padding-right: 12px;
+        border-right: 1px solid var(--warm-neutral-mid-400);
+    }
+}
+
+.search {
+    position: relative;
+    background-color: var(--warm-prime-chalk);
+    border: 1px solid var(--warm-neutral-mid-600);
+    border-radius: 8px;
+
+    svg {
+        flex-shrink: 0;
+    }
+
+    .searchInputContainer {
+        display: flex;
+        align-items: center; 
+        width: 100%;
+        padding: 0px 12px;
+    }
+  
+    input[type="text"] {
+      height: 40px;
+      border: none;
+      padding: 0 0 0 8px;
+  
+      &:focus {
+        outline: none;
+      }
+    }
+  
+    &.error {
+      border-color: var(--warm-stat-chilli-regular);
+    }
+    &.disabled {
+        background: var(--warm-neutral-light-200);
+        input  {
+            background: var(--warm-neutral-light-200);  
+        }
+    }
+}
+
+.supplierSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    .heading {
+        @include FONTSTYLE_HEADING_H6(28px, var(--warm-neutral-shade-600))
+    }
+
+    .searchContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+    }
+}
+
+.noSupplier {
+    display: flex;
+    padding: 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--warm-neutral-light-200);
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .noSupplierReason {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+        .noSupplierReasonTitle {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+        }
+        textarea {
+            width: 100%;
+        }
+    }
+}
+.noSupplierActive {
+    // padding: 24px;
+    background: var(--warm-stat-mint-bg-2);
+}
+
+.emptyReadonly {
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--warm-neutral-light-200);
+    margin-top: 24px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-300));
+}
+
+.addNewSupplier {
+    margin-top: 24px;
+}
+
+.addAnotherSupplier {
+    margin-top: 24px;
+    .addAnotherSupplierButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 15px;
+        gap: 16px;
+        border-radius: 8px;
+        border: 1px solid var(--warm-stat-mint-mid);
+        background: var(--warm-stat-mint-bg-2);
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        cursor: pointer;
+    }
+    .addAnotherSupplierContainer {
+        width: 100%;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid var(--warm-stat-mint-mid);
+        .addAnotherSupplierContainerHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-600));
+        }
+        .addAnotherSupplierContainerWrapper {
+            width: 66%;
+            padding-bottom: 24px;
+            .error {
+                border-color: var(--warm-stat-chilli-regular);
+            }
+        }
+    }
+}
+.validationError {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    @include FONTSTYLE_BODY_R1($color: var(--warm-stat-chilli-regular));
+}

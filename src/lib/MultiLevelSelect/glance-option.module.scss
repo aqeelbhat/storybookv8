@@ -1,0 +1,95 @@
+@import './../branding';
+@import './../font';
+
+.glaceOption {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    cursor: pointer;
+    color: var(--warm-neutral-shade-200);
+
+    &:hover, &.active {
+      color: var(--warm-neutral-shade-600);
+    }
+  }
+
+  .popup {
+    position: fixed;
+    z-index: 2;
+    max-width: 500px;
+    width: max-content;
+    min-width: 250px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+
+    background-color: var(--coco-chalk);
+    border: 1px solid var(--warm-neutral-mid-400);
+    box-shadow: 0px 0px 20px rgba(113, 113, 113, 0.18);
+    border-radius: 8px;
+    cursor: default;
+
+    &.hidden {
+      display: none;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      grid-gap: 24px;
+      justify-content: space-between;
+
+      .code {
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+      }
+
+      .closeBtn {
+        cursor: pointer;
+        color: var(--warm-neutral-shade-300);
+      }
+    }
+
+    .body {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 8px;
+    }
+
+    .parameter {
+      white-space: normal;
+      word-wrap: break-word;
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+
+      .value {
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+      }
+    }
+  }
+
+  .backdrop {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(#000000, 0);
+    cursor: default;
+  }
+}
+
+.optionFullPath {
+  white-space: normal;
+  word-wrap: break-word;
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+
+  .crumb {
+    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+  }
+  .separator {
+    @include FONTSTYLE_BODY_SB2(18px, var(--warm-neutral-shade-300));
+  }
+}

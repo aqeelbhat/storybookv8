@@ -1,0 +1,216 @@
+@import './../branding';
+@import './../font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+}
+
+.changePoForm {
+  display: flex;
+  flex-direction: column;
+
+  width: $form-width;
+  padding: $form-padding;
+  
+  background-color: $pure-white-color;
+  border-radius: 8px;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    border-bottom: 1px dotted $gray-color-2;
+
+    .title {
+        margin-bottom: 24px;
+        @include FONTSTYLE_SUBTITLE_SB1(1.39, $dark-color);
+    }
+
+    .fieldLabel {
+        margin-bottom: 6px;
+        @include FONTSTYLE_BODY_M1 (20px, var(--warm-neutral-shade-400));
+    }
+    
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 24px;
+
+        .heading {
+            display: flex;
+            align-items: center;
+            padding-bottom: 8px;
+            @include FONTSTYLE_BODY_M1 (20px, var(--warm-neutral-shade-400));
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 6px;
+            margin-right: $column-padding;
+
+            &.flex {
+                flex: 1;
+            }
+
+            &:last-child {
+                margin-right: 0
+            }
+
+            &.action {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            .currentValue {
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400));
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: none
+    }
+  }
+}
+
+@media (max-width: 1324px) and (min-width: 1099px) {
+    .changePoForm {
+        .section {
+            .row {
+                flex-direction: column;
+                padding-bottom: 8px;
+
+                &.actionBar {
+                    align-items: flex-end;
+                }
+
+                .item {
+                    min-width: fit-content;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .changePoForm {
+        .section {
+            .row {
+                flex-direction: column;
+                padding-bottom: 8px;
+
+                &.actionBar {
+                    align-items: flex-end;
+                }
+
+                .item {
+                    min-width: fit-content;
+                    padding-bottom: 8px;
+                }
+            }
+        }
+    }
+}
+
+.poBox {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+    padding: 12px 16px;
+    background: var(--warm-prime-clhalk);
+    border: 1px solid var(--warm-neutral-mid-500);
+    border-radius: 8px;
+
+    &.clickable {
+        cursor: pointer;
+    }
+
+    .header {
+        display: flex;
+        grid-gap: 8px;
+
+        .title {
+            margin: 0;
+            @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-600));
+        }
+
+        .number {
+            display: flex;
+            align-items: center;
+            padding: 1px 8px 1px 0px;
+            border-right: 1px solid var(--warm-neutral-mid-400);
+            @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-600));
+        }
+    }
+
+    .data {
+        display: flex;
+        grid-gap: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px dashed var(--warm-neutral-mid-400);
+
+        &:last-of-type {
+            padding: 0;
+            border: none;
+        }
+
+        .prop {
+            display: flex;
+            grid-gap: 4px;
+            padding-left: 8px;
+            border-left: 1px solid var(--warm-neutral-mid-400);
+
+            &:first-of-type {
+                padding: 0;
+                border: none;
+            }
+
+            .key {
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+            }
+
+            .val {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+            }
+        }
+    }
+}
+
+.expenseData {
+    display: flex;
+    flex-direction: column !important;
+
+    .header {
+        @include FONTSTYLE_BODY_M1 (20px, var(--warm-neutral-shade-400)); 
+    }
+}
+
+.spread {
+    flex: 1
+}

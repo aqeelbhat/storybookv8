@@ -1,0 +1,22 @@
+/************************************************************
+ * Copyright (c) 2024 Orolabs.ai to Present
+ * Author: Manoj Kumar
+ ************************************************************/
+@import './../../../branding';
+@import './../../../font';
+
+// for Total Amount below table
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .label {
+    margin-right: 15px;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400));
+  }
+
+  .value {
+    @include FONTSTYLE_BODY_SB1(22px, var(--warm-neutral-shade-500));
+  }
+}

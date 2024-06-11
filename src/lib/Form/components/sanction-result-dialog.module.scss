@@ -1,0 +1,59 @@
+@import './../../branding';
+@import './../../font';
+
+.santionDetailModal {
+    .modalHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 24px;
+        width: 100%;
+
+        .group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+
+            .counter {
+                padding: 0 16px;
+            }
+        }
+    }
+
+    .modalBody {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 32px;
+        max-height: 615px;
+        overflow-y: scroll;
+        overscroll-behavior: contain;
+
+        .listValue {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .aliasName {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+            }
+        }
+
+        .matchScore {
+            display: flex;
+            padding: 4px 8px;
+            align-items: center;
+            gap: 10px;
+            border-radius: 4px;
+            background: var(--warm-stat-chilli-regular);
+            color: var(--warm-prime-chalk);
+        }
+
+        .expandCollapse {
+            margin-top: 12px;
+            cursor: pointer;
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure))
+        }
+    }
+}

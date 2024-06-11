@@ -1,0 +1,121 @@
+@import './../branding';
+@import './../font';
+
+.confirmationModal {
+    .modalHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        width: 100%;
+        padding-bottom: 12px;
+        border-bottom: none;
+
+        .group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .title {
+                @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+            }
+        }
+
+    }
+
+    .modalBody {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: 100%;
+
+        .info {
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300))
+        }
+        
+        .text {
+            padding: 0px 40px;
+            @include FONTSTYLE_BODY_R1($color: var(--warm-neutral-shade-400))
+        }
+
+        &Section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+
+            .row {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                width: 100%;
+
+                .label {
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400))
+                }
+            
+                .item {
+                    width: 100%;
+                    margin-right: 20px;
+                    margin-right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+        
+                    &.flex {
+                        flex: 1;
+                    }
+        
+                    &:last-child {
+                        margin-right: 0
+                    }
+
+                    .dates {
+                        display: flex;
+                        gap: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .modalFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--warm-neutral-mid-400);
+
+        .buttonCancel {
+            display: flex;
+            align-items: center;
+            @include FONTSTYLE_BODY_M1(24px, var(--warm-primary-charcoal));
+            padding: 4px 16px;
+            border-radius: 4px;
+            border: solid 1px $gray-color;
+            background-color: var(--warm-prime-chalk);
+
+            &:hover {
+                color: $dark-color;
+            }
+        }
+
+        .buttonPrimary {
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            margin-left: 8px;
+            border-radius: 4px;
+            background-color: var(--warm-stat-mint-mid);
+            @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-chalk));
+            border: solid 1px var(--warm-stat-mint-mid);
+
+            svg {
+                margin-right: 10px;
+            }
+        }
+    }
+}

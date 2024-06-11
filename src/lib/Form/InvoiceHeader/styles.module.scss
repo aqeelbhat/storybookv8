@@ -1,0 +1,32 @@
+@import './../../branding';
+@import './../../font';
+
+.addmoreBtn {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px dashed var(--warm-stat-mint-regular, #6CA635);
+  background: var(--warm-stat-mint-bg-2, #F7FBF2);
+  padding: 12px;
+  @include FONTSTYLE_BODY_M1(24px, var(--warm-neut-shade-500));
+  cursor: pointer;
+}
+.label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+}
+.morePO {
+  border: 1px dashed var(--warm-stat-mint-regular, #6CA635);
+  background: var(--warm-stat-mint-bg-2, #F7FBF2);
+  padding: 12px 16px;
+}
+
+.nopoCheck {
+  margin-top: -16px;
+}
+
+.x {
+  float: right;
+  cursor: pointer;
+}

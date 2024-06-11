@@ -1,0 +1,135 @@
+@import './../../branding';
+@import './../../font';
+
+.newUserContainer {
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 80vh;
+    padding: 0 12px;
+    &Header {
+        @include FONTSTYLE_HEADING_H6(28px, var(--warm-neutral-shade-500));
+    }
+    &Image {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 20px;
+    }
+    &Data {
+        margin: 8px 0 20px;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+    }
+    &FormHeader {
+        
+        @include FONTSTYLE_HEADING_H6(20px, var(--warm-neutral-shade-500));
+    }
+    &FormData {
+        padding-top: 8px;
+         @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-500));
+    }
+
+    &Form {
+    width: 920px;
+    align-items: center;
+    margin-top: 20px;
+    border: 1px solid var(--coco-neutral-light-500);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,.1);
+    margin-bottom: 80px;
+    margin-top: 48px;
+    }
+
+    &Title {
+        margin: 20px 0;
+        &Header {
+            margin: 16px;
+            border-bottom: 1px solid var(--warm-neutral-mid-400);
+            padding-bottom: 16px;
+            @include FONTSTYLE_SUBTITLE_SB1 (24px, var(--warm-neutral-shade-500));
+        }
+        &Data {
+            
+             @include FONTSTYLE_BODY_R1 (22px, var(--warm-neutral-shade-500));
+        }
+    }
+    &Approval {
+        &Header {
+            margin-bottom: 8px;
+         @include FONTSTYLE_HEADING_H6 (24px, var(--warm-neutral-shade-500));
+        }
+        &Data {
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column;
+             @include FONTSTYLE_SUBTITLE_R2 (20px, var(--warm-neutral-shade-500));
+        }
+        &Title {
+            display: inline;
+            @include FONTSTYLE_SUBTITLE_M2 (22px, var(--warm-neutral-shade-500));  
+        }
+    }
+
+}  
+
+.newUserProcess {
+    margin: 16px;
+    border-radius: 4%;
+    width: 410px;
+    &Header {
+         @include FONTSTYLE_SUBTITLE_SB2(22px, var(--warm-neutral-shade-500));
+         float: left;
+         margin-bottom: 12px;
+    }
+    &Cancel {
+        float: right;
+        color: var(--warm-neutral-shade-200)
+    }
+    &Fields {
+         margin: 20px 0;
+    }
+    &Label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: wrap;
+        font-family: "Inter";
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--warm-neutral-shade-400);
+        margin-bottom: 8px;
+    } 
+}
+
+.newUserForm {
+    &Action {
+        display: flex;
+        gap: 10px;
+        margin: 20px;
+        &Button {
+            padding: 4px 12px;
+        }
+    }
+}
+
+.newUserAdd {
+    border: none !important;
+    background: none;
+    padding: 0 !important;
+    @include FONTSTYLE_BODY_R1(22px, var(--warm-prime-azure) !important)
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+    .mgrLabel {
+        @include FONTSTYLE_BODY_R1(20px, --warm-neutral-shade-200)
+    }
+}

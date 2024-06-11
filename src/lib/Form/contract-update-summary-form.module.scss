@@ -1,0 +1,98 @@
+@import './../_font';
+
+.summary {
+    padding: 0 0 24px 0;
+    &Header {
+        margin-bottom: 8px;
+        @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-600));
+    }
+    &Wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid var(--warm-neutral-mid-400);
+        &Logo {
+            display: flex;
+            img {
+                max-width: 120px;
+                max-height: 40px;
+                object-fit: contain;
+            }
+        }
+        &OtherInfo {
+            padding-top: 16px;
+            border-top: 1px dashed var(--warm-neutral-mid-600);
+            &Docs {
+                margin-top: 16px !important;
+                gap: 12px;
+            }
+            &Doc {
+                display: flex;
+                padding: 2px 12px;
+                align-items: center;
+                gap: 4px;
+                border-radius: 4px;
+                background: var(--warm-neutral-light-300);
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+            }
+            &Wrapper {
+                margin-bottom: 8px !important;
+            }
+            &Items {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                &Divider {
+                    border-right: 1px solid var(--warm-neutral-mid-600);
+                    padding-right: 8px;
+                    margin-right: 8px;
+                }
+            }
+        }
+        &Details {
+            display: flex;
+            flex-direction: column !important;
+            gap: 4px;
+            &Label {
+                @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-300));
+            }
+            &Divider {
+                border-right: 1px solid var(--warm-neutral-mid-400);
+                padding-right: 20px;
+                margin-right: 20px
+            }
+            &Value {
+                @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+                &Info {
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200));
+                }
+            }
+        }
+
+        &Contract {
+            display: flex;
+            // padding: 2px 8px;
+            align-items: center;
+            gap: 8px;
+            border-radius: 4px;
+            // background: var(--warm-stat-berry-lite);
+            &Id {
+                cursor: pointer;
+                @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-prime-azure));
+            }
+            &Type {
+                @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-600));
+            }
+            &Divider {
+                border-right: 1px solid var(--warm-neutral-mid-600);
+                padding-right: 8px;
+                &:last-of-type {
+                    padding: 0 !important;
+                    border: none !important;
+                }
+            }
+        }
+    }
+}

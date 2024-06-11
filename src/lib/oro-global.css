@@ -1,0 +1,332 @@
+
+:root {
+  --font-family-default: 'Inter';
+  --font-family-large: 'Inter';
+
+  --always-white-color: #FFFFFF;
+
+  --color-dark-green: #6CA635;
+  --color-primary-green: #82C146;
+  --color-light-green: #8DD14D;
+  --color-bg-green: #E1EDD4;
+  --color-bg-light-green: #F3FBEA;
+  --color-light-blue-icon: #a0a4a8;
+
+  --color-error-dark: #BE4236;
+  --color-error-main: #D67268;
+  --color-error-bg: #FBECEC;
+
+  --color-warning-yellow: #D46B08;
+  --color-primary-yellow: #F3B72C;
+  --color-light-yellow: #FAECBC;
+  --color-bg-yellow: #FEFEE6;
+
+  --color-progress-blue: #2D8DB7;
+  --color-bg-blue: #E6F7FF;
+
+  --color-dark-neutral: #6782A0;
+  --color-primary-neutral: #7D97B5;
+  --color-bg-neutral: #DDE9F2;
+
+  --color-title-text: #283041;
+  --color-body-text: #3E4456;
+  --color-help-text: #575F70;
+
+  --color-link: #2D8DB7;
+
+  --color-gray-1: #848484;
+  --color-gray-2: #ABABAB;
+  --color-gray-3: #D6D6D6;
+  --color-gray-4: #E6E6E6;
+  --color-gray-5: #F1F0F0;
+  --color-gray-6: #F5F5F5;
+
+  --space-xl: 32px;
+  --space-l: 24px;
+  --space-M: 8px;
+  --space-s: 4px;
+}
+
+.oro-h1 {
+  font-family: var(--font-family-large);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 50px;
+}
+
+.oro-h2 {
+  font-family: var(--font-family-large);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 46px;
+}
+
+.oro-list-page-title {
+  font-family: var(--font-family-large);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.oro-func-page-title {
+  font-family: var(--font-family-large);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.oro-form-title {
+  font-family: var(--font-family-large);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.oro-section-header {
+  font-family: var(--font-family-large);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.oro-large-text-bold {
+  font-family: var(--font-family-default);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.oro-large-text, .value {
+  font-family: var(--font-family-default);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.oro-body-text {
+  font-family: var(--font-family-default);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.oro-text {
+  font-family: var(--font-family-default);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.oro-description-bold {
+  font-family: var(--font-family-default);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.oro-description {
+  font-family: var(--font-family-default);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.oro-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+
+  padding: 0 12px;
+  font-family: var(--font-family-default);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 4px;
+}
+
+.oro-button.xl {
+  height: 48px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.oro-button.lg {
+  height: 40px;
+  border-style: solid;
+  border-width: 1.5px;
+}
+
+.oro-button.md {
+  height: 32px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.oro-button.sm {
+  height: 24px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.oro-button.primary {
+  background-color: var(--warm-stat-mint-mid);
+  color: white;
+  border-color: var(--warm-stat-mint-mid);
+}
+
+.oro-button.secondary {
+  background-color: white;
+  color: var(--warm-neutral-shade-500);
+  border-color: var(--warm-neutral-mid-600);
+}
+
+.oro-button.link {
+  background-color: white;
+  color: var(--color-link);
+  border-color: white;
+}
+
+.oro-button.danger {
+  background-color: var(--color-error-main);
+  color: white;
+  border-color: var(--color-error-main);
+}
+
+.oro-button.default {
+  background-color: white;
+  color: var(--color-title-text);
+  border-color: var(--color-gray-3);
+}
+
+.oro-input-label {
+  font-family: var(--font-family-default);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-title-text);
+}
+
+.oro-input-error {
+  font-family: var(--font-family-default);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-error-main);
+}
+
+.oro-input-error svg {
+  color: var(--color-error-main);
+}
+
+input[type="text"].oro-text-input, textarea.oro-text-input {
+  padding: 0 8px;
+  font-family: var(--font-family-default);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-body-text);
+  border: 1px solid var(--color-gray-3);
+  border-radius: 2px;
+}
+
+input[type="text"].oro-text-input.page-level {
+  height: 40px;
+}
+
+input[type="text"].oro-text-input.widget-level {
+  height: 32px;
+}
+
+input[type="text"].oro-text-input:focus, textarea.oro-text-input:focus {
+  outline: none;
+  border-color: var(--color-primary-green)
+}
+
+input[type="text"].oro-text-input.error, textarea.oro-text-input.error {
+  outline: none;
+  border-color: var(--color-error-main)
+}
+
+input[type="text"].oro-text-input.disabled, textarea.oro-text-input.disabled {
+  outline: none;
+  border-color: var(--color-gray-3);
+  background-color: var(--color-gray-6);
+  opacity: 0.6;
+}
+
+input[type="text"].oro-text-input::-webkit-input-placeholder,
+input[type="text"].oro-text-input:-ms-input-placeholder,
+input[type="text"].oro-text-input::placeholder,
+textarea.oro-text-input::-webkit-input-placeholder,
+textarea.oro-text-input:-ms-input-placeholder,
+textarea.oro-text-input::placeholder {
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-gray-2);
+}
+
+input[type="checkbox"].oro-checkbox {
+  position: static;
+  margin-top: 0;
+  margin-right: 12px;
+  margin-left: 4px;
+  width: 16px;
+  height: 16px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  border-radius: 2px;
+  border: solid 1px var(--color-gray-3);
+  border-radius: 2px;
+  background-color: white;
+  outline: none;
+  transition-duration: 0.1s;
+}
+input[type="checkbox"].oro-checkbox:disabled {
+  border: solid 1px ;
+  background-color: #CFE4BA;
+}
+input[type="checkbox"].oro-checkbox:checked {
+  border: solid 1px var(--color-dark-green);
+  background-color: var(--color-dark-green);
+}
+input[type="checkbox"].oro-checkbox:checked::after {
+  display: block;
+  position: relative;
+  top: -2px;
+
+  content: '\2713';
+  font-family: system-ui;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+#requestListingSearch #multiLevelContainer, #addRequestToListSearch #multiLevelContainer {
+  border: none !important;
+  background-color: white;
+}
+
+#requestListing .popover-inner {
+  width: 360px !important;
+  max-width:360px !important; 
+}
+#requestListing .popover {
+  width: 360px !important;
+  max-width:360px !important;
+  left: 103px !important;
+}
+
+.reactBootstrapSearchTypeahead.owner  input.rbt-input-main,  .reactBootstrapSearchTypeahead.owner .rbt-input-multi.form-control{
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.reactBootstrapSearchTypeahead.owner.reactBootstrapSearchTypeaheadError input.rbt-input-main {
+  border-color: var(--warm-stat-chilli-regular) !important;
+}

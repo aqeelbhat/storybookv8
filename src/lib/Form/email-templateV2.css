@@ -1,0 +1,204 @@
+.emailForm {
+    width: 100%;
+    background-color: #fff;
+}
+
+.formTitle {
+    margin: 0px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    color: #3E4456;
+    padding-bottom: 12px;
+}
+
+.formSection {
+    border-bottom: 1px dashed #CACACA;
+}
+
+.sectionTitle {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #3E4456;
+}
+
+.formQuestion {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #848484;
+    padding-bottom: 4px;
+}
+
+.formAnswer {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #3E4456;
+}
+
+.mrgB16 {
+    margin-bottom: 16px;
+}
+
+.mrgB12 {
+    margin-bottom: 12px; 
+}
+
+.pdB4 {
+    padding-bottom: 4px;
+}
+
+.pdB16 {
+    padding-bottom: 16px;
+}
+
+.pdB12 {
+    padding-bottom: 12px;
+}
+
+.lastSection td.formSection {
+border-bottom: none;
+padding-bottom: 0px;
+}
+
+.firstSection .formSection table tbody tr td.sectionTitle {
+  padding-top: 0px;
+  }
+
+p {
+margin: 0px;
+padding: 0px;
+}
+
+.notes {
+  padding: 0px;
+  list-style-type: none;
+}
+
+.softwareCardEmail {
+    width: 100%;
+    margin-bottom: 8px;
+    border-collapse: separate;
+    border-spacing: 4px;
+  }
+  
+  .softwareCardEmail .profile {
+    vertical-align: top;
+    width: 44px;
+    height: 100%;
+  }
+  
+  .softwareCardEmail .profile img {
+    width: 100%;
+    height: 100%;
+    max-width: 40px;
+    max-height: 48px;
+  }
+  
+  .softwareCardEmail .name {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3E4456;
+  }
+  
+  .softwareCardEmail .preferredTag {
+    padding: 4px 8px;
+    margin-left: 8px;
+    background: #FAECBC;
+    border-radius: 4px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #3E4456;
+  }
+  
+  .softwareCardEmail .contractId {
+    padding: 2px 6px;
+    margin-left: 6px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3E4456;
+    border-left: 1px solid #848484;
+  }
+  
+  .softwareCardEmail .contractValue {
+    margin-right: 8px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3E4456;
+  }
+  
+  .softwareCardEmail .property {
+    padding-right: 8px;
+    margin-right: 8px;
+    border-right: 1px solid #E3E3E3;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #848484;
+  }
+  
+  .softwareCardEmail .property:last-of-type {
+    padding-right: 0;
+    margin-right: 0;
+    border-right: none;
+  }
+
+  .softwareCardEmail .attachment {
+    float: left;
+    margin-right: 8px;
+  }
+
+  .contractNegotiationEmail, .contractFinalisationEmail {
+    width: 100%;
+  }
+
+  .contractNegotiationEmail .contractTable, .contractFinalisationEmail .contractTable {
+    width: 100%;
+  }
+
+  .contractEmail .contractList {
+    padding: 0px;
+    list-style-type: none;
+  }
+
+  .contractEmail .contractItem {
+    padding-bottom: 6px;
+  }
+
+  .contractEmail .userEmail {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6A6A6A;
+  }
+
+  .contractEmail .contractName {
+    padding: 2px 6px 0px;
+    margin-left: 6px;
+    border-left: 1px solid #848484;
+  }
+
+  .contractFinalisationEmail .lastContractSection, .contractNegotiationEmail .lastContractSection {
+    border-bottom: none;
+  }
+
+  .contractFinalisationEmail .tenantCurrencyDisplay, .contractNegotiationEmail .tenantCurrencyDisplay {
+    margin-left: 8px;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6A6A6A;
+  }

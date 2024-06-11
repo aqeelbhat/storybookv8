@@ -1,0 +1,153 @@
+/************************************************************
+ * Copyright (c) 2024 Orolabs.ai to Present
+ * Author: Manoj Kumar
+ ************************************************************/
+@import 'src/lib/_font.scss';
+
+.mainBox {
+  transition: margin-top .5s linear;
+  margin-top: 20%;
+  //margin-bottom: 20px;
+
+  &.pushUp {
+    margin-top: 0;
+  }
+}
+
+.editMode {
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+
+  .heading {
+    text-align: center;
+    color: var(--warm-neutral-shade-500);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    display: flex;
+    gap: 12px;
+    margin: auto;
+  }
+
+
+}
+
+.queryBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 20px;
+  gap: 12px;
+  border: 1px solid var(--warm-stat-mint-mid, #82C146);
+  background: var(--warm-prime-chalk, #FFF);
+
+  .area {
+    flex-grow: 1;
+    width: 100%;
+
+    textarea {
+      @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-600));
+      resize: none;
+      overflow: hidden;
+      border: none;
+      outline: none;
+      padding: 0;
+
+      &:hover {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+}
+
+.bottomRow {
+  display: flex;
+  width: 100%;
+
+  .uploadCell {
+    align-self: flex-end;
+  }
+
+  .enterCell {
+    flex-grow: 1;
+    justify-content: right;
+    display: flex;
+    svg {
+      fill: var(--warm-stat-mint-mid);
+      stroke: var(--coco-chalk);
+      stroke-width: 1px;
+    }
+    button {
+      padding: 0;
+    }
+  }
+}
+
+.response {
+  @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-500));
+}
+
+// upload
+  .uploadContract {
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    border: 1px solid var(--warm-neutral-mid-600);
+
+    input {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+      border: none;
+      text-transform: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &:hover {
+      background-color: var(--warm-neutral-mid-300);
+    }
+  }
+
+  .readOnly {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .selected {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    background-color: var(--warm-neutral-light-400);
+
+    .link {
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure))
+    }
+
+    &Icon {
+      z-index: 1;
+      margin-right: -14px;
+    }
+  }

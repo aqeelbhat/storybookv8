@@ -1,0 +1,38 @@
+/************************************************************
+ * Copyright (c) 2024 Orolabs.ai to Present
+ * Author: Manoj Kumar
+ ************************************************************/
+@import 'src/lib/_font.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  .head {
+    display: flex;
+    gap: 8px;
+
+    @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500));
+
+    img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    button {
+      padding: 0;
+    }
+  }
+
+  .body {
+    @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-600));
+    padding-left: 32px;
+  }
+}
+
+.grow {
+  flex-grow: 1;
+}

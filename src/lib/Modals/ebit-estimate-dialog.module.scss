@@ -1,0 +1,91 @@
+@import './../branding';
+@import './../font';
+
+.ebitEstimateModal {
+    .modalHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 12px;
+        border-bottom: none;
+        
+        .group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+        }
+    }
+
+    .modalBody {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+        p {
+            margin-bottom: 0px !important;
+        }
+
+        .value {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+        }
+
+        .confirmationRow {
+            margin: 16px 0;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+        }
+
+        .totalEstimate {
+            margin-top: 12px;
+            padding: 8px 12px;
+            background: var(--warm-stat-honey-bg);
+            border-radius: 4px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+            .total {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+            }
+        }
+    }
+
+    .modalFooter {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        width: 100%;
+        padding-top: 16px;
+        border-top: 1px solid var(--warm-neutral-mid-400);
+
+        .buttonCancel {
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            border-radius: 4px;
+            background-color: var(--warm-prime-chalk);
+            border: 1px solid var(--warm-neutral-mid-600);
+            @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500))
+        }
+
+        .buttonPrimary {
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            border-radius: 4px;
+            background-color: var(--warm-stat-mint-mid);
+            border: solid 1px var(--warm-stat-mint-mid);
+            margin-left: 8px;
+            @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-chalk));
+
+            &:disabled {
+                color: var(--warm-neutral-shade-100);
+                background-color: var(--warm-neutral-mid-100);
+                border: solid 1px var(--warm-neutral-mid-300);
+                cursor: default;
+            }
+        }
+    }
+}

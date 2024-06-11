@@ -1,0 +1,265 @@
+@import 'src/lib/_font.scss';
+
+#freeSolo {
+    height: 38px;
+    padding: 0 0 0 8px;
+    border: solid 1px var(--warm-neutral-mid-600);
+    border-radius: 4px;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    transition: none;
+
+    &:focus {
+        outline: none;
+        border-color: var(--warm-stat-mint-mid);
+        border-width: 1.4px;
+    }
+
+    &:hover {
+        border-color: var(--warm-neutral-shade-300);
+    }
+}
+
+#materialUIAutocomplete {
+    padding-bottom: 0px !important;
+}
+.contactForm {
+    max-width: 460px;
+    width: 100%;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 30px rgba(6, 3, 34, 0.15);
+    background-color: var(--warm-prime-chalk);
+
+    &Actions {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-end;
+
+        &Primary {
+          padding: 4px 16px !important;
+          border-radius: 4px !important;
+          line-height: 24px !important;
+          color: var(--warm-prime-chalk) !important;
+        }
+
+        &Secondary {
+            padding: 4px 16px !important;
+            background: var(--warm-prime-chalk) !important;
+            border: 1px solid var(--warm-neutral-mid-400) !important;
+            border-radius: 4px !important;
+            color: var(--warm-neutral-shade-500) !important;
+        }
+
+        &Link {
+            padding: 0 !important;
+        }
+    }
+
+    &Heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &Border {
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-bottom: 0px;
+            @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+        }
+    }
+
+    &ExistingContactList {
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+        .actionRow {
+          margin-bottom: 20px; 
+        }
+    }
+
+    &Tabs {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 18px;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            border-bottom: 1px solid var(--light-light-gray-background-color);
+            z-index: -1;
+        }
+
+        &Items {
+            border: 1px solid var(--light-light-gray-background-color);
+            border-radius: 2px;
+            span {
+                display: inline-block;
+                padding: 5px 30px;
+                background-color: var(--always-white-background-color);
+                font-family: var(--primary-16px-below-font-family);
+                font-size: 14px;
+                line-height: 1.57;
+                color: var(--primary-checkbox-label-font-color);
+                cursor: pointer;
+            }
+
+            &Active {
+                background-color: var(--secondary-blue-grays-background-color) !important;
+                color: var(--always-white-background-color) !important;
+            }
+        }
+    }
+
+    &Close {
+        cursor: pointer;
+    }
+
+    &Inputs {
+        border-bottom: 1px solid var(--warm-neutral-mid-400);
+        margin-bottom: 20px;
+
+        &Item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            &Label {
+                margin-bottom: 6px;
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400))
+            }
+
+            &Optional {
+                font-family: var(--primary-16px-below-font-family);
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.57;
+                color: var(--dark-light-2-gray-font-color);
+            }
+
+            &Input {
+                padding: 8px 12px;
+                border-radius: 2px;
+                border: solid 1px var(--light-light-gray-border-color);
+                background-color: var(--always-white-background-color);
+                font-family: var(--primary-16px-below-font-family);
+                font-size: 16px;
+                line-height: 1.5;
+                color: var(--body-text-blue-gray-font-color);
+                outline: none;
+
+                &:hover, &:focus {
+                    border-color: var(--dark-green-background-color);
+                }
+
+                &::placeholder {
+                    font-family: var(--primary-16px-below-font-family);
+                    font-size: 16px;
+                    line-height: 1.5;
+                    color: var(--dark-light-2-gray-font-color);
+                }
+            }
+        }
+    }
+
+    .existingContacts {
+        margin-bottom: 20px;
+
+        &HowMany {
+            padding-bottom: 10px;
+            font-family: var(--primary-16px-below-font-family);
+            font-size: 12px;
+            line-height: 1.67;
+            color: var(--primary-checkbox-label-font-color);
+            border-bottom: 1px solid var(--light-light-gray-background-color);
+        }
+
+        &List {
+            &Item {
+                display: flex;
+                align-items: center;
+                padding: 20px 12px;
+                border-bottom: 1px dashed var(--warm-neutral-mid-400);
+
+                &:hover {
+                    background: var(--warm-neutral-light-400);
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                img {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 8px;
+                    border-radius: 50%;
+                    object-fit: contain;
+                }
+
+                &Info {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    &Checkbox {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        input {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+
+                        &Icon {
+                            display: flex;
+                            align-items: center;
+                            width: 20px;
+                            height: 20px;
+                            padding: 2px;
+                            border-radius: 50%;
+                            background-color: var(--warm-stat-mint-mid);
+                        }
+                    }
+                    &Detail {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2px;
+
+                        &row {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 8px;
+                        }
+                        
+                        &Name {
+                            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+                        }
+                        &Role {
+                            margin-left: 40px;
+                            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300))
+                        }
+                        &Email {
+                            margin-left: 40px;
+                            @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure))
+                        }
+                    }
+                }
+            }
+
+            .active {
+                background: var(--warm-stat-mint-bg-2) !important;
+                border-radius: 8px; 
+            }
+        }
+    }
+}

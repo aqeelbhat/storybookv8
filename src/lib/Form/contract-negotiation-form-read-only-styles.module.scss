@@ -1,0 +1,302 @@
+@import './../branding';
+@import './../_font';
+
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * 4)) / 5);
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    &5 {
+        width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    }
+
+    &6 {
+      width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    }
+}
+
+
+.contractNegotiationReadOnlyForm {
+  // padding-bottom: 32px;
+  
+  &Section {
+    border-bottom: 1px solid var(--warm-neutral-mid-400);
+    margin-bottom: 16px;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    .sectionTitle {
+      margin-bottom: 16px;
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+    }
+
+    .title {
+        margin-bottom: 16px;
+        @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600));
+
+        &Container {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+    }
+
+    .linkButton {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+    }
+
+    .dashedBorder {
+      padding-bottom: 16px;
+      border-bottom: 1px dashed var(--warm-neutral-mid-600);
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 16px;
+
+        .dotContainer {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .dot {
+          display: flex;
+          align-items: center;
+          width: 5px;
+          height: 5px;
+          margin-left: 8px;
+          border-radius: 50%;
+          background-color: var(--warm-neutral-shade-300);
+        }
+    
+        .label {
+          margin-right: 32px;
+           @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+
+            .text {
+              margin-left: 20px;
+              cursor: pointer;
+              @include FONTSTYLE_BODY_R1(20px, var(--warm-prime-azure));
+            }
+        }
+    
+        .value {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+            .userInfo {
+              .email {
+                margin-left: 4px;
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300))
+              }
+            }
+           
+           .relatedContracts {
+              display: flex;
+              flex-direction: row;
+              gap: 4px;
+
+              .wrapper {
+                display: flex;
+
+                .link {
+                  cursor: pointer;
+                  @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+                }
+              }
+           }
+        }
+
+        .tenantValue {
+          margin-left: 8px;
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300))
+        }
+
+        .linkContainer {
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          a {
+            color: var(--warm-prime-azure) !important;
+          }
+        }
+
+        // .documentName {
+        //   max-width: 270px;
+        // }
+
+        .documentContainer {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            max-width: 650px;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+
+            .name {
+              @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+            }
+
+            .file {
+                width: fit-content;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                padding: 4px 12px;
+                border-radius: 4px;
+                @include FONTSTYLE_BODY_R2(20px, var(--warm-prime-azure));
+                background: var(--warm-neutral-light-400);
+                cursor: pointer;
+            
+                svg {
+                  width: 16px;
+                  height: 16px;
+                  flex-shrink: 0;
+                }
+            
+                span {
+                  color: var(--coco-azure) !important;
+                  cursor: pointer;
+                }
+            }
+
+        }
+
+
+        .file {
+          width: fit-content;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 4px 4px;
+          border-radius: 4px;
+          @include FONTSTYLE_BODY_R2(20px, var(--warm-prime-azure));
+          background: var(--warm-neutral-light-400);
+          cursor: pointer;
+      
+          svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+          }
+      
+          span {
+            color: var(--coco-azure) !important;
+            cursor: pointer;
+          }
+      }
+    }
+
+    .proposalSection {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      border-bottom: 1px dashed var(--warm-neutral-mid-600);
+
+      &:last-of-type {
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.singleColumn {
+    .contractNegotiationReadOnlyFormSection .row {
+      flex-direction: column;
+      gap: 0px;
+    }
+  }
+}
+
+.mrgTop8 {
+  margin-top: 8px;
+}
+
+.docField {
+  display: flex;
+  margin-bottom: 16px;
+
+  .legalDocumentContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .label {
+      margin-right: 32px;
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+    }
+
+    .value {
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+    }
+
+      .legalDocuments {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 12px;
+        background: #F6F6F6;
+        border-radius: 4px;
+        @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-300));
+        cursor: pointer;
+        max-width: fit-content;
+        svg {
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+        }
+      }
+
+      .legalDocumentsLink {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        a {
+          color: var(--warm-prime-azure);
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+  }
+}
+
+.legalDocumentsLinkContainer {
+  display: flex;
+  flex-direction: column;
+}

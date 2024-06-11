@@ -1,0 +1,13 @@
+
+@mixin FORCE_SCROLLBAR() {
+  &::-webkit-scrollbar {
+    width: 6px !important;
+    display: block !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--warm-neutral-mid-500) !important;
+    border-radius: 100px !important;
+  }
+  -ms-overflow-style: auto !important;
+  scrollbar-width: auto !important;
+}

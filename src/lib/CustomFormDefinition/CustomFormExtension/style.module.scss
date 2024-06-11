@@ -1,0 +1,15 @@
+
+/************************************************************
+ * Copyright (c) 2024 Orolabs.ai to Present
+ * Author: Manoj Kumar
+ ************************************************************/
+
+.formDataListWrapper {
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--warm-neutral-mid-500);
+
+  &:last-child {
+    padding-bottom: 0px;
+    border-bottom: none;
+  }
+}

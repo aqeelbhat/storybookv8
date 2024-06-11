@@ -1,0 +1,417 @@
+@import './../branding';
+
+.edro {
+    &Heading {
+        margin-bottom: 16px;
+        font-family: $primary-16px-below-font-family;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: $dark-color;
+    }
+
+    .edroItemsChart {
+        margin-bottom: 0;
+        &Breakdown {
+            margin-left: 24px;
+            font-family: $primary-16px-below-font-family;
+            font-size: 14px;
+            line-height: 22px;
+            color: $dark-color;
+        }
+        .edroItemsGraphIcon {
+            padding: 10px;
+            img {
+                width: 14px;
+                height: 14px;
+            }
+        }
+        .edroItemsEstimate {
+            max-width: fit-content;
+            padding: 6px 12px;
+        }
+        .edroItemsEstimateValue {
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    &Items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        &Amount {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &GraphIcon {
+            display: flex;
+            padding: 20px;
+            margin-right: 8px;
+            background: $white-smoke-color;
+            border-radius: 4px 0px 0px 4px;
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &Estimate {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: fit-content;
+            gap: 24px;
+            width: 100%;
+            padding: 16px;
+            background: $white-smoke-color;
+            border-radius: 0px 4px 4px 0px;
+
+            &Title {
+                font-family: $primary-16px-below-font-family;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 20px;
+                color: $panel-font-color;
+            }
+
+            &Value {
+                font-family: $primary-18px-above-font-family;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 32px;
+                color: $dark-green-color;
+            }
+        }
+    }
+}
+
+.ed {
+    &Heading {
+        margin-bottom: 16px;
+        font-family: $primary-16px-below-font-family;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: $dark-color;
+    }
+
+    .datePickerWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .separator {
+          margin: 0 16px;
+        }
+        input {
+          border: none !important;
+        }
+    }
+
+    &Error, input[type="text"].edInputError {
+        font-family: $primary-16px-below-font-family;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: $oro-error-red-color;
+    }
+
+    input[type="text"].edInputError {
+        border-color: $oro-error-red-color;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    &ProjectionsMonthly {
+        max-width: 612px;
+        margin-top: 24px;
+
+        h3 {
+            margin-bottom: 8px;
+            font-family: $primary-16px-below-font-family;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+            color: $dark-color;
+        }
+
+        &Items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 48px;
+            padding-left: 16px;
+            margin-bottom: 16px;
+            background: $primary-badge-background-color-1;
+            border-radius: 2px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &Date {
+                font-family: $primary-16px-below-font-family;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 22px;
+                color: $pure-black-color;
+            }
+
+            input {
+                max-width: 93px;
+                min-height: 48px;
+                margin-right: 0;
+                border-radius: 2px;
+
+                &:focus {
+                    outline-color: $oro-primary-green-color;
+                }
+            }
+        }
+    }
+
+    &ProjectionsYearly {
+        max-width: 612px;
+        margin-top: 24px;
+
+        h3 {
+            margin-bottom: 8px;
+            font-family: $primary-16px-below-font-family;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+            color: $dark-color;
+        }
+        &Items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 48px;
+            padding-left: 16px;
+            margin-bottom: 16px;
+            background: $primary-badge-background-color-1;
+            border-radius: 2px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &Label {
+                margin-right: 22px;
+                font-family: $primary-16px-below-font-family;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 22px;
+                color: $pure-black-color;
+            }
+
+            input {
+                max-width: 93px;
+                min-height: 48px;
+                margin-right: 0;
+                border-radius: 2px;
+                &:focus {
+                    outline-color: $oro-primary-green-color;
+                }
+            }
+
+            &Date {
+                margin-right: 4px;
+                font-family: $primary-16px-below-font-family;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 22px;
+                color: $dark-gray-color;
+            }
+        }
+    }
+
+    &Dates {
+        display: flex;
+
+        &Picker {
+            width: 100%;
+        }
+
+        &Label {
+            font-family: $primary-16px-below-font-family;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+            color: $dark-color;
+        }
+
+        &Start {
+            max-width: 294px;
+            width: 100%;
+
+            label {
+                padding-bottom: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 22px;
+                color: $dark-color;
+            }
+
+            fieldset {
+                border-color: #d6d6d6 !important; // this is intentional
+            }
+        }
+
+        &Duration{
+            display: flex;
+            max-width: 294px;
+            width: 100%;
+            margin-left: 24px;
+            min-height: 82px;
+            span {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 40px;
+                background: $primary-badge-background-color-1;
+                border-radius: 2px;
+                margin-left: -20px;
+                margin-top: 31px;
+                padding-left: 16px;
+            }
+            label {
+                padding-bottom: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 22px;
+                color: $dark-color;
+            }
+            &Count {
+                input[type="text"] {
+                    max-width: 40px;
+                    min-height: 40px;
+                    border-radius: 2px;
+                    &:focus {
+                        outline-color: $oro-primary-green-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &SplitEstimate {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 24px;
+
+        &Label {
+            margin-right: 40px;
+            font-family: $primary-16px-below-font-family;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+            color: $dark-color;
+        }
+
+        div.edSplitEstimateBy {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-right: 16px;
+            img {
+                width: 20px;
+                height: 20px;
+            }
+            input {
+                height: 16px;
+                width: 16px;
+            }
+
+            span {
+                margin-left: 4px;
+                font-family: $primary-16px-below-font-family;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 22px;
+                color: $dark-color;
+            }
+        }
+    }
+
+    &Estimate {
+        margin-bottom: 24px;
+        &Items {
+            display: flex;
+            align-items: flex-end;
+            max-width: 612px;
+            margin-bottom: 24px;
+
+            &TextBox {
+                max-width: 294px;
+                width: 100%;
+            }
+
+            &Currency {
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                height: 40px;
+                background: $primary-badge-background-color-1;
+                border-radius: 2px;
+            }
+
+            label {
+                margin-bottom: 4px;
+                font-family: $primary-16px-below-font-family;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 22px;
+                color: $dark-color;
+            }
+    
+            input[type="text"] {
+                max-width: 294px;
+                height: 40px;
+                padding: 0 8px;
+                border: solid 1px $gray-color-2;
+                border-radius: 2px;
+                font-family: $primary-16px-below-font-family;
+                font-size: 14px;
+                color: $dark-light-color;
+
+                &:focus {
+                    outline-color: $oro-primary-green-color;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,113 @@
+@import './../../branding';
+@import './../../font';
+
+.spread {
+  flex: 1;
+}
+
+.itemComparisonModal {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+  padding: 12px 12px 0px 12px;
+
+  .headerBar {
+    display: flex;
+    align-items: baseline;
+    grid-gap: 8px;
+
+    .title {
+      height: 26px;
+      @include FONTSTYLE_SUBTITLE_M1(26px, var(--warm-neutral-shade-500));
+    }
+
+    .refLabel {
+      border-left: 1px solid var(--warm-neutral-mid-400);
+      padding-left: 8px;
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    }
+
+    .refSelector {
+      display: flex;
+      align-items: baseline;
+      width: 220px;
+    }
+
+    .closeBtn {
+      cursor: pointer;
+      padding: 4px;
+    }
+  }
+
+  .itemTable {
+    border-top: 1px solid var(--warm-neutral-mid-300);
+    width: 100%;
+    max-height: calc(100vh - 150px - 56px - 56px);
+    overflow-y: auto;
+  }
+  .row {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+
+    &:not(.scrollbar) {
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+      &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+      }
+    }
+
+    .headerCol {
+      position: sticky;
+      left: 0px;
+      background-color: var(--warm-prime-chalk);
+      width: 260px;
+      min-width: 260px;
+      border-right: 1px solid var(--warm-neutral-mid-300);
+      border-left: 1px solid var(--warm-neutral-mid-300);
+      border-bottom: 1px solid var(--warm-neutral-mid-300);
+    }
+
+    .valueCol {
+      flex: 1;
+      min-width: 280px;
+      border-right: 1px solid var(--warm-neutral-mid-300);
+      border-bottom: 1px solid var(--warm-neutral-mid-300);
+      padding: 10px 16px;
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+      &.bold {
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+      }
+
+      &.highlight {
+        background-color: var(--warm-stat-honey-lite);
+        border-color: var(--warm-stat-honey-mid);
+      }
+    }
+
+    &.bold {
+      .headerCol {
+        background-color: var(--warm-neutral-light-200);
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+      }
+
+      .valueCol {
+        background-color: var(--warm-neutral-light-200);
+
+        &.empty {
+          border-right: none;
+        }
+      }
+    }
+
+    &.scrollbar {
+      height: 10px;
+
+      .headerCol, .valueCol {
+        border: none;
+      }
+    }
+  }
+}

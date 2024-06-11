@@ -1,0 +1,173 @@
+@import './../branding';
+@import 'src/lib/_font.scss';
+
+.ssoContainer {
+  padding: 8px 12px;
+  width: fit-content;
+  
+  background-color: $link-blue-color;
+  border-radius: 4px;
+
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 18px;
+
+  a {
+    color: $pure-white-color;
+    text-decoration: none;
+  }
+}
+
+.hintText {
+  display: flex;
+  max-width: 400px;
+  margin-top: 12px;
+  svg {
+      flex-shrink: 0;
+  }
+  span {
+      display: block;
+      margin-left: 4px;
+      font-size: 12px;
+      color: var(--pargraphs-blue-gray-font-color);
+  }
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  max-width: 480px;
+  width: 100%;
+
+  background-color: $pure-white-color;
+  box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+
+  font-family: "Inter";
+  color: $oro-font-color;
+  line-height: 1.5;
+
+  .loginFormQRCode {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .loginFormQRCodeText {
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    strong {
+      font-weight: 500;
+      color: var(--warm-prime-azure);
+      margin-left: 4px;
+      cursor: pointer;
+    }
+  }
+
+  .loginFormHeader {
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  .errorMessage {
+    margin-bottom: 8px;
+    width: 100%;
+    align-self: center;
+    font-size: 14px;
+    color: $oro-error-red-color;
+  }
+
+  .inputsContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 24px;
+    text-align: left;
+
+    label {
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .input {
+      box-sizing: border-box;
+      padding-left: 8px;
+      height: 40px;
+      width: 100%;
+
+      background-color: $pure-white-color;
+      border: 1px solid $gray-color;
+      border-radius: 4px;
+
+      color: $oro-edit-color;
+      font-size: 14px;
+      line-height: 24px;
+
+      &:focus {
+        outline-color: $oro-primary-green-color;
+      }
+    }
+
+    .passwordShowHide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 27px;
+      right: 0;
+      width: 60px;
+      height: 40px;
+
+      border-radius: 0 4px 4px 0;
+      background-color: $dark-gray-color;
+      cursor: pointer;
+
+      color: $pure-white-color;
+      font-size: 14px;
+    }
+  }
+
+  .submit {
+    height: 40px;
+    width: 100%;
+
+    border: none;
+    border-radius: 4px;
+    background: $oro-primary-green-color;
+    cursor: pointer;
+
+    font-family: "Inter";
+    font-size: 15px;
+    line-height: 24px;
+    color: $pure-white-color;
+  }
+
+  .forgotPassword {
+    align-self: center;
+    margin-top: 16px;
+    width: fit-content;
+
+    cursor: pointer;
+
+    color: $link-blue-color;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 520px) {
+    padding: 1.5rem;
+  }
+}
+
+.loginFormExtended {
+  max-width: 800px;
+}

@@ -1,0 +1,880 @@
+@import 'src/lib/_font.scss';
+
+.newProcess {
+    width: 100%;
+    padding: 16px 0;
+    padding-bottom: 100px;
+
+    .hiddenSteps {
+        display: block;
+        width: fit-content;
+        padding: 3px 6px;
+        border: 1px solid var(--warm-neutral-mid-400);
+        border-radius: 4px;
+        cursor: pointer;
+        @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500))
+    }
+
+    .vertLine {
+        display: block;
+        position: relative;
+        left: 20px;
+        width: fit-content;
+        height: 28px;
+        margin-bottom: -20px;
+        border-left: 1px solid var(--warm-neutral-shade-400);
+    }
+}
+
+.tree {
+    position: relative;
+
+    &Index {
+        position: absolute;
+        top: 9px;
+        left: -16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    &IndexDot {
+        position: absolute;
+        top: 18px;
+        left: -5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .pendingDot {
+        background-color: var(--warm-stat-mint-mid);
+    }
+    
+    .doneDot {
+        width: 16px;
+        height: 16px;
+        top: 16px;
+        left: -8px;
+        background: var(--coco-chalk);
+        border: 1px solid var(--warm-stat-mint-mid);
+    }
+    
+    .pendingDot {
+        background-color: var(--warm-stat-mint-mid);
+    }
+    
+    .notStartedDot {
+        background-color: var(--warm-neutral-light-500);
+    }
+
+    .naDot {
+        width: 16px;
+        height: 16px;
+        top: 16px;
+        left: -8px;
+        background: var(--coco-chalk);
+        border: 1px solid var(--warm-neutral-shade-100);
+    }
+    
+    .rejectedDot {
+        background-color: var(--warm-stat-chilli-regular);
+    }
+
+    .pending {
+        background-color: var(--warm-stat-mint-mid);
+        @include FONTSTYLE_BODY_M1(20px, var(--coco-chalk))
+    }
+    
+    .done {
+        background-color: var(--coco-chalk);
+        border: 1px solid var(--warm-stat-mint-mid);
+    }
+
+    .late {
+        background-color: var(--warm-stat-honey-regular);
+        @include FONTSTYLE_BODY_M1(20px, var(--coco-chalk))
+    }
+    
+    .pending {
+        background-color: var(--warm-stat-mint-mid);
+        @include FONTSTYLE_BODY_M1(20px, var(--coco-chalk))
+    }
+    
+    .notStarted {
+        background-color: var(--warm-neutral-light-500);
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+    }
+
+    .na {
+        background: var(--coco-chalk);
+        border: 1px solid var(--warm-neutral-shade-100);
+    }
+    
+    .rejected {
+        background-color: var(--warm-stat-chilli-regular);
+        @include FONTSTYLE_BODY_M1(20px, var(--coco-chalk))
+    }
+    
+    ul {
+        margin-bottom: 0px;
+        padding-left: 19.5px;
+        list-style: none;
+
+        .doneLine {
+            &:after {
+                position: absolute;
+                top: 20px;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                content: '';
+                border: 0.5px solid var(--warm-neutral-shade-400) !important;
+            }
+            
+            &:last-child:after {
+                height: 0px;
+            }
+
+            &:last-child {
+                padding-bottom: 0px;
+            }
+        }
+      
+        li {
+            position: relative;
+            padding-left: 22.5px;
+            padding-bottom: 12px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            
+            &:after {
+                position: absolute;
+                top: 20px;
+                bottom: 0;
+                left: 0;
+                height: 100%;
+                content: '';
+                border: 0.5px dashed var(--warm-neutral-mid-600);
+            }
+            
+            &:last-child:after {
+                height: 0px;
+            }
+
+            &:last-child {
+                padding-bottom: 0px;
+            }
+        }
+    }
+}
+
+.nestedParallel {
+    display: flex;
+    width: 100% !important;
+    gap: 9.5px;
+    padding-top: 12px;
+    padding-left: 14.5px;
+
+    &Dots {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 18px;
+
+        &Idv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--warm-stat-mint-mid);
+        }
+    }
+
+    &Cnt {
+        width: 100%;
+
+        &Wrp {
+            margin-bottom: 12px;
+    
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    width: fit-content;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--warm-neutral-light-500);
+
+        .icon {
+            visibility: visible;
+        }
+
+        .chevron {
+            background-color: var(--warm-neutral-shade-200);
+        }
+
+        .number {
+            @include FONTSTYLE_BODY_R2(18px, var(--coco-chalk))
+        }
+
+        .gray {
+            display: none;
+        }
+
+        .white {
+            display: block;
+        }
+    }
+
+    &Parallel {
+        @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300))
+    }
+
+    &Uc {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        &Name {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-600));
+        }
+
+        .icon {
+            visibility: hidden;
+            cursor: pointer;
+        }
+
+        .chevron {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 2px 8px;
+            border-radius: 22px;
+            background-color: var(--warm-neutral-light-400);
+            cursor: pointer;
+        }
+
+        .open {
+            background-color: var(--warm-neutral-shade-100);
+        }
+
+        .openChevron {
+            color: var(--coco-chalk) !important;
+        }
+
+        .number {
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-400));
+        }
+
+        .gray {
+            display: block;
+            margin-top: -2px;
+        }
+
+        .white {
+            display: none;
+            margin-top: -2px;
+        }
+    }
+
+    &Lc {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &Key {
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300))
+        }
+
+        &Value {
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-500))
+        }
+
+        &Assign {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-right: 8px;
+            border-right: 1px solid var(--warm-neutral-mid-400);
+        }
+
+        &Estimate {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    }
+}
+
+.nestedSteps {
+    padding: 12px 0px 0px 0px;
+}
+
+.comments {
+    margin-bottom: 16px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+.expanded {
+    display: flex;
+    gap: 8px;
+
+    &Wrp {
+        max-width: 660px;
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+
+        &TaskOwner {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 12px;
+            margin: -12px -12px 12px -12px;
+            border-bottom: 1px solid var(--warm-stat-honey-mid);
+            border-radius: 8px 8px 0px 0px;
+            background-color: var(--warm-stat-honey-bg);
+
+            &Title {
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500))
+            }
+        }
+
+        &Active {
+            border: 1px solid var(--warm-neutral-shade-200);
+
+            &:hover {
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.18);
+            }
+        }
+
+        &NotActive {
+            border: 1px solid var(--warm-neutral-mid-300);
+
+            &:hover {
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+            }
+        }
+
+        .NameValue {
+            @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+            cursor: pointer;
+        }
+
+        .alert {
+            @include FONTSTYLE_BODY_M2(18px, var(--warm-stat-chilli-regular));
+        }
+
+        .iconGray {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: block;
+        }
+
+        .iconBlue {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            cursor: pointer;
+        }
+
+        .popUp {
+            position: absolute;
+            left: 100px;
+            top: -10px;
+            max-height: 330px;
+            width: fit-content;
+            white-space: nowrap;
+            padding: 16px;
+            background: var(--warm-prime-chalk);
+            border: 1px solid var(--warm-neutral-mid-400);
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            z-index: 1;
+            overflow-y: auto;
+
+            &Team {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                margin-bottom: 16px;
+
+                &Key {
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-300))
+                }
+
+                &Value {
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+                }
+
+                &NoBrd {
+                    margin-bottom: 0px !important;
+                    border-bottom: none !important; 
+                }
+            }
+
+            &Leads {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 2px;
+                padding: 4px 8px;
+                margin-bottom: 20px;
+                background: var(--warm-neutral-light-200);
+                border-radius: 4px;
+                @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-300))
+            }
+
+            &Item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                border-bottom: 1px solid var(--warm-neutral-mid-500);
+
+                &:last-child {
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                    border-bottom: none;
+                }
+
+                &Img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+
+                &Details {
+                    display: flex;
+                    flex-direction: column;
+
+                    &Name {
+                        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600))
+                    }
+    
+                    &Email {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        &Value {
+                            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-400))
+                        }
+
+                        &Icon {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &Alert {
+                        @include FONTSTYLE_BODY_R2(18px, var(--warm-stat-chilli-regular))
+                    }
+                }
+            }
+        }
+
+        &:hover {
+
+            .NameValue {
+                @include FONTSTYLE_BODY_M2(18px, var(--warm-prime-azure))
+            }
+
+            .iconGray {
+                display: none;
+            }
+
+            .iconBlue {
+                display: block;
+            }
+        }
+
+        &Uc {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &Name {
+                @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500))
+            }
+
+            &Status {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 3px 6px;
+                border-radius: 4px;
+
+                span {
+                    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500))
+                }
+            }
+
+            &NotStarted {
+                background-color: var(--warm-neutral-light-500);
+            }
+
+            &Pending {
+                background-color: var(--warm-misc-lite-lime);
+            }
+
+            &Late {
+                background-color: var(--warm-stat-honey-lite);
+            }
+
+            &Done {
+                display: flex;
+                align-items: center;
+                background-color: var(--warm-stat-mint-bg-2);
+
+                &Out {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 13px;
+                    height: 13px;
+                    border-radius: 50%;
+                    border: 1px solid var(--warm-stat-mint-mid);
+                }
+            }
+
+            &Skipped {
+                background-color: var(--warm-neutral-light-500);
+            }
+
+            &Stopped {
+                background-color: var(--warm-stat-chilli-bg);
+            }
+        }
+
+        &Desc {
+            padding-top: 4px;
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300))
+        }
+
+        &Lc {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+
+            &Brd {
+                padding-bottom: 14px;
+            }
+
+            &Key {
+                @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-200))
+            }
+
+            &Value {
+                @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500))
+            }
+
+            &Assign {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                &To {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    &Alert {
+                        padding-bottom: 2px;
+                    }
+                }
+
+                &On {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding-left: 16px;
+                    border-left: 1px solid var(--warm-neutral-mid-400);
+                }
+            }
+
+            &Estimate {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            &Buttons {
+                margin-bottom: 12px;
+
+                &Approval {
+                    position: relative;
+                    display: flex;
+                    gap: 12px;
+
+                    &ApprovePop {
+                        position: absolute;
+                        top: 34px;
+                        left: 40px;
+                    }
+
+                    &DenyPop {
+                        position: absolute;
+                        top: 34px;
+                        left: 140px;
+                    }
+
+                    &Delegate {
+                        position: relative;
+                    }
+                }
+
+                &Approve {
+                    width: fit-content;
+                    height: 34px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0px 16px;
+                    background: var(--warm-stat-mint-mid);
+                    border: 1px solid var(--warm-stat-mint-mid);
+                    border-radius: 4px;
+                    cursor: pointer;
+                    @include FONTSTYLE_BODY_M1(24px, var(--coco-chalk))
+                }
+
+                &Doc {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    &Menu {
+                        height: 34px;
+                        width: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: var(--always-white-font-color);
+                        border: 1px solid var(--semi-dark-border-divider-color-3);
+                        border-radius: 4px;
+                        cursor: pointer;
+                    }
+
+                    &Popup {
+                        position: relative;
+                        top: 10px;
+                        left: 138px;
+                    }
+
+                    &TaskActionMore {
+                        padding: 8px 8px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                      
+                        div {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            padding: 6px 12px;
+                            cursor: pointer;
+                            border: 1px solid transparent;
+                            border-radius: 4px;
+                            @include FONTSTYLE_BODY_SB1(22px, var(--warm-neutral-shade-300));
+                        
+                            &:hover {
+                                background-color: var(--coco-light-300);
+                                border: 1px solid var(--coco-berry-lite);
+                            }
+                        }
+                    }
+                }
+
+                &Secondary {
+                    width: fit-content;
+                    height: 34px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0px 16px;
+                    border: 1px solid var(--warm-stat-mint-mid);
+                    border-radius: 4px;
+                    cursor: pointer;
+                    @include FONTSTYLE_BODY_M1(24px, var(--warm-stat-mint-mid))
+                }
+
+                &Deny {
+                    width: fit-content;
+                    height: 34px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0px 16px;
+                    border-radius: 4px;
+                    background-color: var(--red-error-background-color);
+                    cursor: pointer;
+                    @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-chalk))
+                }
+
+                &More {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 4px 12px;
+                    border-radius: 4px;
+                    border: 1px solid var(--warm-neutral-mid-600);
+                    @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &Updates {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px solid var(--warm-neutral-mid-300);
+
+            &Update {
+                @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500))
+            }
+
+            &Activity {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                cursor: pointer;
+            }
+
+            &Na {
+                display: flex;
+                align-items: center;
+
+                &Key {
+                    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300))
+                }
+
+                &Date {
+                    margin-left: 4px;
+                    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-200))
+                }
+            }
+        }
+
+        &Loaded {
+            padding: 12px 0px;
+        }
+
+        &Lmc {
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+
+            &Words {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            &Cnt {
+                display: flex;
+                flex-direction: column;
+
+                &Dot {
+                    height: 4px;
+                    width: 4px;
+                    background-color: var(--warm-neutral-shade-100);
+                    border-radius: 50%;
+                }
+
+                &Name {
+                    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500))
+                }
+
+                .error {
+                    color: var(--warm-stat-chilli-regular);
+                }
+    
+                &Key {
+                    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300))
+                }
+    
+                &Value {
+                    display: block;
+                    padding-left: 8px;
+                    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-500))
+                }
+            }
+
+            &Date {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-200))
+            }
+        }
+    }
+
+    &MinIcon {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--warm-neutral-light-200);
+        border: 1px solid var(--warm-neutral-mid-300);
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    &Contact {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        z-index: 10;
+
+        @media (max-width: 520px) {
+            padding: 0 14px;
+        }
+    }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    cursor: default;
+  }

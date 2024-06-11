@@ -1,0 +1,820 @@
+@import './../branding';
+@import './../_font';
+
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+  &1 {
+    width: $column-width
+  }
+
+  &2 {
+    width: calc((#{$column-width} * 2) + #{$column-padding})
+  }
+
+  &3 {
+    width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+  }
+
+  &4 {
+    width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+  }
+
+  // &5 {
+  //     width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+  // }
+
+  // &6 {
+  //   width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+  // }
+}
+
+.contractNegotiationForm {
+
+  .tab {
+    &Container {
+      position: relative;
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      border-bottom: 2px solid $gray-color-2;
+
+      .slider {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: 2px;
+        width: 140px;
+        border-radius: 2px;
+        background-color: $dark-light-color;
+        transition: left 0.3s ease-in-out;
+
+        &Container {
+          position: relative;
+          display: flex;
+        }
+
+        &Tab1 {
+          left: 0;
+          width: 140px;
+        }
+
+        &Tab2 {
+          left: 140px;
+          width: 124px;
+        }
+      }
+
+      .colTab {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        flex-grow: 0;
+        min-width: 130px;
+        padding: 10px 8px;
+        border: none;
+        cursor: pointer;
+
+        span {
+          @include FONTSTYLE_SUBTITLE_SB2(22px, $dark-light-gray-font-color);
+        }
+
+        &Active {
+          border-bottom: none;
+          background-color: var(--always-white-background-color);
+
+          span {
+            @include FONTSTYLE_SUBTITLE_SB2(22px, $dark-light-color);
+          }
+        }
+
+        .callbackCount {
+          padding: 2px 4px;
+          margin-left: 5px;
+          background: $light-light-gray-color;
+          border-radius: 4px;
+          @include FONTSTYLE_BODY_SB2(16px, $dark-light-color);
+        }
+      }
+    }
+  }
+
+  &Details {
+    width: 100%;
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      gap: 16px;
+      border-bottom: 1px solid #EBEBEB;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      .title {
+        margin-bottom: 12px;
+        @include FONTSTYLE_SUBTITLE_SB1(22px, $dark-light-color);
+      }
+
+      .pb16 {
+        padding-bottom: 16px !important;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+
+        .sectionTitle {
+          @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600))
+        }
+
+        .contractDetailsTable {
+          border: 1px solid var(--warm-neutral-mid-500);
+          border-radius: 4px;
+
+          &Heading, &Body {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+          }
+          .hide {
+            display: none;
+          }
+
+        }
+
+        .notFirstColumn {
+          border-left: none !important;
+          border-top-left-radius: none !important;
+          border-right: 1px solid var(--warm-neutral-mid-500);
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+
+        .twoColumn {
+          width: 50% !important;
+        }
+
+        .contractDetailsColumn {
+          // border: 1px solid var(--warm-neutral-mid-500);
+          display: flex;
+          flex-direction: column;
+          width: 33.33%;
+
+          .twoColumn {
+            width: 50% !important;
+          }
+
+          // border-radius: 4px;
+          &Row {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+            &:last-child {
+
+              // border-bottom-right-radius: 4px;
+              .right {
+                border-bottom: none;
+                border-bottom: none;
+                background: var(--warm-neutral-light-200);
+              }
+
+              .left {
+                border-bottom-left-radius: 4px !important;
+                border-bottom: none;
+              }
+            }
+
+            &:first-child {
+              .right {
+                border-top-right-radius: 4px;
+              }
+            }
+          }
+
+          .error {
+            input {
+              &:focus {
+              border: 1px solid var(--warm-stat-chilli-regular) !important;
+              border-radius: 0 !important;
+              }
+            }
+          }
+
+          .right {
+            // padding: 8px 12px;    
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid var(--warm-neutral-mid-500);
+            width: 100%;
+            position: relative;
+
+            input {
+              text-indent: 12px;
+              padding: 0 0 0 16px;
+              height: 40px;
+              border: none;
+              outline: none;
+
+              &:focus {
+                border: 1px solid var(--warm-stat-mint-mid);
+                border-radius: 0;
+              }
+            }
+
+            svg+input {
+              text-indent: 24px;
+            }
+
+            svg,
+            span {
+              margin-top: 12px;
+              margin-left: 12px;
+              position: absolute;
+            }
+
+            input:disabled {
+              background: var(--warm-neutral-light-200);
+            }
+
+            &Heading {
+              padding: 7px 12px;
+              min-height: 41px;
+              background: var(--warm-neutral-light-200);
+              border-bottom: 1px solid var(--warm-neutral-mid-500);
+              &:first-child {
+                border-top-right-radius: 4px;
+              }
+              .multiLevelSelect {
+                border: none !important;
+              }
+            }
+          }
+
+          .left {
+            padding: 8px 12px;
+            min-height: 41px;
+            background: var(--warm-neutral-light-200);
+            border-right: 1px solid var(--warm-neutral-mid-500);
+            border-bottom: 1px solid var(--warm-neutral-mid-500);
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:first-child {
+              border-top-left-radius: 4px;
+            }
+
+            &:last-child {
+              border-bottom-left-radius: 4px !important;
+              border-bottom: none;
+            }
+
+            &Heading {
+              padding: 8px 12px;
+              min-height: 41px;
+              background: var(--warm-neutral-light-200);
+              border-bottom: 1px solid var(--warm-neutral-mid-500);
+              border-right: 1px solid var(--warm-neutral-mid-500);
+              &:first-child {
+                border-top-left-radius: 4px;
+              }
+            }
+          }
+          
+          .withSelector {
+            padding: 0px 0px !important;
+          }
+        }
+        &.actionBar {
+          align-items: flex-end;
+          cursor: pointer;
+          padding-bottom: 20px;
+
+          .addSplit {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 16px;
+            gap: 8px;
+            width: 100%;
+            height: 40px;
+            background: #F8F8F8;
+            border: 1px dashed #CACACA;
+            border-radius: 4px;
+            flex: none;
+            order: 3;
+            align-self: stretch;
+            flex-grow: 0;
+
+              span {
+                  @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+                  padding-left: 9px;
+              }
+          }
+      }
+        .alertMessage {
+          float: left;
+          clear: both;
+          margin-top: 12px;
+          svg {
+            vertical-align: middle;
+            margin-right: 12px;
+          }
+            span{
+            width: 100%;
+            height: 20px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-stat-chilli-regular));
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+          }
+        }
+
+        .action {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: none
+      }
+    }
+
+    .formSection {
+      margin-bottom: 20px;
+      // padding-bottom: 20px;
+      border-bottom: 1px solid #EBEBEB;
+
+      &Header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+
+        &ButtonPrimary {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          margin: 0;
+          padding: 4px 12px;
+          outline: none;
+          border: 1px solid var(--warm-neutral-mid-600);
+          border-radius: 4px;
+          background-color: transparent;
+          cursor: pointer;
+
+          @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+        }
+
+        &ButtonEdit {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          margin: 0;
+          padding: 0;
+          outline: none;
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+
+          @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-azure));
+        }
+      }
+      
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600));
+
+        &LineHeight {
+          @include FONTSTYLE_SUBTITLE_M2(34px, var(--warm-neutral-shade-600));
+        }
+      }
+
+      .titleSub {
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400));
+      }
+
+
+      .row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        &Mg6 {
+          margin-bottom: 6px;
+        }
+
+        .docSection {
+          @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600))
+        }
+
+        .summary {
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-400))
+        }
+
+        .contractDocument {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+            .fileItem {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
+              width: 100%;
+              padding: 0 12px 12px;
+
+              &.flex {
+                flex: 1;
+              }
+
+              .file {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                justify-content: space-between;
+                padding: 16px;
+                @include FONTSTYLE_BODY_R2(20px, var(--warm-neutral-shade-500));
+                background-color: var(--warm-stat-mint-lite-2);
+                border-radius: 4px;
+            
+                span {
+                  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+                  cursor: pointer;
+                  margin-left: 4px;
+                  margin-right: 8px;
+                }
+          
+                svg {
+                  height: 18px;
+                  width: 18px;
+                }
+
+                &Name {
+                  display: flex;
+                  gap: 10px;
+                }
+              }
+            }
+
+          &Details {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px 12px;
+            background: var(--warm-neutral-light-200);
+            border: 1px solid var(--warm-neutral-mid-200);
+            border-radius: 4px;
+            margin-bottom: 12px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200))
+          }
+
+          &AddMore {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+            align-items: center;
+            margin-top: 12px;
+            cursor: pointer;
+    
+            .label {
+              margin: 0px;
+              @include FONTSTYLE_BODY_SB1(22px, var(--warm-prime-azure));
+            }
+          }
+        }
+
+        .container {
+          border: 1px solid #E3E3E3;
+          border-radius: 8px;
+          
+          .documentRow {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 12px;
+            position: relative;
+            cursor: pointer;
+
+            input {
+              display: block;
+              width: 100%;
+              height: 100%;
+              font-size: 18px;
+              border: none;
+              text-transform: none;
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              opacity: 0;
+              cursor: pointer;
+            }
+            
+            .addDocumentContainer {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+            }
+            .name {
+              @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500))
+            }
+            .text {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-azure));
+
+              svg {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      .subField {
+        margin-bottom: 20px;
+      }
+    }
+
+    label {
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+      margin-bottom: 6px;
+
+      .error {
+        color: $oro-error-red-color;
+      }
+    }
+  }
+}
+
+.contractValue {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &Header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+    &Text {
+      @include FONTSTYLE_BODY_M1(28px, var(--warm-neutral-shade-400));
+    }
+
+    &History {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-azure));
+      cursor: pointer;
+    }
+  }
+
+  &Section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--warm-neutral-mid-600);
+
+    &:last-child {
+      padding-bottom: 0;
+      border: none;
+    }
+
+    &Row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      &Column {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  }
+
+  &Label {
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+    &Hint {
+      @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+    }
+  }
+
+  &Dot {
+    display: flex;
+    align-items: center;
+    width: 6px;
+    height: 6px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: var(--warm-neutral-shade-500);
+  }
+
+  &ButtonPrimary {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin: 0;
+    padding: 4px 12px;
+    outline: none;
+    border: 1px dashed var(--warm-neutral-mid-600);
+    border-radius: 4px;
+    background-color: var(--warm-neutral-light-200);
+    cursor: pointer;
+
+    @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+  }
+
+  &Control {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+
+    &Text {
+      input {
+        text-indent: 0px !important;
+      }
+    }
+
+    input {
+      text-indent: 12px;
+      padding: 0 0 0 16px !important;
+      height: 40px;
+      border: none;
+      outline: none;
+
+      &:focus {
+        border: 1px solid var(--warm-stat-mint-mid);
+        border-radius: 0;
+      }
+    }
+
+    svg+input {
+      text-indent: 24px;
+    }
+
+    svg {
+      position: absolute;
+      top: 13px;
+      left: 12px;
+    }
+
+    input:disabled {
+      background: var(--warm-neutral-light-200);
+    }
+  }
+
+}
+
+.contractReadOnly {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
+  &Header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 2px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+    &Text {
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+    }
+
+    &History {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-azure));
+      cursor: pointer;
+    }
+  }
+
+  &Row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    &Column {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &Label {
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+  }
+
+  &Value {
+    width: 240px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+  }
+
+  &DocumentValue {
+    width: 240px;
+    max-height: 26px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    background-color: var(--warm-neutral-light-300);
+    cursor: pointer;
+
+    &Text {
+      width: 240px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-300));
+    }
+  }
+
+  &FileIcon {
+    width: 12px;
+  }
+
+  &Button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-azure));
+  }
+
+  &DashedBorder {
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--warm-neutral-mid-600);
+  }
+
+  &Dot {
+    display: flex;
+    align-items: center;
+    width: 5px;
+    height: 5px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: var(--warm-neutral-shade-300);
+  }
+}

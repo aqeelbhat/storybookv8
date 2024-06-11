@@ -1,0 +1,574 @@
+@import './../branding';
+@import './../_font';
+
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    // &5 {
+    //     width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    // }
+
+    // &6 {
+    //   width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    // }
+}
+
+.callbackForm {   
+  padding-bottom: 16px; 
+    .tab {
+        &Container {
+          position: relative;
+          display: flex;
+          gap: 8px;
+          width: 100%;
+          border-bottom: 2px solid $gray-color-2;
+
+          .slider {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            height: 2px;
+            width: 140px;
+            border-radius: 2px;
+            background-color: $dark-light-color;
+            transition: left 0.3s ease-in-out;
+          
+            &Container {
+              position: relative;
+              display: flex;
+            }
+
+            &Tab1 {
+              left: 0;
+              width: 140px;
+            }
+            
+            &Tab2 {
+              left: 140px;
+              width: 124px;
+            }
+          }
+
+          .colTab {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            flex-grow: 0;
+            min-width: 130px;
+            padding: 10px 8px;
+            border: none;
+            cursor: pointer;
+
+            span {
+              @include FONTSTYLE_SUBTITLE_SB2(22px, $dark-light-gray-font-color);
+            }
+          
+            &Active {
+              border-bottom: none;
+              background-color: var(--always-white-background-color);
+              span {
+                @include FONTSTYLE_SUBTITLE_SB2(22px, $dark-light-color);
+              }
+            }
+
+            .callbackCount {
+              padding: 2px 4px;
+              margin-left: 5px;
+              background: $light-light-gray-color;
+              border-radius: 4px;
+              @include FONTSTYLE_BODY_SB2(16px, $dark-light-color);
+            }
+          }
+        }
+    }
+
+    &Details {
+        width: 100%;
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+            &:last-of-type {
+              border-bottom: none;
+            }
+
+            .statusSection {
+              display: flex;
+              flex-direction: column;
+              padding-bottom: 16px;
+              margin-bottom: 8px;
+              border-bottom: 1px solid $gray-color-2;
+              width: 100%;
+              
+              .statusContainer {
+                display: flex;
+                flex-direction: column;
+                padding: 16px;
+                gap: 10px;
+                background: $white-smoke-color;
+                border-radius: 8px;
+                
+                .statusTitle {
+                  @include FONTSTYLE_BODY_SB3(24px, var(--warm-neutral-shade-500));
+                }
+    
+                .outcomeRow {
+                  display: flex;
+                  flex-direction: row;
+                  width: 100%;
+
+                  .outcomeDropdown {
+                    width: 100%;
+                    padding-top: 3px;
+                  }
+                }
+    
+                .finalOutcome {
+                  display: flex;
+                  flex-direction: row;
+                  grid-gap: 8px;
+    
+                  &Title {
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+                  }
+    
+                  &SubTitle {
+                    @include FONTSTYLE_BODY_R1(22px, $dark-gray-color);
+                  }
+    
+                  &Header {
+                    display: flex;
+                    align-items: center;
+                  }
+    
+                  &DropdownContainer {
+                    padding-top: 5px;  
+                  }
+                }
+              }
+    
+            }
+
+            .title {
+              margin-bottom: 12px;
+              @include FONTSTYLE_SUBTITLE_SB1(22px, $dark-light-color);
+            }
+            
+            .row {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+                padding-bottom: 16px;
+
+                &:last-of-type {
+                  padding-bottom: 0;
+                }
+
+                .datetimeContainer {
+                  margin-bottom: 8px !important;
+                }
+
+                .phonecommunication {
+                    display: flex;
+                    flex-direction: row;
+                    grid-gap: 4px;
+
+                    .phone {
+                      margin-right: 15px;
+                    }
+                }
+        
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    grid-gap: 4px;
+                    width: 100%;
+        
+                    &.flex {
+                        flex: 1;
+                    }
+        
+                    &:last-child {
+                        margin-right: 0
+                    }
+
+                    &.action {
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: flex-end;
+                    }
+
+                    .attachmentBtn {
+                      position: absolute;
+                      right: 8px;
+                      top: 92px;     
+                      cursor: pointer;
+              
+                      &.flush {
+                        right: 14px;
+                      }
+                    }
+  
+                    .attachmentInput {
+                      font-size: 18px;
+                      display: none;
+                      width: 100%;
+                      border: none;
+                      text-transform: none;
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      opacity: 0;
+                      cursor: pointer;
+                    }
+                }
+
+                .pdB8 {
+                  padding-bottom: 8px !important;
+                }
+
+                .fileItem {
+                  display: flex;
+                  flex-direction: column;
+                  
+                  gap: 4px;
+                  width: 100%;
+                  padding-bottom: 12px;
+
+                  &.flex {
+                    flex: 1;
+                  }
+                }
+            }
+        
+            &:last-child {
+                margin-bottom: 0;
+                border-bottom: none
+            }
+        }
+
+        .checkBox {
+          display: flex;
+          flex-direction: column;
+        }
+  
+        label {
+          @include FONTSTYLE_BODY_M1(20px, $blue-gray-color);
+  
+          .error {
+            color: $oro-error-red-color;
+          }
+        }
+  
+        div.communicationmode {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-right: 16px;
+            img {
+                width: 20px;
+                height: 20px;
+            }
+            input {
+                height: 16px;
+                width: 16px;
+            }
+            span {
+                margin-left: 4px;
+                @include FONTSTYLE_SUBTITLE_R2(24px, $dark-color);
+            }
+        }
+  
+        textarea {
+          resize: none;
+          &:focus {
+            outline: none;
+            border-color: $oro-primary-green-color !important;
+          }
+        }
+
+        .outcomeGroup {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+    
+          &RadioItem {
+            display: inline-block;
+            position: relative;
+            padding: 0 6px;
+            margin: 0px;
+    
+            input[type='radio'] {
+              display: none;
+            }
+    
+            label {
+              display: flex;
+              .text {
+                font-weight: 400;
+                font-size: 16px;
+                max-width: calc(100% - 30px);
+                color: $dark-color
+              }
+            }
+    
+            label:before {
+              content: " ";
+              display: inline-block;
+              position: relative;
+              margin: 0 5px 0 0;
+              width: 16px;
+              height: 16px;
+              border-radius: 10px;
+              border: solid 1px var(--warm-neutral-shade-100);
+              background-color: transparent;
+            }
+    
+            input[type=radio]:checked + label:before {
+              border: solid 1px $oro-primary-green-color;
+            }
+    
+            input[type=radio]:checked + label:after {
+              border-radius: 5px;
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              top: 4px;
+              left: 10px;
+              content: " ";
+              display: block;
+              background: $oro-primary-green-color;
+            }
+          }
+        }
+    }
+
+    /* Below classes needs to remove once history tab moves to comment section */
+    &History{
+      display: flex;
+      flex-direction: column;
+      width: $form-width;
+      height: calc(100vh - 157px);
+      overflow: scroll;
+      
+      &Event {
+        padding-bottom: 15px;
+        border-bottom: 1px dotted $gray-color-2;
+
+        &:last-child {
+          border-bottom: none
+        }
+
+      &Row {
+        display: flex;
+        padding: 15px 10px 0px 0px;
+        position: relative;
+
+        &Content {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-left: 8px;
+  
+          &Date{
+              width: 80px;
+              margin-top: 3px;
+              @include FONTSTYLE_BODY_R2(20px, $blue-grays-font-color)
+          }
+        }
+
+        &Profile {
+          margin-top: 10px;
+          height: 30px;
+          width: 30px;
+          background-color: var(--always-white-font-color);
+          border-radius: 19px;
+          overflow: hidden;
+          z-index: 1;
+  
+          img {
+            height: 30px;
+            width: 30px;
+          }
+        }
+
+        &NoteDetails {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .sourceContactContainer {
+            display: flex;
+            padding-top: 5px;
+
+            svg {
+              margin-top: 7px;
+              margin-right: 5px;
+            }
+
+            .sourceMode {
+              padding-right: 8px;
+              padding-top: 3px;
+              border-right: 0.5px solid $light-blue-gray-color;
+              @include FONTSTYLE_BODY_SB2(20px, $light-blue-gray-color);
+              margin-right: 8px;
+            }
+
+            .contactSource {
+              span {
+                @include FONTSTYLE_BODY_SB2(20px, $light-blue-gray-color)
+              }
+            }
+          }
+          
+          .notes {
+            display: flex;
+            padding: 8px;
+            background: $oro-notes-background-color;
+            border-radius: 4px;
+            width: 350px;
+            @include FONTSTYLE_BODY_R1($color:$dark-light-color);
+          }
+
+          .attachment {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            grid-gap: 4px;
+            padding-top: 4px;
+            max-width: 350px;
+          }
+        }
+
+        &CommentWrapper {
+          flex: 1;
+          display: flex;
+          margin-left: 12px;
+
+          .historyDetails {
+              flex-direction: column;
+              justify-content: center;
+              min-height: 38px;
+
+              &Date{
+                display: flex;
+                flex-direction: row;
+                @include FONTSTYLE_BODY_SB2(20px, $light-blue-gray-color)
+              }
+
+              .name, .source{
+                @include FONTSTYLE_BUTTON(20px, $dark-light-color)
+              }
+
+              .text {
+                @include FONTSTYLE_BODY_R1(20px, $dark-light-color)
+              }
+
+              .icon {
+                display: inherit;
+              }
+          }
+
+          .sourceDetails {
+            display: flex;
+            flex-direction: row;
+          }
+
+          .commentText {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              min-height: 38px;
+              padding: 0 8px;
+              outline: none;
+              border: 1px solid transparent;
+              border-radius: 4px;
+              @include FONTSTYLE_BUTTON(20px, $blue-grays-font-color);
+          }
+        }
+          &Line {
+            position: absolute;
+            left: 138px;
+            top: 23px;
+            height: 110PX;
+            width: 1px;
+            border: 1px dashed $light-gray-color;
+          }
+      }
+      }
+    }
+
+    .file {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 25px;
+      padding: 4px 8px;
+      @include FONTSTYLE_BODY_R2(20px, var(--warm-prime-azure));
+      background-color: var(--warm-neutral-light-300);
+      cursor: pointer;
+
+      .name {
+        display: flex;
+        gap: 4px;
+      }
+  
+      span {
+        color: var(--coco-azure) !important;
+        cursor: pointer;
+        margin-left: 4px;
+        margin-right: 8px;
+      }
+
+      svg {
+        height: 18px;
+        width: 18px;
+      }
+    }
+
+    .error {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.14;
+      color: $oro-error-red-color;
+  
+      img {
+        margin-right: 5px;
+      }
+    }
+}

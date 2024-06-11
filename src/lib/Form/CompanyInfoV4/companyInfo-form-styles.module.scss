@@ -1,0 +1,1120 @@
+@import 'src/lib/_font.scss';
+@import 'src/lib/branding.scss';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+}
+
+.allDisabled {
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+}
+
+.companyInfoFormUpdateHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .companyInfoFormUpdateHeaderInfo {
+        @include FONTSTYLE_HEADING_H7(28px, var(--warm-neutral-shade-600));
+    }
+    .companyInfoFormUpdateHeaderSubText {
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    }
+}
+
+.companyInfoFormPopupContentsHeaderProgressInfo {
+    display: flex;
+    padding: 12px 16px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 8px;
+    background: var(--warm-neutral-light-500);
+    .companyInfoFormPopupContentsHeaderProgressInfoCountry {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+        .companyInfoFormPopupContentsHeaderProgressInfoCountryName {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        }
+    }
+    .companyInfoFormPopupContentsHeaderProgressInfoEdit {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+        cursor: pointer;
+    }
+}
+
+.companyExtension {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .companyExtensionHeader {
+        margin-bottom: 16px;
+    }
+    .companyExtensionHeaderInfo {
+        @include FONTSTYLE_HEADING_H7(28px, var(--warm-neutral-shade-600));
+    }
+    .companyExtensionHeaderSubText {
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    }
+    .companyExtensionOptionsSeperator {
+        width: 100%;
+        margin: 24px 0;
+        border-bottom: 1px dashed var(--warm-neutral-mid-500);
+    }
+    .companyExtensionOptions {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+        .companyExtensionOptionsNotChecked {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--warm-neutral-shade-100);
+            background-color: var(--warm-prime-chalk);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .companyExtensionOptionsChecked {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background-color: var(--warm-stat-mint-mid);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .companyExtensionOptionsItem {
+            width: 100%;
+            .companyExtensionOptionsItemHeader {
+                @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+            }
+            .companyExtensionOptionsItemHeaderSubText {
+                margin-top: 8px;
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+            }
+            .companyExtensionOptionsItemForm {
+                position: relative;
+                width: 100%;
+                margin-top: 12px;
+                .companyExtensionOptionsItemFormContent {
+                    height: 220px;
+                    overflow: hidden;
+                }
+                .companyExtensionOptionsItemFormContentExpanded {
+                    height: 100%;
+                }
+                .companyExtensionOptionsItemFormShadow {
+                    position: absolute;
+                    bottom: 24px;
+                    width: 100%;
+                    height: 55px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--warm-prime-chalk) 100%);
+                }
+                .companyExtensionOptionsItemFormExpand {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 8px;
+                    width: 100%;
+                    z-index: 2;
+                    .companyExtensionOptionsItemFormExpandBorder {
+                        height: 1px;
+                        width: 100%;
+                        background-color: var(--warm-neutral-mid-500);
+                    }
+                    .companyExtensionOptionsItemFormExpandText {
+                        display: flex;
+                        padding: 4px 16px;
+                        align-items: center;
+                        gap: 4px;
+                        border-radius: 100px;
+                        border: 1px solid var(--warm-prime-azure);
+                        background: var(--warm-stat-berry-lite);
+                        flex-shrink: 0;
+                        cursor: pointer;
+                        @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-azure));
+                    }
+                }
+            }
+        }
+    }
+}
+
+.companyInfoFormPopupWrapperContentsPreview {
+    padding: 24px;
+    background: var(--warm-neutral-light-300);
+    min-height: calc(100% - 53px);
+    display: flex;
+    align-items: center;
+    .companyInfoFormPopupWrapperContentsPreviewContainer {
+        width: 100%;
+    }
+}
+
+.companyInfoFormPopupWrapperExpandContainerHeaderActionItems {
+    display: flex;
+    align-items: center;
+    .companyInfoFormPopupWrapperExpandContainerHeaderActionItemsDownload {
+        display: flex;
+        padding-right: 12px;
+        margin-right: 12px;
+        border-right: 1px solid var(--warm-neutral-mid-600);
+        svg {
+            flex-shrink: 0;
+        }
+    }
+}
+
+.companyInfoFormPopupContentsActions {
+    display: flex;
+    width: 100%;
+    padding-top: 16px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    align-self: stretch;
+    border-top: 1px solid var(--warm-neutral-mid-400);
+    @media (max-width: 980px) {
+        margin-top: 0;
+    }
+
+    button {
+        @media (max-width: 980px) {
+            height: 44px;
+        }
+    }
+
+    .companyInfoFormPopupContentsActionsSave {
+        padding-right: 16px;
+        border-right: 1px solid var(--warm-neutral-mid-400);
+    }
+}
+
+.fileUploaderContainerKeyDropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--warm-prime-chalk);
+    min-width: 100px;
+    width: max-content;
+    max-width: 526px;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--warm-neutral-mid-300);
+
+    &Header {
+        padding: 0 12px;
+        text-transform: uppercase;
+        @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-200));
+    }
+
+    &ItemActive {
+        background: var(--warm-stat-mint-lite-2) !important;
+    }
+
+    &Item {
+        border-radius: 8px;
+        padding: 12px;
+        cursor: pointer;
+
+        &:hover {
+            background: var(--warm-neutral-light-400);
+        }
+
+        &Name {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        }
+
+        &Desc {
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+        }
+
+        &Link {
+            display: block;
+            text-decoration: none !important;
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+            cursor: pointer;
+
+            &:hover {
+                color: var(--warm-prime-azure);
+            }
+        }
+    }
+}
+
+
+.companyInfoFormDetails {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+    border-radius: 12px;
+    background: var(--warm-neutral-light-200);
+
+    .companyInfoFormDetailsName {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed var(--warm-neutral-mid-600);
+        .companyInfoFormDetailsNameText {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            @include FONTSTYLE_SUBTITLE_SB0(26px, var(--warm-neutral-shade-600));
+            .companyInfoFormDetailsNameTextTax {
+                @include FONTSTYLE_SUBTITLE_R1(26px, var(--warm-neutral-shade-600));   
+            }
+        }
+    }
+
+    .companyInfoFormDetailsLegalSeparator {
+        width: 100%;
+        border-bottom: 1px dashed var(--warm-neutral-mid-600);
+    }
+
+    .companyInfoFormDetailsLegal {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        .companyInfoFormDetailsLegalHeader {
+            @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-600));
+        }
+
+        .companyInfoFormDetailsLegalInfoLabel {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+        }
+
+        .companyInfoFormDetailsLegalInfoLabelError {
+            color: var(--warm-stat-chilli-regular);
+        }
+
+        .companyInfoFormDetailsLegalInfoValue {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+            .companyInfoFormDetailsLegalInfoValuError {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-stat-chilli-regular));
+            }
+        }
+    }
+}
+
+.companyInfoFormFixedPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background: rgba(40, 40, 40, 0.40);
+}
+
+.companyInfoFormPopup {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 980px) {
+        align-items: flex-end;
+    }
+    @media (min-width: 980px) {
+        padding: 0 24px;
+    }
+    .companyInfoFormPopupWrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 640px;
+        max-height: 85vh;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: 24px;
+        border-radius: 8px;
+        background: var(--warm-prime-chalk);
+        box-shadow: 0px 4px 30px 0px rgba(6, 3, 34, 0.15);
+        @media (max-width: 980px) {
+            border-radius: 8px 8px 0 0;
+            max-height: 94vh;
+            gap: 24px;
+        }
+    }
+    .companyInfoFormPopupWrapperContents {
+        display: flex;
+        gap: 24px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .companyInfoFormPopupContentsHeader {
+        .companyInfoFormPopupContentsHeaderProgress {
+            margin-bottom: 24px;
+            @media (max-width: 980px) {
+                margin: 16px 0;
+            }
+        }
+        .companyInfoFormPopupContentsHeaderInfo {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 12px;
+            @media (max-width: 980px) {
+                margin-bottom: 0;
+            }
+            svg {
+                display: flex;
+                flex-shrink: 0;
+            }
+            .companyInfoFormPopupContentsHeaderInfoLeft {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+        .companyInfoFormPopupContentsHeaderText {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include FONTSTYLE_SUBTITLE_SB1(26px, var(--warm-neutral-shade-600));
+            @media (max-width: 980px) {
+                @include FONTSTYLE_BODY_SB1(26px, var(--warm-neutral-shade-600));
+            }
+        }
+        .companyInfoFormPopupContentsHeaderTellUs {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include FONTSTYLE_SUBTITLE_SB2(26px, var(--warm-neutral-shade-600));
+        }
+        .companyInfoFormPopupContentsHeaderTextConfirm {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            @include FONTSTYLE_SUBTITLE_SB2(26px, var(--warm-neutral-shade-600));
+        }
+    }
+
+    .companyInfoFormPopupWrapperExpand {
+        max-width: 1322px;
+
+        .companyInfoFormPopupWrapperExpandContainer {
+            position: relative;
+            width: 100%;
+            overflow: auto;
+            border: 1px solid var(--warm-neutral-mid-400);
+            border-radius: 8px;
+
+            .companyInfoFormPopupWrapperExpandContainerHeader {
+                position: sticky;
+                top: 0;
+                background: var(--warm-prime-chalk);
+                z-index: 12;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px 24px;
+                border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+                .companyInfoFormPopupWrapperExpandContainerHeaderAction {
+                    display: flex;
+                    align-items: center;
+                    width: fit-content;
+                    gap: 4px;
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+                    cursor: pointer;
+                }
+
+                .companyInfoFormPopupWrapperExpandContainerHeaderName {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .companyInfoFormPopupContents {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        overflow: hidden;
+
+        .companyInfoFormPopupContentsContainer {
+            overflow-y: scroll;
+            height: 100%;
+            padding-right: 16px;
+        }
+        .companyInfoFormPopupContentsCountrySelector {
+            height: calc(100% - 66px);
+        }
+        .companyInfoFormPopupContentsCountrySelectorContents {
+            height: calc(100% - 24px);
+        }
+    }
+    .companyInfoFormPopupContentsShrinked {
+        max-width: 520px;
+    }
+}
+
+.countrySelector {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .countrySelectorContents {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .countrySelectorContentsRadio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .countrySelectorContentsRadioIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+        border-radius: 50%;
+        background-color: var(--warm-stat-mint-mid);
+    }
+
+    .countrySelectorItems {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .countrySelectorItemsImage {
+            width: 24px;
+            height: 16px;
+        }
+
+        .countrySelectorItemsName {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+        }
+
+        .countrySelectorItemsDivider {
+            color: var(--warm-neutral-mid-400);
+            height: 20px;
+        }
+
+        .countrySelectorItemsCode {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+        }
+    }
+}
+
+.emptyFormMessage {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 100%;
+    gap: 16px;
+    border-radius: 12px;
+    background: var(--warm-stat-mint-lite-2);
+
+    .emptyFormMessageAction {
+        width: fit-content;
+        display: flex;
+        padding: 8px 16px 8px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        border-radius: 40px;
+        border: none;
+        background: var(--warm-prime-chalk);
+        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.04);
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+        cursor: pointer;
+    }
+
+    .emptyFormMessageContent {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .emptyFormMessageInfo {
+        @include FONTSTYLE_HEADING_H7(24px, var(--warm-neutral-shade-600));
+    }
+
+    .emptyFormMessageHelpText {
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    }
+}
+
+.companyInfoForm {
+    display: flex;
+    flex-direction: column;
+
+    width: $form-width;
+    padding: $form-padding;
+
+    background-color: $pure-white-color;
+    border-radius: 8px;
+    padding-bottom: 20px;
+    font-family: "Inter";
+}
+
+.tag {
+    margin-right: 8px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px dotted $gray-color-2;
+
+    .label {
+        margin-bottom: -10px;
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400))
+    }
+
+    .title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.39;
+        color: var(--warm-neutral-shade-500);
+    }
+
+    .fullName {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        max-width: 635px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+
+        .item {
+            margin-right: $column-padding;
+
+            &.flex {
+                flex: 1;
+            }
+
+            &:last-child {
+                margin-right: 0
+            }
+
+            &.action {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &:last-child {
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+    }
+}
+
+@media (max-width: 1324px) and (min-width: 1099px) {
+    .companyInfoForm {
+        .section {
+            .row {
+                flex-direction: column;
+
+                &.actionBar {
+                    align-items: flex-end;
+                }
+
+                .item {
+                    min-width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .companyInfoForm {
+        .section {
+            .row {
+                flex-direction: column;
+
+                &.actionBar {
+                    align-items: flex-end;
+                }
+
+                .item {
+                    min-width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .col {
+
+        &1,
+        &2,
+        &3,
+        &4,
+        &5,
+        &6 {
+            width: 100%;
+        }
+    }
+}
+
+.attachments {
+    &Boxes {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &Box {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed var(--warm-neutral-mid-600);
+
+        &:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0 !important;
+        }
+        .attachmentsBoxTitle {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+        }
+    }
+
+    &Header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @include FONTSTYLE_SUBTITLE_SB0(26px, var(--warm-neutral-shade-600));
+    }
+
+    .taxFormLink {
+        display: block;
+        margin-top: 8px;
+        text-decoration: none !important;
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+        cursor: pointer;
+
+        &:hover {
+            color: var(--warm-prime-azure);
+        }
+    }
+
+    .fileUploaderErrorMsg {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 8px;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-stat-chilli-regular));
+    }
+
+    .fileUploaderError {
+        border-color: var(--warm-stat-chilli-regular) !important;
+    }
+
+    .fileUploader {
+        width: 100%;
+        border-radius: 8px;
+        background: var(--warm-stat-mint-lite-2);
+        padding: 8px 12px;
+        border: 1px dashed var(--warm-stat-mint-mid);
+
+        @media (max-width: 960px) {
+            width: 100%;
+        }
+
+        .fileUploaded {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            border-radius: 8px;
+            background: var(--warm-prime-chalk);
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+
+            &Name {
+                white-space: normal !important;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                line-break: anywhere;
+                overflow: hidden;
+                cursor: pointer;
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+
+                img,
+                svg {
+                    flex-shrink: 0;
+                    margin-right: 8px;
+                    width: 16px !important;
+                    height: 16px !important;
+                }
+            }
+        }
+
+        &Container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &Upload {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-azure));
+                cursor: pointer;
+            }
+
+            &UploadDisabled {
+                color: var(--warm-neutral-shade-200) !important;
+                cursor: default !important;
+            }
+
+            &UploadInput {
+                font-size: 18px;
+                display: block;
+                width: 100%;
+                z-index: -1;
+                border: none;
+                text-transform: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                cursor: pointer;
+
+                &:disabled {
+                    cursor: default;
+                }
+            }
+
+            &Key {
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &Name {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    cursor: pointer;
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-600));
+
+                    span {
+                        color: var(--warm-neutral-shade-300);
+                    }
+                }
+
+                &SupportOCR {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    padding: 3px 8px 3px 6px;
+                    border-radius: 4px;
+                    background: var(--warm-misc-lite-lavender);
+                    @include FONTSTYLE_BODY_M2(18px, var(--warm-misc-bold-lavender));
+
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .fileUploaderActive {
+        border-color: var(--warm-stat-mint-mid);
+    }
+}
+
+.uploadedFileEVData {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+    strong {
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+    }
+
+    &Icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--warm-misc-bold-orange);
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        @include FONTSTYLE_BODY_M2(20px, var(--warm-prime-chalk));
+    }
+}
+
+.uploadedFileViwer {
+    position: fixed;
+    height: 100vh;
+    background: rgba(40, 40, 40, 0.4);
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+    left: 0;
+    padding-top: 56px;
+
+    &File {
+        display: flex;
+        gap: 24px;
+        padding: 24px;
+        height: calc(100vh - 56px);
+        border-radius: 16px 16px 0px 0px;
+        background: var(--warm-prime-chalk);
+    }
+
+    .uploadedFileEV {
+        max-width: 500px;
+        width: 100%;
+        padding: 40px 0;
+        overflow-y: scroll;
+
+        &Data {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 6px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+            strong {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+            }
+
+            &Icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--warm-misc-bold-orange);
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+                @include FONTSTYLE_BODY_M2(20px, var(--warm-prime-chalk));
+            }
+        }
+
+        &Action {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding-top: 24px;
+        }
+
+        &Header {
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--warm-neutral-mid-600);
+            @include FONTSTYLE_HEADING_H5_MEDIUM(32px, var(--warm-neutral-shade-600));
+        }
+
+        &HeaderChangeBorder {
+            border-color: var(--warm-misc-bold-lavender) !important;
+        }
+
+        &HeaderInfo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 0px 0px 8px 8px;
+            background: var(--warm-misc-lite-lavender);
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-misc-bold-lavender));
+        }
+    }
+}
+
+.specialTaxAttachment {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.specialTaxAttachmentLabel {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+}
+
+.additionalLangSelector {
+    position: relative;
+    display: flex;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    border: 1px dashed var(--warm-stat-mint-regular);
+    background: var(--warm-stat-mint-bg-2);
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+    cursor: pointer;
+    z-index: 1;
+
+    &Option {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        display: flex;
+        width: fit-content;
+        min-width: 200px;
+        height: fit-content;
+        max-height: 200px;
+        overflow-y: scroll;
+        padding: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        z-index: 10;
+        border-radius: 4px;
+        border: 1px solid var(--warm-neutral-mid-300);
+        background: var(--warm-prime-chalk);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
+
+        &Item {
+            display: flex;
+            padding: 6px 12px;
+            align-items: center;
+            width: 100%;
+            gap: 6px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+            &:hover {
+                background: var(--warm-neutral-light-200);
+            }
+        }
+    }
+}
+
+.additionalLangItem {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    border-radius: 8px;
+    background: var(--warm-neutral-light-200);
+
+    &Name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @include FONTSTYLE_SUBTITLE_SB0(26px, var(--warm-neutral-shade-500));
+    }
+
+    &Address {
+        width: 100%;
+    }
+}
+
+.additionalLang {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--warm-neutral-light-400);
+    margin-top: 8px;
+
+    &Icon {
+        display: flex;
+    }
+
+    &Info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        &Text {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        }
+
+        &Help {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+        }
+    }
+}

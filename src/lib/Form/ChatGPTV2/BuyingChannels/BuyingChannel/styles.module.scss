@@ -1,0 +1,54 @@
+@import 'src/lib/_font.scss';
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--warm-neutral-mid-600);
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+
+    .infoCell {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .title {
+            @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-500));
+        }
+
+        .desc {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+
+            #oro-rich-text-editor {
+                .ql-editor {
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.video {
+
+    iframe {
+        border: 1px solid var(--warm-neutral-mid-600);
+        border-radius: 8px;
+    }
+}
+
+.instruction {
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+}

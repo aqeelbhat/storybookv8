@@ -1,0 +1,51 @@
+@import './../../branding';
+@import './../../_font';
+
+.label {
+  @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-500));
+}
+
+.value {
+  @include FONTSTYLE_BODY_M1(22px, var(--warm-neutral-shade-500));
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.39;
+  color: var(--warm-neutral-shade-500);
+}
+
+.helptext {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--warm-neutral-shade-500);
+}
+
+.separator {
+  border-bottom: 1px solid var(--warm-neutral-mid-400);
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  &.dotted {
+    border-bottom: 1px dashed var(--warm-neutral-mid-600);
+  }
+}
+
+.validationError {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8px;
+
+  @include FONTSTYLE_BODY_R1($color: var(--warm-stat-chilli-regular));
+
+  img {
+    margin-right: 5px;
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+    margin-bottom: 1px;
+  }
+}

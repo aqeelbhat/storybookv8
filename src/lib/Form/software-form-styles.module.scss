@@ -1,0 +1,203 @@
+@import './../branding';
+@import './../font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    // &5 {
+    //     width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    // }
+
+    // &6 {
+    //     width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    // }
+}
+
+.softwareForm {
+  display: flex;
+  flex-direction: column;
+
+  width: $form-width;
+  padding: $form-padding;
+  
+  background-color: $pure-white-color;
+  border-radius: 8px;
+
+  font-family: "Inter";
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    border-bottom: 1px dotted $gray-color-2;
+
+    .title {
+        margin-bottom: 24px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.39;
+        color: $dark-color;
+    }
+
+    .fieldLabel {
+        margin-bottom: 6px;
+        @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+    }
+    
+    .row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 24px;
+
+        .item {
+            margin-right: $column-padding;
+
+            &.flex {
+                flex: 1;
+            }
+
+            &:last-child {
+                margin-right: 0
+            }
+
+            &.action {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            .typeOfPurchaseBox {
+                padding: 16px 24px;
+                background-color: var(--warm-neutral-light-200);
+                border: 1px solid var(--warm-neutral-mid-500);
+                border-top: none;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+
+            .similarSoftwareBox {
+                padding: 16px 24px;
+                background-color: var(--warm-neutral-light-200);
+                border: 1px solid var(--warm-neutral-mid-500);
+                border-top: none;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: none
+    }
+  }
+}
+
+.similarSoftwareBox {
+    .label {
+        display: flex;
+        align-self: center;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+        svg {
+            cursor: pointer;
+        }
+    }
+
+    .list {
+        display: flex;
+        align-items: center;
+        grid-gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+}
+
+.similarSoftwareCard {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+    min-width: 286px;
+    padding: 12px;
+    background-color: var(--warm-prime-chalk);
+    border: 1px solid var(--warm-neutral-mid-400);
+    border-radius: 8px;
+
+    .body {
+        display: flex;
+        align-items: center;
+        grid-gap: 12px;
+        width: 100%;
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40px;
+            height: 100%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              max-width: 40px;
+              max-height: 40px;
+            }
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+
+            .name {
+                @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-500));
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-top: 8px;
+        border-top: 1px dashed var(--warm-neutral-mid-500);
+
+        .owner {
+            @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+        }
+
+        .action {
+            @include FONTSTYLE_BODY_M2(18px, var(--warm-prime-azure));
+            cursor: pointer;
+        }
+    }
+
+    .property {
+        @include FONTSTYLE_BODY_R2(20px, var(--warm-neutral-shade-300));
+    }
+}
+
+.spread {
+    flex: 1;
+}

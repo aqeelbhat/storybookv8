@@ -1,0 +1,277 @@
+
+@import './../../../branding';
+@import './../../../_font';
+
+.scopeModal {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 8px;
+
+  &Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $gray-color-2;
+
+    .title{
+      @include FONTSTYLE_SUBTITLE_SB2(24px, $pure-black-color)
+    }
+
+    .closeBtn {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      cursor: pointer;
+      @include FONTSTYLE_BUTTON(22px, var(--warm-prime-azure));
+
+      svg {
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &Body {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 100%;
+    height: 350px;
+
+    &ScopeTypes {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: auto;
+      border-right: 1px solid var(--color-gray-4);
+    
+      &Wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 2px;
+        padding: 6px 12px;
+        
+        &.active {
+          background-color: var(--color-bg-light-green);
+        }
+    
+        .displayName {
+          width: 191px;
+          cursor: default;
+          @include FONTSTYLE_BUTTON(20px, var(--coco-shade-500))
+        }
+    
+        svg {
+          height: 16px;
+          color: $dark-gray-color;
+        }
+
+        .badge {
+          height: 20px;
+          min-width: 24px;
+          padding: 0 7px;
+          border-radius: 4px;
+          background-color: var(--warm-neutral-light-500);
+          @include FONTSTYLE_BUTTON(20px, var(--warm-neutral-shade-400));
+
+          &.active {
+            background-color: var(--coco-chalk);
+          }
+        }
+
+        .badgePlaceholder {
+          height: 15px;
+          width: 15px;
+        }
+      }
+    }
+
+    &OptionsContainer {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 7px;
+    
+      .options {
+        flex: 1;
+        margin: 2px 0;
+        overflow-y: auto;
+      }
+    
+      .optionWrapper {
+        .option {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 7px 0;
+      
+          .chevronBox {
+            margin-right: 8px;
+            height: 16px;
+            width: 16px;
+              
+            svg {
+              vertical-align: baseline;
+              height: 16px;
+              width: 16px;
+              color: var(--color-light-blue-icon);
+            }
+          }
+      
+          .checkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+      
+            input {
+              width: 16px;
+              height: 16px;
+      
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              -o-appearance: none;
+              appearance: none;
+      
+              border-radius: 2px;
+              border: solid 1px $gray-color;
+              border-radius: 2px;
+              background-color: var(--always-white-color);
+              outline: none;
+              transition-duration: 0.1s;
+              line-height: 14px;
+      
+              &:checked {
+                border: solid 1px $oro-primary-green-color;
+                background-color: $oro-primary-green-color;
+      
+                &::after {
+                  display: block;
+                  content: '\2713';
+                  text-align: center;
+                  color: var(--always-white-color);
+                  font-weight: 600;
+                }
+              }
+      
+              &:disabled {
+                border: solid 1px var(--dark-green-disabled-background-color);
+                background-color: var(--dark-green-disabled-background-color);
+              }
+      
+              &.partialSelection {
+                &::after {
+                  display: block;
+                  margin: 3px;
+                  content: '-';
+                  text-align: center;
+                  color: var(--color-primary-green);
+                  line-height: 8px;
+                  background-color: var(--color-primary-green);
+                }
+              }
+            }
+          }
+          .displayName {
+            width: max-content;
+            cursor: pointer;
+            @include FONTSTYLE_BUTTON(20px, var(--warm-neutral-shade-400));
+          }
+        }
+      
+        .childOptions {
+          margin-left: 22px;
+        }
+      }
+    }
+  }
+
+  &Footer {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    &InfoBar {
+      margin: 0;
+      padding: 16px;
+      width: 100%;
+      background-color: $white-smoke-color;
+
+      .text {
+        @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-200))
+      }
+
+      .displayText {
+        &Label {
+          @include FONTSTYLE_BODY_R1(22px, var(--warm-neutral-shade-200));
+        }
+      
+        &Container {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          margin-bottom: 0;
+          padding-left: 16px;
+          @include FONTSTYLE_BODY_R1(22px, $blue-gray-color);
+
+          .list {
+            color: var(--coco-shade-100);
+          }
+
+          .limitedTo {
+            @include FONTSTYLE_BODY_R1(22px, $blue-gray-color);
+          }
+        }
+      
+        button {
+          margin: 0;
+          margin-right: 4px;
+          text-transform: none;
+          text-decoration: none;
+          color: var(--primary-goback-link-font-color);
+          background-color: transparent;
+          outline: none;
+          border: none;
+        }
+      }
+    }
+
+    &ActionBar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0;
+      padding-top: 24px;
+      width: 100%;
+
+      .clearAll {
+        padding: 0;
+        @include FONTSTYLE_BUTTON(20px, var(--coco-azure));
+      }
+
+      .rightActionBtn {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .cancelBtn {
+          background-color: $pure-white-color;
+          border-color: $gray-color-2;
+          padding: 4px 23px;
+          @include FONTSTYLE_SUBTITLE_R2(24px, $dark-color);
+        }
+
+        .saveBtn {
+          padding: 4px 23px;
+          @include FONTSTYLE_SUBTITLE_R2(24px, $pure-white-color);
+        }
+      }
+
+    }
+  }
+
+}
+
+

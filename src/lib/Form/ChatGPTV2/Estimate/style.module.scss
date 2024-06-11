@@ -1,0 +1,11 @@
+@import './../../../font';
+
+.responseLabel {
+    @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-500));
+    padding-bottom: 10px;
+}
+
+.amount {
+    @include FONTSTYLE_SUBTITLE_M2(24px, var(--warm-neutral-shade-500));
+
+}

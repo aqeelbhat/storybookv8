@@ -1,0 +1,55 @@
+@import './../../branding';
+@import './../../font';
+
+.default {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    height: fit-content;
+    width: fit-content;
+    gap: 5px;
+    background: var(--warm-stat-honey-lite);
+    border: 1px solid var(--warm-stat-honey-lite);
+    border-radius: 5px;
+    padding: 1px 8px;
+    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+
+    &:hover{
+        border: 1px solid var(--warm-stat-honey-lite);
+    }
+}
+
+.deleted {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    height: fit-content;
+    width: fit-content;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 1px 8px;
+    @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-500));
+    background: var(--warm-neutral-light-500);
+    border: 1px solid var(--warm-neutral-light-500);
+}
+
+.blocked {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: fit-content;
+    flex-shrink: 0;
+    width: fit-content;
+    gap: 5px;
+    background: var(--warm-stat-chilli-lite);
+    border: 1px solid var(--warm-stat-chilli-lite);
+    border-radius: 5px;
+    padding: 1px 8px;
+    @include FONTSTYLE_BODY_M2(18px, var(--warm-stat-chilli-burnt));
+
+    &:hover{
+        border-color: var(--warm-stat-chilli-lite)
+    }
+}

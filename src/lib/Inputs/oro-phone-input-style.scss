@@ -1,0 +1,48 @@
+// this file is to update react-phone-input css
+@import './../branding';
+@import './../font';
+
+.oroPhone.PhoneInput.oroPhone-invalid {
+    border-color: $oro-error-red-color;
+    &:focus {
+        outline-color: $oro-error-red-color;
+    }
+}
+
+.PhoneInput.oroPhone.oroPhone-disabled {
+    background-color: $white-smoke-color;
+}
+
+.oroPhone.PhoneInput {
+    height: 40px;
+    padding: 0 8px;
+    border: solid 1px $gray-color-2;
+    border-radius: 2px;
+    background-color: $pure-white-color;
+
+    .PhoneInputInput {
+        margin-left: 5px;
+        @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+        border: none;
+        outline: none;
+    }
+
+    .PhoneInputCountryIcon {
+        width: 23px;
+        height: 23px;
+        border-radius: 4px;
+    }
+
+    .PhoneInputCountryIcon--border {
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .PhoneInputCountryIconImg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+}

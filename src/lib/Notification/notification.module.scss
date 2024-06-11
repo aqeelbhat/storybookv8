@@ -1,0 +1,138 @@
+@import '../font';
+
+.notificationPanel {
+    .header {
+        position: sticky;
+        top: 0px;
+        background-color: var(--warm-prime-chalk);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        grid-gap: 16px;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--warm-neutral-mid-300);
+
+        .title {
+          flex: 1;
+          @include FONTSTYLE_SUBTITLE_SB2(26px, var(--warm-neutral-shade-600));
+        }
+
+        .clearBtn {
+          @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+          cursor: pointer;
+        }
+
+        .moreAction {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            cursor: pointer;
+
+            .allReadBtn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 4px;
+
+                span {
+                    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+                }
+            }
+        }
+
+        .closeBtn {
+          cursor: pointer;
+        }
+      }
+
+      .approvalList {
+        padding-top: 8px;
+
+        .approvalItem {
+          display: flex;
+          grid-gap: 8px;
+          padding: 16px 24px;
+          border-bottom: 1px solid var(--warm-neutral-mid-300);
+          cursor: pointer;
+
+          &.unRead {
+            // background: var(--warm-stat-berry-bg);
+          }
+
+          &.newNotifications {
+            background-color: var(--warm-stat-mint-bg-2);
+          }
+
+          .profile {
+            width: 32px;
+            height: 32px;
+            // padding: 6px 5px 6px 6px;
+
+            img {
+              width: 32px;
+              height: 32px;
+              border: 1px solid var(--coco-chalk);
+              border-radius: 16px;
+            }
+          }
+
+          .messageBody {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            grid-gap: 4px;
+            flex: 1;
+
+            .messageText {
+              @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-600));
+
+              .requestor {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+              }
+            }
+
+            .comment {
+              font-style: italic;
+              @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+            }
+
+            .info {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .id {
+                    @include FONTSTYLE_BODY_M2(18px, var(--warm-prime-azure));
+                }
+
+                .icon {
+                    &::after {
+                        background-color: var(--warm-neutral-shade-300);
+                    }
+                }
+
+                .messageTimestamp {
+                    @include FONTSTYLE_BODY_R2(14px, var(--warm-neutral-shade-200));
+                }
+            }
+          }
+
+          .unreadTag{
+            width: 8px;
+            height: 8px;
+            border-radius: 6px;
+            background-color: var(--warm-prime-azure);
+            margin-top: 4px;
+          }
+        }
+
+        .approvalItem.newNotifications:hover {
+            background-color: var(--warm-stat-mint-lite-2);
+          }
+        
+        .approvalItem:hover {
+          background-color: var(--warm-neutral-light-200);
+        }
+
+      }
+}

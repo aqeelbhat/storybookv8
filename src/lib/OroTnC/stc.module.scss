@@ -1,0 +1,26 @@
+@import './../branding.scss';
+@import 'src/lib/_font.scss';
+
+.stc {
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-600));
+
+  p {
+    margin-bottom: 12px;
+  }
+
+  b {
+    @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-600));
+  }
+
+  .title b {
+    @include FONTSTYLE_HEADING_H5(32px, var(--warm-neutral-shade-600));
+  }
+  .subtitle b {
+    @include FONTSTYLE_SUBTITLE_SB2(24px, var(--warm-neutral-shade-600));
+  }
+
+  .languageToggleBtn {
+    display: inline-block;
+    padding: 0;
+  }
+}

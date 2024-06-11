@@ -1,0 +1,119 @@
+@import './../../../../branding';
+@import './../../../../font';
+
+.header {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--warm-neutral-mid-300);
+    padding: 8px 0px;
+    background-color: var(--warm-neutral-light-200);
+
+    .th {
+        padding: 1px 8px;
+        text-transform: uppercase;
+        @include FONTSTYLE_BODY_M2(18px, var(--warm-neutral-shade-200));
+    }
+
+    .productService {
+        flex-grow: 1;
+    }
+
+    .requester {
+        flex: 1 1;
+        min-width: 160px;
+        max-width: 160px;
+    }
+
+    .date {
+        flex: 1 1;
+        min-width: 120px;
+        max-width: 120px;
+    }
+
+    .total {
+        flex: 1 1;
+        max-width: 140px;
+        min-width: 140px;
+    }
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+
+    .tr {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--warm-neutral-mid-400);
+        &:last-of-type {
+            border-bottom: none;
+        }
+        .td {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 8px;
+            gap: 10px;
+            width: 100%;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+        }
+
+        .title {
+            flex: 1 0;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            flex-wrap: wrap;
+
+            .name {
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+            }
+        }
+
+        .company {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300))
+        }
+
+        .requester {
+            flex-grow: 1;
+            min-width: 160px;
+            max-width: 160px;
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+        }
+
+        .transactionDate {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 120px;
+            max-width: 120px;
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-400));
+
+            .dateContainer {
+                display: flex;
+                flex-direction: column;
+                padding: 2px 0px;
+
+                .title {
+                    @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-400));
+                }
+
+                .value {
+                    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400))
+                }
+            }
+        }
+
+        .amount {
+            min-width: 140px;
+            max-width: 140px;
+
+            &Value {
+                @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+            }
+        }
+    }
+}

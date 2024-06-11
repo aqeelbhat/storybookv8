@@ -1,0 +1,17 @@
+@import './../../branding';
+@import './../../font';
+
+
+.resultContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 32px;
+    border-radius: 8px;
+    border: 1px solid var(--warm-neutral-mid-400);
+    background: var(--warm-prime-chalk);
+    margin-bottom: 24px;
+}
+.responseLabel {
+    @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-500));
+    padding-bottom: 10px;
+}

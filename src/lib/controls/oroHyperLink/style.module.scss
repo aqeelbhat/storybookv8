@@ -1,0 +1,12 @@
+@import 'src/lib/_font.scss';
+
+.oroHyperLink {
+  cursor: pointer;
+  @include FONTSTYLE_BODY_M1(20px, var(--warm-prime-azure));
+
+  .icon {
+    margin-left: 8px;
+    stroke: var(--warm-prime-azure);
+    margin-bottom: 2px;
+  }
+}

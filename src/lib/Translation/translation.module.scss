@@ -1,0 +1,20 @@
+@import 'src/lib/_font.scss';
+
+.translate {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .translateAction {
+        width: fit-content;
+        cursor: pointer;
+        @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300));
+    }
+
+    .translateOriginalShow {
+        display: block;
+    }
+    .translateOriginalHide {
+        display: none;
+    }
+}

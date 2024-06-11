@@ -1,0 +1,174 @@
+@import 'src/lib/_font.scss';
+
+.progressBar {
+    width: 98.9%;
+    padding: 16px 16px 16px 12px;
+    margin-bottom: 24px;
+    background-color: var(--warm-neutral-light-200);
+    border-bottom: 1px solid var(--warm-neutral-mid-400);
+
+    &UcWrp {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &Expand {
+            width: 18%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+        }
+    }
+
+    &Uc {
+        width: 82%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &HorProgressBar {
+            position: relative;
+            height: 8px;
+            max-width: 487px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 20px;
+            background-color: var(--warm-neutral-mid-400);
+    
+            &Cross {
+                padding-bottom: 2px;
+                margin-left: -5px;
+                background: var(--coco-chalk);
+                border-radius: 50%;
+            }
+            
+            &Value {
+                border-radius: 20px;
+                height: 8px;
+            }
+        }
+
+        &Steps {
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-300))
+        }
+    }
+
+    &Lc {
+        display: flex;
+        align-items: center;
+
+        .key {
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300))
+        }
+
+        .value {
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500))
+        }
+
+        &Status {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-right: 16px;
+
+            &Dot {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-left: 4px;
+            }
+        }
+
+        &Start {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-right: 16px;
+            padding-left: 16px;
+            border-left: 1px solid var(--warm-neutral-mid-400);
+        }
+
+        &End {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding-left: 16px;
+            border-left: 1px solid var(--warm-neutral-mid-400);
+        }
+    }
+
+    &Btm {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 11px;
+
+        &Statement {
+            display: flex;
+            align-items: center;
+            padding: 3px 8px;
+            border-radius: 4px;
+            @include FONTSTYLE_BODY_R2(18px, var(--warm-neutral-shade-500));
+
+            &Info {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background: var(--warm-stat-honey-bg)
+            }
+
+            &Pending {
+                background: var(--warm-neutral-light-400);
+            }
+        }
+
+        &Invalid {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &Tag {
+                display: flex;
+                align-items: center;
+                padding: 3px 8px;
+                background: var(--warm-stat-chilli-lite);
+                border-radius: 4px;
+                @include FONTSTYLE_BODY_SB2(18px, var(--coco-neutral-shade-500))
+            }
+        }
+
+        &Cancelled {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &Tag {
+                display: flex;
+                align-items: center;
+                padding: 3px 8px;
+                background: var(--coco-neutral-shade-100);
+                border-radius: 4px;
+                @include FONTSTYLE_BODY_SB2(18px, var(--coco-chalk))
+            }
+        }
+
+        &Completed {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &Tag {
+                display: flex;
+                align-items: center;
+                padding: 3px 8px;
+                background: var(--green-light-highlight-background-color);
+                border-radius: 4px;
+                @include FONTSTYLE_BODY_SB2(18px, var(--coco-neutral-shade-500))
+            }
+        }
+    }
+}

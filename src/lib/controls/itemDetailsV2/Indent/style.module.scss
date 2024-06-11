@@ -1,0 +1,39 @@
+/************************************************************
+ * Copyright (c) 2024 Orolabs.ai to Present
+ * Author: Manoj Kumar
+ ************************************************************/
+
+.index {
+  padding: 10px 10px 0px 14px;
+  min-width: 35px;
+  width: fit-content;
+}
+
+.indexNested {
+  padding: 10px 10px 0px 3px;
+  min-width: 27px;
+  width: fit-content;
+  text-align: left;
+}
+
+.collapsedIcon {
+  padding: 12px 4px 0px 8px;
+  max-width: 28px;
+  min-width: 28px;
+  width: 28px;
+
+  &.click {
+    cursor: pointer;
+  }
+
+  svg {
+    stroke: var(--warm-neutral-mid-600);
+
+  }
+}
+
+.indentation {
+  width: 15px;
+  max-width: 15px;
+  min-width: 15px;
+}

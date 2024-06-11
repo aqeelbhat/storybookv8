@@ -1,0 +1,185 @@
+@import './../../branding';
+@import './../../_font';
+
+$form-width: 100%;
+$form-padding: 0;
+$column-padding: 20px;
+$number-of-columns: 4;
+$number-of-gaps: calc(#{$number-of-columns} - 1);
+$column-width: calc((#{$form-width - (2 * $form-padding)} - (#{$column-padding} * #{$number-of-gaps})) / #{$number-of-columns});
+
+.col {
+    &1 {
+        width: $column-width
+    }
+
+    &2 {
+        width: calc((#{$column-width} * 2) + #{$column-padding})
+    }
+
+    &3 {
+        width: calc((#{$column-width} * 3) + (#{$column-padding} * 2))
+    }
+
+    &4 {
+        width: calc((#{$column-width} * 4) + (#{$column-padding} * 3))
+    }
+
+    // &5 {
+    //     width: calc((#{$column-width} * 5) + (#{$column-padding} * 4))
+    // }
+
+    // &6 {
+    //     width: calc((#{$column-width} * 6) + (#{$column-padding} * 5))
+    // }
+}
+
+.editSupplier {
+    display: flex;
+    .details {
+        width: 100%;
+
+        &Section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px dotted $gray-color-2;
+
+            &:last-of-type {
+                margin-bottom: 0;
+                border-bottom: none
+            }
+
+            .row {
+                width: 100%;
+                padding-bottom: 16px;
+
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    grid-gap: 6px;
+        
+                    &.flex {
+                        flex: 1;
+                    }
+        
+                    &:last-child {
+                        margin-right: 0
+                    }
+
+                    label{
+                        @include FONTSTYLE_BODY_M1(18px, var(--warm-neutral-shade-400));
+                    }
+                }
+
+                .actionBtn {
+                    display: flex;
+                    flex-direction: row;
+                    grid-gap: 10px;
+                    justify-content: flex-end;
+
+                    .cancelBtn {
+                        background-color: $pure-white-color;
+                        border-color: var(--warm-neutral-mid-600);
+                        padding: 4px 16px;
+                        @include FONTSTYLE_BODY_M1(24px, var(--warm-neutral-shade-500));
+                      }
+              
+                    .submitBtn {
+                       padding: 4px 16px;
+                       @include FONTSTYLE_BODY_M1(24px, var(--warm-prime-chalk));
+                    }
+                }
+            }
+
+            .title {
+                margin-bottom: 24px;
+                @include FONTSTYLE_SUBTITLE_SB1(24px, var(--coco-neutral-shade-500));
+            }
+
+            .subTitle {
+                padding: 15px;
+                @include FONTSTYLE_BODY_R2(18px, var(--coco-shade-200))
+            }
+
+            &Currency {
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                height: 40px;
+                background: $primary-badge-background-color-1;
+                border-radius: 2px;
+            }
+
+            .pdBt0 {
+                padding-bottom: 0px !important;
+            }
+        }
+    }
+
+    .logoSection {
+        padding: 24px;
+        width: 30%;
+        background: var(--coco-chalk);
+
+        &Container {
+            width: 145px;
+            height: 130px;
+            background: var(--coco-light-300);
+            box-sizing: border-box;
+            border: dashed 2px var(--coco-mid-400);
+            &Img {
+                width: 100%;
+                height: 130px;
+                cursor: pointer;
+            }
+        }
+
+        .fileUpload {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+            cursor: pointer;
+    
+            &Text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .placeholder {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  margin-left: 7px;
+                  @include FONTSTYLE_BODY_R1(24px, var(--coco-azure));
+                }
+
+                .optional {
+                  @include FONTSTYLE_OVERLINE2(24px, var(--coco-shade-200))
+                }
+            }
+    
+            &FileInput {
+                font-size: 18px;
+                display: block;
+                width: 100%;
+                border: none;
+                text-transform: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                cursor: pointer;
+            }      
+        }
+    
+    }
+}
+

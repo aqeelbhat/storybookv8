@@ -1,0 +1,248 @@
+@import './../branding';
+
+.costDetails {
+
+    &FormLabel {
+        font-family: $primary-18px-above-font-family;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: $dark-color;
+        margin-bottom: 16px;
+    }
+
+    &Rows {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        &Row {
+            width: 612px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border: 1px solid $gray-color;
+            box-sizing: border-box;
+            border-radius: 2px;
+            margin-bottom: 18px;
+    
+            input[type="text"] {
+                width: 360px;
+                outline: none;
+                border: none;
+                padding: 0px;
+                margin-right: 16px;
+            }
+    
+            input[type="number"] {
+                width: 100px;
+                outline: none;
+                border: none;
+                min-height: fit-content;
+                padding: 0px;
+                margin-left: 4px;
+            }
+    
+            input[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+    
+            input::placeholder {
+                color: $semilight-gray-placeholder-color;
+            }
+    
+            &Currency {
+                display: flex;
+                align-items: center;
+                span {
+                    font-family: $primary-16px-below-font-family;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: $dark-gray-color;
+                }
+            }
+    
+            &Date{
+                // position: relative;
+                // left: 30px;
+                height: 18px;
+                margin-top: -20px;
+                margin-left: -20px;
+            }
+        }
+
+        &Trash {
+            position: relative;
+            bottom: 7px;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+    }
+
+    &Btn {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            left: 328px;
+            top: 594px;
+            margin-right: 8px;
+            border: 1px solid $gray-color-2;
+            box-sizing: border-box;
+            border-radius: 100px;
+        }
+
+        p {
+            font-family: $primary-16px-below-font-family;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+            color: $link-blue-color;
+        }
+    }
+
+    &Cont {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 24px;
+
+        &Buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px
+        }
+    }
+}
+
+.error {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 6px;
+    margin-top: -12px;
+    margin-bottom: 10px;
+
+    img {
+      height: 18px;
+      margin-right: 4px;
+    }
+
+    font-family: $primary-16px-below-font-family;
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: $oro-error-red-color;
+}
+
+.readOnly {
+    width: 100%;
+
+    label {
+        display: none;
+        padding-bottom: 24px;
+        font-family: $primary-16px-below-font-family;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 33px;
+        color: $dark-light-color;
+    }
+
+    &Thead {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 4px;
+        font-family: $primary-16px-below-font-family;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.03em;
+        color: $dark-light-gray-font-color;
+        border-bottom: 1px dashed $gray-color-2;
+
+        &Details {
+            display: block;
+            width: 60%;
+        }
+
+        &Amount {
+            width: 20%;
+        }
+
+        &Year {
+            width: 15%;
+        }
+    }
+
+    &Tbody {
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px dashed $gray-color-2;
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+
+        &Details {
+            display: block;
+            width: 60%;
+            font-family: $primary-16px-below-font-family;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+            align-items: center;
+            color: $dark-color;
+        }
+
+        &Amount {
+            width: 20%;
+            font-family: $primary-16px-below-font-family;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+            color: $dark-light-color;
+        }
+
+        &Year {
+            width: 15%;
+            font-family: $primary-16px-below-font-family;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 22px;
+            color: $light-blue-gray-color;
+        }
+    }
+
+    &Tbody:last-child {
+        border: none;
+    }
+}

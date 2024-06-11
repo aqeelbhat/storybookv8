@@ -1,0 +1,312 @@
+/************************************************************
+ * Copyright (c) 2024 Orolabs.ai to Present
+ * Author: Noopur Landge
+ ************************************************************/
+
+@import './../../branding';
+@import './../../font';
+@import './../../oroStyles.scss';
+
+.bankInfo {
+  .sectionTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    .title{
+      @include FONTSTYLE_SUBTITLE_M1(26px, var(--warm-neutral-shade-600));
+    }
+
+    .description {
+      @include FONTSTYLE_BODY_R1(24px, var(--warm-neutral-shade-500));
+    }
+  }
+
+  .addBankAction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 1px dashed var(--warm-stat-mint-regular);
+    background: var(--warm-stat-mint-bg-2);
+    cursor: pointer;
+  
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neut-shade-500));
+  }
+}
+
+.borderBox {
+  margin-left: 16px !important;
+  margin-top: 16px !important;
+  border-radius: 12px;
+  border: 1px solid var(--warm-neutral-mid-500);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.paymentOption {
+  .selectButton {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--warm-neutral-shade-100);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &.selected {
+      background-color: var(--warm-stat-mint-mid);
+      border-color: var(--warm-stat-mint-mid);
+    }
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    grid-gap: 8px;
+    @include FONTSTYLE_SUBTITLE_M1(26px, var(--warm-neutral-shade-500));
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .customItem {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-400));
+  }
+
+  .bankKeyDropdown {
+    border: none;
+    width: fit-content;
+    margin-left: -8px;
+    margin-bottom: -8px;
+    background-color: transparent;
+
+    div:first-child {
+      div:first-child {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        color: #262626;
+      }
+    }
+  }
+
+  .encryptedValue {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 12px;
+  }
+
+  .expanded {
+    width: 100%;
+    padding: 16px 0 0 16px;
+  }
+}
+
+.paymentModeForm {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 12px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--warm-stat-mint-lite-2);
+}
+
+.paymentMode {
+  display: flex;
+  align-items: center;
+  grid-gap: 8px;
+
+  .icon {
+    display: flex;
+    align-items: center;
+    width: 24px;
+  }
+
+  .description {
+    flex: 1;
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+    .higlight {
+      position: relative;
+      display: inline;
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+    }
+  }
+
+  &.title {
+    margin-bottom: 4px;
+
+    .description {
+      flex: 1;
+      @include FONTSTYLE_SUBTITLE_M1(26px, var(--warm-neutral-shade-600));
+    }
+  }
+
+  &.footer {
+    margin-top: 4px;
+
+    .description {
+      padding-top: 12px;
+      border-top: 1px solid var(--warm-neutral-mid-500);
+    }
+
+    .link {
+      margin-left: 12px;
+      cursor: pointer;
+      color: var(--warm-prime-azure);
+    }
+  }
+}
+
+.noDetailsNeeded {
+  display: flex;
+  align-items: center;
+  grid-gap: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--warm-neutral-light-400);
+  @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+}
+
+.inlineDropdown {
+  position: relative;
+  display: inline;
+
+  .value {
+    display: inline-flex;
+    align-items: center;
+    grid-gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--warm-neutral-mid-400);
+    background: var(--warm-prime-chalk);
+    cursor: pointer;
+    @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+  }
+
+  .optionList {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    min-width: 346px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+    padding: 8px;
+    max-height: 256px;
+    background: var(--warm-prime-chalk);
+    border-radius: 4px;
+    border: 1px solid var(--warm-neut-mid-300);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
+
+    overflow-y: auto;
+    @include FORCE_SCROLLBAR();
+
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+      &.selected {
+        background: var(--warm-stat-mint-lite-2);
+      }
+
+      &:hover {
+        background: var(--warm-stat-mint-lite-2);
+      }
+
+      &.label {
+        padding: 0 8px;
+        text-transform: uppercase;
+        @include FONTSTYLE_BODY_M2(28px, var(--warm-neutral-shade-200));
+        cursor: default;
+
+        &:hover {
+          background: var(--warm-prime-chalk);
+        }
+      }
+    }
+  }
+}
+
+.card {
+  // padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 6px;
+
+  .primaryInfo {
+    @include FONTSTYLE_SUBTITLE_R2(24px, var(--warm-neutral-shade-600));
+  }
+
+  .secondaryInfo {
+    @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-300));
+
+    .value {
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+    }
+  }
+}
+
+.spread {
+  flex: 1;
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($pure-black-color, 0);
+  cursor: default;
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  grid-gap: 20px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--warm-neutral-light-400);
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 6px;
+
+    .title {
+      @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-600));
+    }
+    .subtitle {
+      @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+    }
+  }
+}

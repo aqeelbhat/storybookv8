@@ -1,0 +1,196 @@
+@import 'src/lib/_font.scss';
+
+.menuActioncontainer{
+  display: inline;      
+}
+
+.dropdown {
+  &Toggle {
+    background: transparent !important;
+    border: none;
+
+    &WithBorder {
+      padding: 6px;
+      border: 1px solid var(--coco-mid-200);
+      border-radius: 6px;
+    }
+  }
+
+  &Icon {
+    &Wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: var(--coco-chalk);
+      border-radius: 6px;
+
+      &Small {
+        width: 18px;
+        height: 18px;
+      }
+
+      &Medium {
+        width: 32px;
+        height: 32px;
+      }
+
+      &Large {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  &Menu {
+    min-width: fit-content !important;
+    padding: 8px !important;
+    margin: 4px 0px !important;
+    border: 1px solid #E6E6E6 !important;
+    border-radius: 4px !important;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12) !important;
+    z-index: 9 !important;
+
+    &Small {
+      padding: 4px !important;
+    }
+
+    &Medium {
+      padding: 8px !important;
+    }
+  }
+
+  &Divider {
+    margin: 4px 0px !important;
+  }
+
+  &Item {
+    padding: 6px 12px !important;
+    margin: 2px 0px !important;
+    font-family: "Inter" !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: var(--coco-shade-500) !important;
+    background: none !important;
+    border: 1px solid var(--coco-chalk) !important;
+    border-radius: 4px !important;
+
+    &:hover {
+      background-color: var(--coco-light-300) !important;
+      border: 1px solid var(--coco-berry-lite) !important;
+    }
+  }
+
+  &Selected {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 6px 12px !important;
+    margin: 2px 0px !important;
+    font-family: "Inter" !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: var(--coco-shade-500) !important;
+    background: var(--coco-berry-lite) !important;
+    border: none !important;
+    border-radius: 4px !important;
+  }
+
+  &Disabled {
+    padding: 4px 12px !important;
+    font-family: "Inter" !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 14.32px !important;
+    color: var(--coco-shade-400) !important;
+  }
+}
+
+.wrapper {
+  width: 100%;
+
+  &Popup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    box-shadow: 0px 0px 20px var(--coco-mid-600);
+    background-color: var(--coco-chalk);
+    border-radius: 4px;
+
+    &Header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include FONTSTYLE_SUBTITLE_SB2(24px, var(--coco-shade-400))
+    }
+
+    &Box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 8px 12px 8px 12px;
+      border: 1px solid var(--coco-mid-600);
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      textarea {
+        height: 60px;
+        padding: 0px;
+        outline: none;
+        border: none;
+        resize: none;
+        @include FONTSTYLE_BODY_R1(16.71px, var(--warm-neutral-shade-500))
+      }
+
+      textarea::placeholder {
+        @include FONTSTYLE_BODY_R1(18px, var(--coco-shade-100))
+      }
+
+      &File {
+        display: none;
+      }
+
+      &Attachment {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+
+        &Item {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 3px 4px;
+          border-radius: 4px;
+          background-color: var(--coco-light-300);
+          @include FONTSTYLE_BODY_R2(20px, var(--warm-prime-azure))
+        }
+      }
+    }
+
+    &ButtonBox {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+
+      button {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 16px;
+        background: var(--primary-green-background-color);
+        border: none;
+        box-sizing: border-box;
+        border-radius: 4px;
+        @include FONTSTYLE_BODY_R1(22px, var(--coco-chalk))
+      }
+    }
+  }
+}

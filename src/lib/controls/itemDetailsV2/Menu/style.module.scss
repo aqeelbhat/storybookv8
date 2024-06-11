@@ -1,0 +1,67 @@
+
+@import './../../../branding';
+@import './../../../font';
+
+.seperator {
+  border-top: 1px solid var(--warm-neutral-mid-400);
+  border-bottom-color: transparent;
+}
+// Menu Duplicate/delete
+.menu {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  border-radius: 4px;
+  background-color: var(--coco-chalk);
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.12));
+  z-index: 99; // backdrop would be zindex 1 and portal has 9, so adding 99 to make it top most
+  min-width: 140px;
+  transition: left .5s;
+
+  & .menuItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    line-height: 22px;
+    padding: 6px 10px;
+    @include FONTSTYLE_BODY_SB1(20px, var(--warm-neutral-shade-300));
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: var(--warm-neutral-light-200);
+    }
+  }
+}
+
+// inline Menu Duplicate/delete
+.inlineMenu {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+
+
+  .inlineMenuItem {
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+
+    svg {
+      cursor: pointer;
+      stroke: var(--warm-neutral-shade-200);
+
+      &:hover {
+        stroke: var(--warm-neutral-shade-600);
+      }
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

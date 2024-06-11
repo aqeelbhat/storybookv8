@@ -1,0 +1,101 @@
+@import 'src/lib/_font.scss';
+
+.prioritySelector {
+    position: relative;
+
+    .color {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+    }
+
+    .selection {
+        width: 100%;
+        padding: 0 6px;
+        display: flex;
+        align-items: center;
+        grid-gap: 8px;
+        cursor: pointer;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: var(--warm-prime-chalk);
+        background-color: var(--warm-neutral-light-400);
+
+        .value {
+            flex: 1;
+            @include FONTSTYLE_BODY_M1(20px, var(--warm-neutral-shade-500));
+
+            &.placeholder {
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-200));
+            }
+        }
+
+        &:hover {
+            &.readOnly {
+                cursor: unset;
+            }
+        }
+
+        &.focused {
+            border: 1.4px solid var(--warm-stat-mint-mid);
+        }
+    }
+
+    .optionWrapper {
+        z-index: 6;
+        position: absolute;
+        width: max-content;
+        min-width: 168px;
+        background: var(--coco-chalk);
+        border-radius: 4px;
+        border: 1px solid var(--warm-neutral-mid-200);
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.12);
+        clip-path: inset(0px -20px -20px -20px);
+        margin-top: 2px;
+        padding: 6px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 6px;
+
+        .activeOption {
+            outline: 2px solid var(--warm-stat-mint-mid);
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            grid-gap: 8px;
+            padding: 4px 12px;
+            border-radius: 4px;
+            @include FONTSTYLE_BODY_R1(20px, var(--warm-neutral-shade-500));
+
+            &:hover {
+                cursor: pointer;
+                background: var(--warm-stat-mint-lite-2);
+            }
+
+            &.selected {
+                background: var(--warm-stat-mint-lite-2);
+            }
+
+            &.clear {
+                @include FONTSTYLE_BODY_R1(20px, var(--warm-prime-azure));
+            }
+
+            .label {
+                flex: 1;
+            }
+        }
+    }
+
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        // background: rgba(36, 43, 58, 0.12);
+        cursor: default;
+    }
+}

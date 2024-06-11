@@ -1,0 +1,28 @@
+/************************************************************
+ * Copyright (c) 2024 Orolabs.ai to Present
+ * Author: Manoj Kumar
+ ************************************************************/
+@import 'src/lib/_font.scss';
+
+.trans {
+  transition-duration: 0.7s ;
+  transition-property: grid-template-rows;
+  display: grid;
+  & > div {
+    overflow: hidden;
+    line-height: normal;
+  }
+}
+
+.show {
+  grid-template-rows: 1fr;
+}
+
+.showWithDelay {
+  transition-delay: .4s ;
+  grid-template-rows: 1fr;
+}
+
+.hide {
+  grid-template-rows: 0fr;
+}

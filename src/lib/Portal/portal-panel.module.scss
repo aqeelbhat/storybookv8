@@ -1,0 +1,431 @@
+@import './../branding';
+
+$portal-width: 500px;
+$portal-width-expanded: 792px;
+$portal-width-expanded-large: 1226px;
+
+.portal {
+  position: fixed;
+  width: $portal-width;
+  right: 0;
+  z-index: 10;
+  padding: 0;
+
+  border: 1px solid var(--warm-neutral-mid-400);
+  box-shadow: -4px 0px 8px rgb(0 0 0 / 0.05);
+  background-color: $pure-white-color;
+
+  opacity: 0;
+
+  .portalContentWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 6px !important;
+      display: block !important;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--warm-neutral-mid-500) !important;
+      border-radius: 100px !important;
+    }
+    -ms-overflow-style: auto !important;
+    scrollbar-width: auto !important;
+  }
+
+  .expandCollapseBtn {
+    position: fixed;
+    // top: 92px;
+    right: calc(#{$portal-width} - 14px);
+    z-index: 11;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    width: 28px;
+
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--warm-stat-mint-mid);
+    border-radius: 14px;
+
+    transition: width 0.2s;
+    cursor: pointer;
+
+    svg {
+      stroke: var(--warm-prime-chalk);
+    }
+
+    // &:hover {
+    //   justify-content: flex-start;
+    //   width: 40px;
+    //   transition: width 0.2s;
+
+    //   svg {
+    //     margin-left: 6px;
+    //   }
+    // }
+  }
+
+  .expandCollapseBtnWrapper {
+    &:hover ~ .expandHighlight{
+      border: 1px solid var(--warm-stat-mint-mid);
+    }
+  }
+
+  .expandHighlight {
+    z-index: 10;
+    position: fixed;
+    width: 0;
+    border: none;
+  }
+
+  &Show {
+    animation: slide-in 0.5s forwards;
+    -webkit-animation: slide-in 0.5s forwards;
+
+    &.expanded {
+      animation: expand 0.5s forwards;
+      -webkit-animation: expand 0.5s forwards;
+
+      .expandCollapseBtn {
+        animation: btn-expand-slide 0.5s forwards;
+        -webkit-animation: btn-expand-slide 0.5s forwards;
+      }
+
+      .expandCollapseBtnWrapper {
+        &:hover ~ .expandHighlight{
+          margin-left: -2px;
+        }
+      }
+    }
+
+    &.regular {
+      animation: shrink 0.5s forwards;
+      -webkit-animation: shrink 0.5s forwards;
+
+      .expandCollapseBtn {
+        animation: btn-shrink-slide 0.5s forwards;
+        -webkit-animation: btn-shrink-slide 0.5s forwards;
+      }
+    }
+
+    .expandCollapseBtn {
+      animation: btn-slide-in 0.5s forwards;
+      -webkit-animation: btn-slide-in 0.5s forwards;
+    }
+
+    @keyframes expand {
+      0% {
+        opacity: 1;
+        width: $portal-width;
+      }
+      100% {
+        opacity: 1;
+        width: $portal-width-expanded;
+      }
+    }
+
+    @keyframes shrink {
+      0% {
+        opacity: 1;
+        width: $portal-width-expanded;
+      }
+      100% {
+        opacity: 1;
+        width: $portal-width;
+      }
+    }
+
+    @keyframes btn-expand-slide {
+      0% {
+        opacity: 1;
+        right: calc(#{$portal-width} - 14px);
+      }
+      100% {
+        opacity: 1;
+        right: calc(#{$portal-width-expanded} - 14px);
+      }
+    }
+
+    @keyframes btn-shrink-slide {
+      0% {
+        opacity: 1;
+        right: calc(#{$portal-width-expanded} - 14px);
+      }
+      100% {
+        opacity: 1;
+        right: calc(#{$portal-width} - 14px);
+      }
+    }
+
+    /* for extra expand START */
+    &.expandedLarge {
+      animation: expandLarge 0.5s forwards;
+      -webkit-animation: expandLarge 0.5s forwards;
+
+      .expandCollapseBtn {
+        animation: btn-expandLarge-slide 0.5s forwards;
+        -webkit-animation: btn-expandLarge-slide 0.5s forwards;
+      }
+
+      .expandCollapseBtnWrapper {
+        &:hover ~ .expandHighlight{
+          margin-left: -2px;
+        }
+      }
+    }
+
+    &.regularLarge {
+      animation: shrinkLarge 0.5s forwards;
+      -webkit-animation: shrinkLarge 0.5s forwards;
+
+      .expandCollapseBtn {
+        animation: btn-shrinkLarge-slide 0.5s forwards;
+        -webkit-animation: btn-shrinkLarge-slide 0.5s forwards;
+      }
+    }
+
+    @keyframes expandLarge {
+      0% {
+        opacity: 1;
+        width: $portal-width;
+      }
+      100% {
+        opacity: 1;
+        width: $portal-width-expanded-large;
+      }
+    }
+
+    @keyframes btn-expandLarge-slide {
+      0% {
+        opacity: 1;
+        right: calc(#{$portal-width} - 14px);
+      }
+      100% {
+        opacity: 1;
+        right: calc(#{$portal-width-expanded-large} - 14px);
+      }
+    }
+
+    @keyframes shrinkLarge {
+      0% {
+        opacity: 1;
+        width: $portal-width-expanded-large;
+      }
+      100% {
+        opacity: 1;
+        width: $portal-width;
+      }
+    }
+
+    @keyframes btn-shrinkLarge-slide {
+      0% {
+        opacity: 1;
+        right: calc(#{$portal-width-expanded-large} - 14px);
+      }
+      100% {
+        opacity: 1;
+        right: calc(#{$portal-width} - 14px);
+      }
+    }
+    /* for extra expand END */
+  }
+
+  &Hide {
+    pointer-events: none;
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;
+
+    .expandCollapseBtn {
+      animation: btn-slide-out 0.5s forwards;
+      -webkit-animation: btn-slide-out 0.5s forwards;
+    }
+  }
+
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      right: -100%;
+    }
+    100% {
+      opacity: 1;
+      right: 0%;
+    }
+  }
+
+  @keyframes slide-out {
+    0% {
+      opacity: 1;
+      right: 0%;
+    }
+    100% {
+      opacity: 0;
+      right: -100%;
+    }
+  }
+
+  @keyframes btn-slide-in {
+    0% {
+      opacity: 0;
+      right: calc(-1 * calc(#{$portal-width} - 14px));
+    }
+    100% {
+      opacity: 1;
+      right: calc(#{$portal-width} - 14px);
+    }
+  }
+
+  @keyframes btn-slide-out {
+    0% {
+      opacity: 1;
+      right: calc(#{$portal-width} - 14px);
+    }
+    100% {
+      opacity: 0;
+      right: calc(-1 * calc(#{$portal-width} - 14px));
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgba(#282828, 0.3);
+  cursor: default;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 1440px) {
+  .backdrop {
+    left: calc(calc(100% - #{$max-app-width}) / 2);
+    right: calc(calc(100% - #{$max-app-width}) / 2);
+  }
+
+  .portal {
+    right: calc(calc(100% - #{$max-app-width}) / 2);
+    transform: none;
+    -webkit-transform: none;
+
+    &Show {
+      animation: none;
+      -webkit-animation: none;
+      opacity: 1;
+      transition: opacity 0.5s;
+      transform: none;
+      -webkit-transform: none;
+
+      .expandCollapseBtn {
+        animation: none;
+        -webkit-animation: none;
+        opacity: 1;
+        transition: opacity 0.5s;
+        transform: none;
+        -webkit-transform: none;
+      }
+
+      &.expanded {
+        .expandCollapseBtn {
+          animation: btn-expand-slide-wide 0.5s forwards;
+          -webkit-animation: btn-expand-slide-wide 0.5s forwards;
+        }
+      }
+      &.regular {
+        .expandCollapseBtn {
+          animation: btn-shrink-slide-wide 0.5s forwards;
+          -webkit-animation: btn-shrink-slide-wide 0.5s forwards;
+        }
+      }
+
+      @keyframes btn-expand-slide-wide {
+        0% {
+          opacity: 1;
+          right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width} - 14px);
+        }
+        100% {
+          opacity: 1;
+          right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width-expanded} - 14px);
+        }
+      }
+
+      @keyframes btn-shrink-slide-wide {
+        0% {
+          opacity: 1;
+          right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width-expanded} - 14px);
+        }
+        100% {
+          opacity: 1;
+          right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width} - 14px);
+        }
+      }
+      /* For Extra Wide Expanded */
+      &.expandedLarge {
+        .expandCollapseBtn {
+          animation: btn-expand-slide-wide-large 0.5s forwards;
+          -webkit-animation: btn-expand-slide-wide-large 0.5s forwards;
+        }
+      }
+      &.regularLarge {
+        .expandCollapseBtn {
+          animation: btn-shrink-slide-wide-large 0.5s forwards;
+          -webkit-animation: btn-shrink-slide-wide-large 0.5s forwards;
+        }
+      }
+      @keyframes btn-expand-slide-wide-large {
+        0% {
+          opacity: 1;
+          right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width} - 14px);
+        }
+        100% {
+          opacity: 1;
+          right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width-expanded-large} - 14px);
+        }
+      }
+      @keyframes btn-shrink-slide-wide-large {
+        0% {
+          opacity: 1;
+          right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width-expanded-large} - 14px);
+        }
+        100% {
+          opacity: 1;
+          right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width} - 14px);
+        }
+      }
+    }
+
+    &Hide {
+      animation: none;
+      -webkit-animation: none;
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s 0.5s;
+      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      z-index: 0;
+
+      .expandCollapseBtn {
+        animation: none;
+        -webkit-animation: none;
+        opacity: 0;
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        z-index: 0;
+      }
+    }
+
+    .expandCollapseBtn {
+      transform: none;
+      -webkit-transform: none;
+      right: calc(calc(calc(100% - #{$max-app-width}) / 2) + #{$portal-width} - 14px);
+      transition: width 0.2s;
+    }
+  }
+}
